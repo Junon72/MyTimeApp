@@ -16,35 +16,74 @@
 </head>
 
 <body>
-        <!-- Fixed header / Navigation -->
-        <header class="container d-block">
-            <nav class="navbar navbar-default fixed-top p-0" id="firstHeader">
-            </nav>
-        </header>
-        <!-- Main content -->
-        <div class="main-container">
-    
-    
-        </div>
-        <!-- Fixed footer / Actions / Navigation -->
-        <footer>
-            <nav class="navbar navbar-default fixed-bottom p-0">
-                <div class="container-fluid" id="nav-container-bottom">
-                    <!-- Action buttons-->
-                    <div class="actions-container">
-    
+    <!-- Fixed header / Navigation -->
+    <header class="container d-block">
+            <nav class="navbar navbar-default fixed-top p-0">
+                    <div class="container-fluid" id="nav-container">
+                        <!-- Navigation Icons -->
+                        <div class="nav navbar-nav navbar-left home-container">
+                            <a href="tasks.html" target="blank_"><span class="fa-icon"><i class="fa fa-home"
+                                        aria-hidden="true"></i></span></a>
+                        </div>
+                        <div class="nav navbar-nav navbar-center page-title-container">
+                            <!-- Page Title -->
+                            <div class="page-title">
+                                <h4>Share</h4>
+                                <i class="fa fa-envelope-o page-title-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="nav navbar-nav navbar-right out-container">
+                            <a href="exit.html" target="blank_"><span class="fa-icon"><i class="fa fa-sign-out"
+                                        aria-hidden="true"></i></span></a>
+                        </div>
                     </div>
-                    <!-- Bottom-navigation -->
-                    <div class="nav navbar-nav navbar-left back-container">
-    
+                    <!-- Project Title -->
+                    <div class="title-container">
+                        <h4 id="project-title"> Project 1</h4>
                     </div>
-                    <div class="nav navbar-nav navbar-right forward-container">
-    
+                    <!-- Date -->
+                    <div class="date-container">
+                        <div id="recDate" class="dateHeader clearfix"></div>
                     </div>
+                </nav>
+    </header>
+    <!-- Main content -->
+    <div class="main-container">
+        <form action="">
+            <div class="form-group">
+                <label for="">To:</label>
+                <input type="text" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="">From:</label>
+                <input type="text" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="">Message</label>
+                <textarea name="" id="" rows="10" class="form-control"></textarea>
+            </div>
+        </form>
+
+    </div>
+    <!-- Fixed footer / Actions / Navigation -->
+    <footer>
+        <nav class="navbar navbar-default fixed-bottom p-0">
+            <div class="container-fluid" id="nav-container-bottom">
+                <!-- Action buttons-->
+                <div class="actions-container">
+                        <a href="exit.html" target="blank_" class="btn btn-success start-button" id="goToRecord">Send</a>
+                    </div>
+                <!-- Bottom-navigation -->
+                <div class="nav navbar-nav navbar-left back-container">
+                    <i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i>
                 </div>
-            </nav>
-        </footer>
-    
-    </body>
-    
-    </html>
+                <div class="nav navbar-nav navbar-right forward-container">
+                    <i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
