@@ -1,0 +1,37 @@
+/* Global*/
+
+:root {
+    /*Cyan deriv. */
+    --clr-dark: rgb(105, 134, 140);
+    --clr-middle: rgb(163, 196, 201);
+    --clr-light: rgb(224, 230, 231);
+    /*Text*/
+    --clr-mainDark: #2e3944;
+    --clr--mainLight: #949a9f;
+    --clr-title:  #6605c7;
+    --clr-time: #05c766;
+    --clr-success: #66C705;
+
+    /*Buttons*/
+    --clr-green: rgb(5, 199, 5);
+    --clr-purple: rgb(102, 5 ,199);
+    --clr-magenta: rgb(199, 5 ,199);
+    --clr-add: rgb(3, 153, 240);
+    --clr-rec: rgb(199, 5, 5);
+    --clr-stop: rgb(2, 22, 42);
+    --clr-pause: rgb(199, 102, 5);
+    --clr-home: rgb(1, 134, 105);
+}
+
+/* Universal selector style */
+*,
+*::before,
+*::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    top: 9rem;
+}
