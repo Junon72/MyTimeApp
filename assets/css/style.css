@@ -1,3 +1,5 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Public+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 /* Global*/
 
 :root {
@@ -6,21 +8,22 @@
     --clr-middle: rgb(163, 196, 201);
     --clr-light: rgb(224, 230, 231);
     /*Text*/
-    --clr-mainDark: #2e3944;
+    --clr-mainDark: #13181B;
     --clr--mainLight: #949a9f;
-    --clr-title:  #6605c7;
+    --clr-title: #4a1d68;
     --clr-time: #05c766;
     --clr-success: #66C705;
 
     /*Buttons*/
     --clr-green: rgb(5, 199, 5);
-    --clr-purple: rgb(102, 5 ,199);
-    --clr-magenta: rgb(199, 5 ,199);
+    --clr-purple: rgb(94, 1, 94);
+    --clr-magenta: rgb(199, 5, 199);
     --clr-add: rgb(3, 153, 240);
     --clr-rec: rgb(199, 5, 5);
-    --clr-stop: rgb(2, 22, 42);
+    --clr-stop: rgb(1, 69, 143);
     --clr-pause: rgb(199, 102, 5);
     --clr-home: rgb(1, 134, 105);
+    --clr-out: #798187;
 }
 
 /* Universal selector style */
@@ -33,5 +36,332 @@
 
 /* General body styling */
 body {
-    top: 9rem;
+    position: relative;
+    font-family: 'Public Sans', sans-serif;
+    /* Change later to limit the window on big screens - needs js*/
+
+    padding: 0;
+}
+
+/*--------------------- Fixed Header ---------------------*/
+
+nav {
+    background: var(--clr-light);
+    z-index: 999;
+}
+
+#firstHeader {
+    height: 10.5em;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+#nav-container {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Icons */
+.home-container {
+    float: left !important;
+    align-items: center;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.out-container {
+    float: right !important;
+    align-items: center;
+    margin-top: 1em;
+    margin-right: 1em;
+}
+
+.fa-home {
+    font-size: 3.2em;
+    color: var(--clr-home);
+}
+
+.fa-sign-out {
+    font-size: 3.2em;
+    color: var(--clr-out);
+}
+
+/* Page Title */
+.page-title-container {
+    position: relative;
+    margin-top: 3.8em;
+
+}
+
+.page-title-icon {
+    display: inline;
+    font-size: 1.6em;
+    color: var(--clr-dark);
+}
+
+.page-title h4 {
+    display: inline;
+    margin-right: 0.4em;
+    color: var(--clr-dark);
+    font-weight: 700;
+    font-size: 2em;
+}
+
+/* Title icons */
+
+.fa-circle {
+    color: var(--clr-rec);
+}
+
+/* Title */
+
+.title-container {
+    width: 100%;
+    display: block;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.project-title {
+    height: 1.6em;
+    font-weight: 500;
+    color: var(--clr-title);
+}
+
+/* ------------------------ Fixed bottom ---------------------*/
+.fixed-bottom {
+    z-index: 999;
+}
+
+.actions-container {
+    display: block;
+    margin: 1em .5em;
+
+}
+
+.nav-container-bottom {
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+}
+
+.back-container {
+    float: left !important;
+    align-items: center;
+    height: 2.2em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+
+}
+
+.forward-container {
+    float: right !important;
+    align-items: center;
+    height: 2.2em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+    font-size: 2em;
+    color: var(--clr--mainLight);
+
+}
+
+/* Action icons */
+
+.action {
+    font-size: 2.8em;
+    padding: 0;
+    margin-right: 1em;
+}
+
+.fa-pause-circle {
+    color: var(--clr-pause);
+}
+
+.fa-stop-circle {
+    color: var(--clr-stop);
+}
+
+/*-----------Buttons----------*/
+/* Tasks Page - Start project button*/
+button {
+    outline: 0;
+}
+
+.start-button {
+    background-color: var(--clr-green);
+    border-color: var(--clr-green);
+    font-size: 1.2em;
+    font-weight: 200;
+}
+
+
+/* -------------------------- Main Content ---------------------------*/
+
+.main-container {
+    position: relative;
+    margin-top: 10.5em;
+    margin-bottom: 8em;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow: auto;
+}
+
+/*--------------------- Index ------------------------------- */
+
+.index-page-title {
+    position: relative;
+    height:
+
+}
+
+.mytime {
+    position: absolute;
+    top: 0;
+    font-size: 6em;
+    color: white;
+    font-size: 900;
+
+}
+
+.index-main-container {
+    position: relative;
+    margin: 11em 1em 1em;
+    height: 50vh;
+    overflow: auto;
+    text-align: center;
+}
+
+.hourClassFull {
+    display: block;
+}
+
+.hour-class-home {
+    text-align: center;
+}
+
+#hGlassFull {
+    color: var(--clr-purple);
+    font-size: 13em;
+    text-align: center;
+}
+
+.newProjectForm {
+    margin-bottom: 8em;
+}
+
+#newProject {
+    color: var(--clr-purple);
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
+/*---------------------------- Tasks -------------------------*/
+
+
+.tasks-container h5 {
+    color: var(--clr--mainLight);
+    margin-top: .5em;
+    margin-bottom: .8em;
+    font-weight: 400;
+    font-size: 1.2em;
+    letter-spacing: 1.4px;
+    font-style: italic;
+    font-weight: 500i;
+}
+
+
+/* Form container*/
+
+.create-tasks {
+    margin-top: 2em;
+}
+
+/* Add/Remove Tasks */
+
+#defaultTitle {
+    margin-bottom: 1em;
+
+}
+
+#createTitle {
+    margin-bottom: 1em;
+}
+
+
+#showTasks {
+    margin: 1.2em 0 0;
+    background-color: rgb(3, 153, 240);
+    padding: 4px 6px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+#task-name {
+    display: flex;
+}
+
+.task-input {
+    height: 2.2em;
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Add /Remove Button */
+
+.task-button {
+    padding: 0;
+
+}
+
+.task-icon {
+    margin-top: -.1em;
+    font-size: 2.4em;
+    color: rgb(3, 153, 240);
+}
+
+/* List Element Style */
+
+ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 1em;
+    color: var(--clr-title);
+    font-size: 1.2em;
+    font-weight: 500;
+    
+}
+
+.remove {
+    display: flex;
+    float: right;
+}
+
+/*--------------------------- Recording ---------------------------*/
+
+.date-container {
+    margin-left: 2em;
+    margin-top: -2em;
+}
+
+.dateHeader {
+    display: flex;
+    float: right;
+    color: var(--clr-time);
+    font-size: 1.2em;
+    font-weight: 900;
+    font-style: italic;
+    opacity: .3;
 }

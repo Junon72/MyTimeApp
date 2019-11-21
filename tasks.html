@@ -18,7 +18,7 @@
 <body>
     <!-- Fixed header / Navigation -->
     <nav class="navbar navbar-default fixed-top p-0">
-        <div class="container-fluid" id="nav-container">
+        <div class="container-fluid nav-container-top">
             <!-- Navigation Icons -->
             <div class="nav navbar-nav navbar-left home-container">
                 <a href="tasks.html" target="blank_"><span class="fa-icon"><i class="fa fa-home"
@@ -32,7 +32,8 @@
                 </div>
             </div>
             <div class="nav navbar-nav navbar-right out-container">
-                <a href="exit.html" target="blank_"><span class="fa-icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span></a>
+                <a href="exit.html" target="blank_"><span class="fa-icon"><i class="fa fa-sign-out"
+                            aria-hidden="true"></i></span></a>
             </div>
         </div>
         <!-- Project Title -->
@@ -42,22 +43,25 @@
     </nav>
     <!-- Main content -->
     <div class="main-container">
-        <div class="tasks-container h-100">
+        <div class="tasks-container h-100 mt-3">
             <!-- Default Tasks List -->
-            <hr>
-            <h5 id="defaultTitle">Default tasks:</h5>
+        
+            <h5 class="tasksTitles" id="defaultTitle">Default tasks:</h5>
             <ul class="taskList">
                 <li class="col-12">Lunch</li>
                 <li class="col-12">Break</li>
             </ul>
             <hr>
-            <h5 id="createTitle">Create project tasks:</h5>
+            <h5 class="tasksTitles" id="createTitle">New project tasks:</h5>
             <!-- Create tasks container -->
             <div class="newTasks w-100 d-block">
                 <!-- Tasks List -->
                 <ul id="taskItems" class="taskList">
-                    <li>Task 1</li>
+                    <li class="task">Task 1<form class="remove"><button type="submit" class="btn btn-default col-2 task-button" id="removeTask" data-toggle="tooltip" title="Remove task"><i class="fa fa-minus-circle task-icon"></i></button></form></li>
                     <li>Task 2</li>
+                    <li>Task 1</li>
+                   
+
                 </ul>
                 <!--Add/Remove Tasks-->
                 <form id="newTaskForm">
@@ -72,25 +76,26 @@
                 <div id="newTaskButton"><button hrf="#" class="btn btn-default" id="showTasks">New Task</button></div>
             </div>
         </div>
-        </div>
-        <!-- Fixed footer / Actions / Navigation -->
-        <footer>
-            <nav class="navbar navbar-default fixed-bottom p-0">
-                <div class="container-fluid" id="nav-container-bottom">
-                    <!-- Action buttons-->
-                    <div class="actions-container">
-                            <a href="record.html" target="blank_" class="btn btn-success start-button" id="goToRecord">Start project</a>
-                        </div>
-                    <!-- Bottom-navigation -->
-                    <div class="nav navbar-nav navbar-left back-container">
-                            <i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i>
-                        </div>
-                    <div class="nav navbar-nav navbar-right forward-container">
-                            <i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i>
-                    </div>
+    </div>
+    <!-- Fixed footer / Actions / Navigation -->
+    <footer>
+        <nav class="navbar navbar-default fixed-bottom p-0">
+            <!-- Action buttons-->
+            <div class="actions-container w-100">
+                <a href="record.html" target="blank_" class="btn btn-success start-button w-100" id="goToRecord">Start
+                    project</a>
+            </div>
+            <!-- Bottom-navigation -->
+            <div class="container-fluid nav-container-bottom w-100 p-0">
+                <div class="nav navbar-nav navbar-left back-container">
+                    <a href="index.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
                 </div>
-            </nav>
-        </footer>
+                <div class="nav navbar-nav navbar-right forward-container">
+                    <a href="record.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </nav>
+    </footer>
 
 </body>
 

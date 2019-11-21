@@ -39,39 +39,39 @@
             </div>
             <!-- Project Title -->
             <div class="title-container">
-                <h4 id="project-title"> Project 1</h4>
+                <h4 class="project-title"> Project 1</h4>
             </div>
             <!-- Date -->
             <div class="date-container">
-                <div id="recDate" class="dateHeader clearfix"></div>
-
+                <div id="recDate" class="dateHeader justify-content-right w-100 clearfix"><h3 class="date">Wednesday, 20. Nov. 2019</h3></div>
             </div>
         </nav>
     </header>
     <!-- Main content -->
     <div class="main-container">
         <div class="projectTimeDisplay d-flex">
-            <div class="projectClockDisplay">
-                <p>Clock: </p>00:00
+            <div class="projectClockDisplay col projectTime p-0">
+                <h6>Clock</h6>
+                <p>00:00:00</p>
             </div>
-            <div class="projectStartTime">
-                <p>Project started:</p>00:00
+            <div class="projectStartTime col projectTime p-0">
+                <h6>Started</h6>
+                <p>00:00:00</p>
             </div>
-            <div class="projectElapsedTime">
-                <p>Elapsed time:</p>00:00
+            <div class="projectElapsedTime col projectTime p-0">
+                <h6>Elapsed</h6>
+                <p>00:00:00</p>
             </div>
         </div>
-        <div class="defaults-container">
-            <ul class="defaults-list">
-                <li class="col-12 d-flex">
+        <div class="recTitles">
                     <span>
-                        <h4>Task</h4>
+                        <p>Task</p>
                     </span>
                     <span>
-                        <h4>Task started:</h4>
+                            <p>Task started:<p>
                     </span>
                     <span>
-                        <h4>Elapsed time:</h4>
+                            <p>Elapsed time:</h5>
                     </span>
                 </li>
                 <li class="col-12 d-flex"><button>Task 1</button>
@@ -103,18 +103,18 @@
     <!-- Fixed footer / Actions / Navigation -->
     <footer>
         <nav class="navbar navbar-default fixed-bottom p-0">
-            <div class="container-fluid" id="nav-container-bottom">
+            <div class="container-fluid nav-container-top">
                 <!-- Action buttons-->
                 <div class="col-12 d-flex justify-content-right actions-container">
-                    <i class="fa fa-pause-circle page-title-icon" aria-hidden="true"></i>
-                    <i class="fa fa-stop-circle page-title-icon" aria-hidden="true"></i>
+                    <i class="fa fa-pause-circle action page-title-icon" aria-hidden="true"></i>
+                    <i class="fa fa-stop-circle action page-title-icon" aria-hidden="true"></i>
                 </div>
                 <!-- Bottom-navigation -->
                 <div class="nav navbar-nav navbar-left back-container">
-                    <i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i>
+                        <a href="tasks.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
                 </div>
                 <div class="nav navbar-nav navbar-right forward-container">
-                    <i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i>
+                        <a href="view.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>

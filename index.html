@@ -19,37 +19,39 @@
     <!-- Fixed header / Navigation -->
     <header class="container d-block">
         <nav class="navbar navbar-default fixed-top p-0" id="firstHeader">
+            <div class="index-page-title">
+                <h4 class="mytime">MyTime</h4>
+            </div>
         </nav>
     </header>
     <!-- Main content -->
-    <div class="main-container">
+    <div class="index-main-container d-flex justify-content-center align-items-center">
         <div class="row hourClassFull no-gutters">
-            <div class="logo-text d-flex justify-content-center">
-                <h1 class="start-logo">MyTime</h1>
-            </div>
-            <div class="col-12 hour-class-home d-flex justify-content-center">
+            <div class="hour-class-home d-flex">
                 <i class="fa fa-hourglass" id="hGlassFull" aria-hidden="true"></i>
             </div>
         </div>
-        <form>
-            <div class="form-row project-name no-gutters">
-                <div class="form-group col-12">
-                    <label for="inputProjectName">New MyTime Project:</label>
-                    <input type="text" class="form-control" id="project-name" placeholder="New project name">
-                </div>
-            </div>
-        </form>
     </div>
+    <form class="newProjectForm fixed-bottom mr-2 ml-2">
+        <div class="form-row project-name p- 0 m-0 no-gutters">
+            <div class="form-group col-12">
+                <label for="inputProjectName" id="newProject">New MyTime Project:</label>
+                <input type="text" class="form-control" id="project-name" placeholder="New project name">
+            </div>
+        </div>
+    </form>
+
     <!-- Fixed footer / Actions / Navigation -->
     <footer>
         <nav class="navbar navbar-default fixed-bottom p-0">
-            <div class="container-fluid" id="nav-container-bottom">
-                <!-- Action buttons-->
-                <div class="col-12 d-flex justify-content-center actions-container">
-                        <a href="tasks.html" type="submit" target="blank_" class="btn btn-success create"
-                        id="goToTasks">Create</a>
-                </div>
-                <!-- Bottom-navigation -->
+            <!-- Action buttons-->
+            <div class="d-flex w-100 justify-content-center actions-container">
+                <a href="tasks.html" target="blank_" class="btn btn-success start-button w-100"
+                    id="goToRecord">Create</a>
+            </div>
+
+            <!-- Bottom-navigation -->
+            <div class="container-fluid nav-container-bottom">
                 <div class="nav navbar-nav navbar-left back-container">
 
                 </div>
