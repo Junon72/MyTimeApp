@@ -19,6 +19,7 @@
     <!-- Fixed header / Navigation -->
     <header class="container d-block">
         <nav class="navbar navbar-default fixed-top p-0">
+
             <div class="container-fluid" id="nav-container">
                 <!-- Navigation Icons -->
                 <div class="nav navbar-nav navbar-left home-container">
@@ -38,49 +39,44 @@
                 </div>
             </div>
             <!-- Project Title -->
-            <div class="title-container">
-                <h4 class="project-title"> Project 1</h4>
-            </div>
+
             <!-- Date -->
             <div class="date-container">
-                <div id="recDate" class="dateHeader justify-content-right w-100 clearfix"><h3 class="date">Wednesday, 20. Nov. 2019</h3></div>
+                <div id="recDate" class="dateHeader justify-content-right w-100 clearfix">
+                    <h3 class="date">Wednesday, 20. Nov. 2019</h3>
+                </div>
+            </div>
+            <div class="projectTimeDisplay d-flex col-12 p-0">
+                <div class="rec-title-container col-6">
+                    <h4 class="rec-project-title"> Project 1</h4>
+                </div>
+
+                <div class="projectStartTime rec-title-container col-3 d-flex projectTime">
+                    <h6 class="mb-0 headerTimeTitle">Started</h6>
+                    <p class="headerTime mb-1">00:00</p>
+                </div>
+                <div class="projectElapsedTime rec-title-container col-3 projectTime">
+                    <h6 class="mb-0 headerTimeTitle">Elapsed</h6>
+                    <p class="headerTime mb-1">00:00</p>
+                </div>
             </div>
         </nav>
     </header>
     <!-- Main content -->
     <div class="main-container">
-        <div class="projectTimeDisplay d-flex">
-            <div class="projectClockDisplay col projectTime p-0">
-                <h6>Clock</h6>
-                <p>00:00:00</p>
-            </div>
-            <div class="projectStartTime col projectTime p-0">
-                <h6>Started</h6>
-                <p>00:00:00</p>
-            </div>
-            <div class="projectElapsedTime col projectTime p-0">
-                <h6>Elapsed</h6>
-                <p>00:00:00</p>
-            </div>
-        </div>
+        <h5 class="tasksHeader">Tasks</h5>
         <div class="recTitles">
-                    <span>
-                        <p>Task</p>
-                    </span>
-                    <span>
-                            <p>Task started:<p>
-                    </span>
-                    <span>
-                            <p>Elapsed time:</h5>
-                    </span>
+            <ul>
+                <li class="col-12 d-flex recTask">
+                    <button class="btn btn-success col-6 recTaskButton">Task 1</button>
+                    <p class="startTaskTime taskTime col-3">00:00</p>
+                    <p class="elapsedTaskTime taskTime col-3">00:00</p>
                 </li>
-                <li class="col-12 d-flex"><button>Task 1</button>
-                    <div>st 1</div>
-                    <div>et 1</div>
-                </li>
-                <li class="col-12 d-flex"><button>Task 2</button>
-                    <div>st 2</div>
-                    <div>et 2</div>
+                <hr>
+                <li class="col-12 d-flex recTask">
+                    <button class="btn btn-success col-6 recTaskButton">Task 2</button>
+                    <p class="startTaskTime taskTime col-3">00:00</p>
+                    <p class="elapsedTaskTime taskTime col-3">00:00</p>
                 </li>
             </ul>
         </div>
@@ -90,13 +86,16 @@
     <!-- Default Tasks-->
     <div class="defaults-container">
         <ul class="defaults-list">
-            <li class="col-12 d-flex"><button>Lunch</button>
-                <div>st lunch</div>
-                <div>et lunch</div>
+            <li class="col-12 d-flex recTask">
+                <button class="btn btn-success col-6 recTaskButton">Lunch</button>
+                <p class="startTaskTime taskTime col-3">00:00</p>
+                <p class="elapsedTaskTime taskTime col-3">00:00</p>
             </li>
-            <li class="col-12 d-flex"><button>Break</button>
-                <div>st break</div>
-                <div>et break</div>
+            <hr>
+            <li class="col-12 d-flex recTask">
+                <button class="btn btn-success col-6 recTaskButton">Break</button>
+                <p class="startTaskTime taskTime col-3">00:00</p>
+                <p class="elapsedTaskTime taskTime col-3">00:00</p>
             </li>
         </ul>
     </div>
@@ -104,17 +103,24 @@
     <footer>
         <nav class="navbar navbar-default fixed-bottom p-0">
             <div class="container-fluid nav-container-top">
-                <!-- Action buttons-->
-                <div class="col-12 d-flex justify-content-right actions-container">
-                    <i class="fa fa-pause-circle action page-title-icon" aria-hidden="true"></i>
-                    <i class="fa fa-stop-circle action page-title-icon" aria-hidden="true"></i>
+                <div class="col-12 d-flex actions-container">
+                    <div class="projectClockDisplay p-0">
+                        <p>00:00</p>
+                    </div>
+                    <!-- Action buttons-->
+                    <div class="actionButtons d-flex justify-content-flex-end">
+                        <button type="submit" class="btn btn-default pauseAction"><i class="fa fa-pause-circle action"
+                                aria-hidden="true"></i></button>
+                        <button type="submit" class="btn btn-default stopAction"><i class="fa fa-stop-circle action"
+                                aria-hidden="true"></i></button>
+                    </div>
                 </div>
                 <!-- Bottom-navigation -->
                 <div class="nav navbar-nav navbar-left back-container">
-                        <a href="tasks.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                    <a href="tasks.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
                 </div>
                 <div class="nav navbar-nav navbar-right forward-container">
-                        <a href="view.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                    <a href="view.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
