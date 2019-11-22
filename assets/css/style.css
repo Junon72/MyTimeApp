@@ -463,6 +463,11 @@ li {
 .tasksHeader {
     margin: 2.8rem 0 1rem ;
     color: var(--clr--mainLight);
+    font-size: 1.2em;
+    font-style: italic;
+    letter-spacing: 1.4px;
+    font-weight: 400;
+
 }
 
 .recTask {
@@ -488,6 +493,6 @@ li {
 
 .defaults-container {
     position: relative;
-    margin: 0 1rem;
+    margin: 0 1rem 9em;
 }
 
