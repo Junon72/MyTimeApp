@@ -123,8 +123,13 @@ nav {
 
 /* Title icons */
 
-.fa-circle {
+#faRecTitle {
     color: var(--clr-rec);
+    
+}
+
+.fa-square {
+    color: var(--clr-stop);
 }
 
 /* Title */
@@ -196,13 +201,24 @@ nav {
 
 .fa-pause-circle {
     color: var(--clr-pause);
+    font-size: 2.4rem;
 
 }
 
 .fa-stop-circle {
     color: var(--clr-stop);
+    font-size: 2.4rem;
 }
 
+#faRecButton {
+    color: var(--clr-rec);
+    font-size: 2.4rem;
+}
+
+.fa-check-circle {
+    color: var(--clr-green);
+    font-size: 2.4rem;
+}
 /*-----------Buttons----------*/
 /* Tasks Page - Start project button*/
 button {
@@ -214,14 +230,18 @@ button {
     border-color: var(--clr-green);
     font-size: 1.2em;
     font-weight: 200;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .pause {
     position: absolute;
-    right: 1.8em;
+    right: 5rem;
+    padding: 0 1rem;
 }
 
 .stop {
+    padding: 0 1rem;
     position: absolute;
     right: 0;
 }
@@ -420,7 +440,7 @@ li {
 }
 
 .projectClockDisplay > p{
-    padding-top: .5em;
+    padding-top: .4em;
 }
 
 .date-container {
