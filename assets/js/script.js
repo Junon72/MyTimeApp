@@ -91,8 +91,6 @@ function noNamePrompt () {
 function saveProjectToLocal() {
     savedProject = projectNameInput.value;
     localStorage.setItem('project', savedProject);
-    getProject = localStorage.getItem('project');
-    $(".project-title").text(getProject)
 }
 
 
