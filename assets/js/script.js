@@ -18,7 +18,7 @@ const saveProjectButton = document.getElementById('save-project')
 const nameNotOkPrompt = document.getElementById('nameOk')
 
 let savedProject = localStorage.getItem('project')
-const getProject = localStorage.getItem('project');
+var getProject;
  
 //project creator gets the name input and creates a <p> element to display the name
 // for this constructor I used the code example from https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
@@ -91,8 +91,8 @@ function noNamePrompt () {
 function saveProjectToLocal() {
     savedProject = projectNameInput.value;
     localStorage.setItem('project', savedProject);
-    if(projectCreateButton === null)
-    projectCreateButton.removeEventListener('click', (this))
+    getProject = localStorage.getItem('project');
+    $(".project-title").text(getProject)
 }
 
 
