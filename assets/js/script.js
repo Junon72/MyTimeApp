@@ -5,6 +5,7 @@ $(document).ready(function() {
 $("#save-project").css({"background-color": "rgb(5, 199, 5, .5", "border-color": "var(--clr-green)"})
 $("#save-tasks").css({"background-color": "rgb(5, 199, 5, .5", "border-color": "var(--clr-green)"})
 
+
 //index
 //query selectors
 const projectNameForm = document.getElementById('create-project-form')
@@ -14,11 +15,13 @@ const projectCreateButton = document.getElementById('create-project-button')
 const projectResetButton = document.getElementById('projectReset')
 const projectNameInput = document.getElementById('projectName')
 const saveProjectButton = document.getElementById('save-project')
+const nameNotOkPrompt = document.getElementById('nameOk')
 
 let savedProject = localStorage.getItem('project')
 const getProject = localStorage.getItem('project');
  
 //project creator gets the name input and creates a <p> element to display the name
+// for this constructor I used the code example from https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
 const projectCreator = (text) => {
     const pName = document.createElement('p')
     pName.textContent = text
@@ -26,11 +29,13 @@ const projectCreator = (text) => {
 }
  
 // clicking 'enter' submits the name value and the name form is hidden from view
+
 projectCreateButton.addEventListener('click', function (e) {
     e.preventDefault()
+
     projectCreator(projectNameInput.value)
     if(projectNameInput.value === null || projectNameInput.value == "") {
-    alert ("Please give project a name");
+       noNamePrompt();
     } else {
     if(projectNameForm.style.display === "none") {
         projectNameForm.style.display = "flex";
@@ -39,12 +44,10 @@ projectCreateButton.addEventListener('click', function (e) {
         projectNameForm.style.display = "none";
         projectName.style.display = "flex";
     }
-
-    saveProjectButton.addEventListener('click', saveProjectToLocal);
-    $("#toTasks").attr("href", "tasks.html")
-    $("#save-project").css({"background-color": "var(--clr-green)", "border-color": "var(--clr-green)"})
+    addProjectButtonListener ();
 }
 })
+
  
 // the name value is displayed with a cancel button. On click,,
 //the <p> element displaying the name removed, name form displayed and the name form field is emptied.
@@ -66,12 +69,34 @@ projectResetButton.addEventListener('click', function(e) {
     projectNameInput.value = ''
 })
  
+function addProjectButtonListener () {
+    
+    saveProjectButton.addEventListener('click', saveProjectToLocal);
+    $("#toTasks").attr("href", "tasks.html", "target", "_blank")
+    $("#save-project").css({"background-color": "var(--clr-green)", "border-color": "var(--clr-green)"})
+
+}
+
+function noNamePrompt () {
+    $("#noNamePrompt").css({"display": "block"})
+    $(".fa-hourglass").css({"color": "rgba(94, 1, 94, 0.3)"})
+    nameNotOkPrompt.addEventListener('click', function() {
+        $("#noNamePrompt").css({"display": "none"})
+        nameNotOkPrompt.addEventListener('click', (this))
+        $(".fa-hourglass").css({"color": "rgba(94, 1, 94, 0.6)"})
+    })
+    
+}
 
 function saveProjectToLocal() {
     savedProject = projectNameInput.value;
     localStorage.setItem('project', savedProject);
-    
+    if(projectCreateButton === null)
+    projectCreateButton.removeEventListener('click', (this))
 }
+
+
+
 
 
 

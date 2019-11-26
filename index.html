@@ -13,7 +13,7 @@
         type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
 
 </head>
@@ -36,6 +36,16 @@
         </div>
     </div>
 
+    <!-- No Name Prompt -->
+    <div class="noName w-100 fade show" id="noNamePrompt">
+        <div class="row justify-content-center no-gutters w-100">
+            <div id="messageOk">Give your project a name</div>
+            <button type="button" id="nameOk" class="btn btn-default-light w-100" aria-label="Close">
+               <p class="ok">OK</p>
+            </button>
+    </div>
+        </div>
+
     <!--Create Project Form-->
     
     <div class="newProjectForm fixed-bottom mr-2 ml-2">
@@ -48,7 +58,7 @@
             </div>
             
             <form class="form-group projectForm row no-gutters mr-2 ml-2" id="create-project-form">
-                <input id="projectName" type="text"  class="form-control d-flex col-10"
+                <input id="projectName"  type="text"  class="form-control d-flex col-10"
                     placeholder=" New project name" required>
                 <button type="button" class="btn btn-success col-2" id="create-project-button">Enter</button>
             </form>
@@ -59,6 +69,7 @@
         </div>
      
      
+        
      
         <!-- Fixed footer / Actions / Navigation -->
         <footer>
@@ -66,7 +77,7 @@
                 <!-- Action buttons-->
                
                 <div class="d-flex col justify-content-center actions-container">
-                        <a class="p-0 ml-3 mr-3 w-100" href="#" target="blank_" id="toTasks"><button type="button" class="btn btn-success start-button w-100 m-0" 
+                        <a class="p-0 ml-0 mr-0 w-100" id="toTasks"><button type="button" class="btn btn-success start-button w-100 m-0" 
                        id="save-project">Create</button></a>
                 </div>
              

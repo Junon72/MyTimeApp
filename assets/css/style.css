@@ -11,12 +11,13 @@
     --clr-mainDark: #13181B;
     --clr--mainLight: #949a9f;
     --clr-title: #4a1d68;
+    --clr-purpleTitle: rgba(94, 1, 94);
     --clr-time: #05c766;
     --clr-success: #66C705;
  
     /*Buttons*/
     --clr-green: rgb(5, 199, 5);
-    --clr-purple: rgb(94, 1, 94);
+    --clr-purple: rgba(94, 1, 94, 0.7);
     --clr-magenta: rgb(199, 5, 199);
     --clr-add: rgb(3, 153, 240);
     --clr-rec: rgb(199, 5, 5);
@@ -223,9 +224,6 @@ nav {
  
 /*-----------Buttons----------*/
 /* Tasks Page - Start project button*/
-button {
-    outline: 0;
-}
 
 
 
@@ -314,9 +312,10 @@ button {
 }
  
 #newProject {
-    color: var(--clr-purple);
+    color: var(--clr-purpleTitle);
     font-weight: 600;
     font-size: 1.6em;
+    margin-bottom: -0.1rem;
 }
  
 .new-projectName>p {
@@ -344,7 +343,66 @@ button {
 .accept-project#project-name-display {
     order: 1;
 }
- 
+
+/* No Name Prompt */
+
+.noName {
+    display: none;
+    position: absolute;
+    background-color: rgb(199, 102, 5, .4);
+    border: 1px solid rgb(199, 102, 5, .7);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    height: 20rem;
+    max-width: 20rem;
+    border-radius: 50%;
+    z-index: 800;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+#messageOk {
+    position: relative;
+    display: block;
+    margin: 43% auto 6%;
+    padding: 0 auto;
+    width: auto;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+.ok {
+    position: relative;
+    justify-content: center;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 200;
+    background-color: rgba(253, 142, 32, 0.4);
+    border: 1px solid rgb(199, 102, 5);
+    padding: 0;
+    margin: .2rem 7.2rem;
+    border-radius: 8%;
+    -webkit-border-radius: 8%;
+    -moz-border-radius: 8%;
+    -ms-border-radius: 8%;
+    -o-border-radius: 8%;
+}
+
+
+#nameOK {
+    background-color: none;
+    margin: auto;
+}
+
+
 /*---------------------------- Tasks -------------------------*/
  
  
