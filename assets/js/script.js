@@ -23,14 +23,15 @@ $(document).ready(function () {
     const saveProjectButton = document.getElementById('save-project');
     const nameNotOkPrompt = document.getElementById('nameOk');
 
-    let savedProject = localStorage.getItem('project');
-    let getProject;
-
+    let projectTitle;
     //project creator gets the name input and creates a <p> element to display the name
     // for this constructor I used the code example from https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
     const projectCreator = (text) => {
         const pName = document.createElement('p');
-        pName.textContent = text
+        projectTitle = text;
+        projectTitle = jQuery.trim(projectTitle);
+        projectTitle = projectTitle.charAt(0).toUpperCase() + projectTitle.slice(1);
+        pName.textContent = projectTitle;
         projectNameDisplay.appendChild(pName);
     };
 
@@ -38,9 +39,9 @@ $(document).ready(function () {
 
     projectCreateButton.addEventListener('click', (e) => {
         e.preventDefault();
-
         projectCreator(projectNameInput.value);
-        if (projectNameInput.value === null || projectNameInput.value == "") {
+        console.log(projectTitle)
+        if (projectTitle === null || projectTitle == "" || projectTitle.length === 0 || projectTitle === 'undefined') {
             noNamePrompt();
         } else {
             if (projectNameForm.style.display === "none") {
@@ -80,9 +81,9 @@ $(document).ready(function () {
 
     function addProjectButtonListener() {
 
-        saveProjectButton.addEventListener('click', saveProjectToLocal);
+        saveProjectButton.addEventListener('click', saveProjectToLocal());
         $("#toTasks").attr("href", "tasks.html", "target", "_blank");
-        $("#save-project").css({
+        $('#save-project').css({
             "background-color": "var(--clr-green)",
             "border-color": "var(--clr-green)"
         });
@@ -109,8 +110,9 @@ $(document).ready(function () {
     };
 
     function saveProjectToLocal() {
-        savedProject = projectNameInput.value;
-        localStorage.setItem('project', savedProject);
+        localStorage.setItem('project', projectTitle);
+        let project = localStorage.getItem('project');
+        console.log(project);
     };
 
 

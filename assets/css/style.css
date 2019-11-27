@@ -346,7 +346,7 @@ nav {
 
 /* No Name Prompt */
 
-.noName {
+#noNamePrompt {
     display: none;
     position: absolute;
     background-color: rgb(199, 102, 5, .4);

@@ -5,15 +5,37 @@ $(document).ready(function setProject() {
     $("#save-project").css({
         "background-color": "rgb(5, 199, 5, .5",
         "border-color": "var(--clr-green)"
-    })
+    });
     $("#save-tasks").css({
         "background-color": "rgb(5, 199, 5, .5",
         "border-color": "var(--clr-green)"
-    })
+    });
+
+
 
     // setting the project name title
-    let getProject = localStorage.getItem('project');
-    $(".project-title").text(getProject);
+    let project;
+    if(localStorage.getItem('project')) {
+        project = localStorage.getItem('project')
+    } else {
+        if (confirm('You forgot to give your project a name and "Create" it. Would you like to do it now?')) {
+            location.href = 'index.html';
+        } else {
+           project = ('unnamed project');
+           localStorage.setItem('project', project);
+        }
+    }
+
+    $(".project-title").text(project);
+    /*if (project === null || project === 'undefined' || project.length == 0) {
+        if (confirm('You forgot to give your project a name and "Create" it. Would you like to do it now?')) {
+            location.href = 'index.html';
+        } else {
+            $(".project-title").html('project')
+           return;
+        }
+    };*/
+    
 
     /*let task 
 
@@ -29,66 +51,66 @@ $(document).ready(function setProject() {
 
     //let taskList = localStorage.setItem()
 
+        const $newTaskButton = $('#newTaskButton');
+        const $newTaskForm = $('#newTaskForm');
+        const $nameInput = $('input:text');
 
-    const $newTaskButton = $('#newTaskButton');
-    const $newTaskForm = $('#newTaskForm');
-    const $nameInput = $('input:text');
+        const $emptyName = $('#emptyNamePrompt');
+        const $taskItems = $('#taskItems');
 
-    const $emptyName = $('#emptyNamePrompt');
-    const $taskItems = $('#taskItems')
+        $newTaskForm.show();
+        $newTaskButton.hide();
 
-    $newTaskForm.show();
-    $newTaskButton.hide();
-
-    $newTaskForm.on('submit', (e) => {
-        e.preventDefault();
-        var newName = $nameInput.val();
-        newName = jQuery.trim(newName);
+        $newTaskForm.on('submit', (e) => {
+            e.preventDefault();
+            var newName = $nameInput.val();
+            newName = jQuery.trim(newName);
             console.log(newName)
             console.log(newName.length) /* add input validation!!*/
-        if (newName === null || newName == "" || newName.length === 0) {
-            emptyNamePrompt();
-            console.log(typeof(newName));
-        } else {
-            newName = newName.charAt(0).toUpperCase() + newName.slice(1);
-            $taskItems.after(
-                '<form>' +
-                '<li class="task">' + newName +
-                '<button type="submit" class="btn btn-default remove task-button" id="removeTask" data-toggle="tooltip" title="Remove task"><i class="fa fa-minus-circle task-icon"></i></button>' +
-                '</li>' + '</form>');
+            if (newName === null || newName == "" || newName.length === 0) {
+                emptyNamePrompt();
+                console.log(typeof (newName));
+            } else {
+                newName = newName.charAt(0).toUpperCase() + newName.slice(1);
+                $taskItems.after(
+                    '<form>' +
+                    '<li class="task">' + newName +
+                    '<button type="submit" class="btn btn-default remove task-button" id="removeTask" data-toggle="tooltip" title="Remove task"><i class="fa fa-minus-circle task-icon"></i></button>' +
+                    '</li>' + '</form>');
 
-            $newTaskForm.hide();
-            $newTaskButton.show();
-            $nameInput.val('');
-        }
-    });
-
-    $('#showTasks').on('click', () => {
-        $newTaskButton.hide();
-        $newTaskForm.show();
-        $('.newTasks').scrollTop($('.newTasks')[0].scrollHeight);
-    });
-
-
-    /* Removing Tasks */
-
-    $("#removeTask").on('submit', (e) => {
-        $(this).remove(".task");
-    });
-
-
-    function emptyNamePrompt() {
-        $emptyName.css({
-            "display": "block"
+                $newTaskForm.hide();
+                $newTaskButton.show();
+                $nameInput.val('');
+            }
         });
 
-        $emptyName.on('click', function () {
+        $('#showTasks').on('click', () => {
+            $newTaskButton.hide();
+            $newTaskForm.show();
+            $('.newTasks').scrollTop($('.newTasks')[0].scrollHeight);
+        });
+
+
+        /* Removing Tasks */
+
+        $("#removeTask").on('submit', (e) => {
+            e.preventDefault();
+            $(this).remove(".task");
+        });
+
+
+        function emptyNamePrompt() {
             $emptyName.css({
-                "display": "none"
+                "display": "block"
             });
-            $nameInput.val('')
-        });
-    };
+
+            $emptyName.on('click', function () {
+                $emptyName.css({
+                    "display": "none"
+                });
+                $nameInput.val('')
+            });
+        };
 
 
 
