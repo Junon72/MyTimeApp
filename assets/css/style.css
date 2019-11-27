@@ -144,9 +144,10 @@ nav {
 }
  
 .project-title {
-    height: 1.6em;
-    font-weight: 500;
-    color: var(--clr-title);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--clr-purpleTitle);
 }
  
 /* ------------------------ Fixed bottom ---------------------*/
@@ -313,16 +314,18 @@ nav {
  
 #newProject {
     color: var(--clr-purpleTitle);
-    font-weight: 600;
+    font-weight: 300;
     font-size: 1.6em;
     margin-bottom: -0.1rem;
+    padding-left: .3rem;
 }
  
 .new-projectName>p {
+    padding: 0;
     color: var(--clr-purple);
-    font-size: 1.4em;
+    font-size: 1.8rem;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 300;
  
 }
  

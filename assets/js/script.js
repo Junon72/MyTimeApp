@@ -40,7 +40,6 @@ $(document).ready(function () {
     projectCreateButton.addEventListener('click', (e) => {
         e.preventDefault();
         projectCreator(projectNameInput.value);
-        console.log(projectTitle)
         if (projectTitle === null || projectTitle == "" || projectTitle.length === 0 || projectTitle === 'undefined') {
             noNamePrompt();
         } else {

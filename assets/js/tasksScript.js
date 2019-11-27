@@ -21,21 +21,12 @@ $(document).ready(function setProject() {
         if (confirm('You forgot to give your project a name and "Create" it. Would you like to do it now?')) {
             location.href = 'index.html';
         } else {
-           project = ('unnamed project');
+           project = ('Unnamed project');
            localStorage.setItem('project', project);
         }
     }
 
     $(".project-title").text(project);
-    /*if (project === null || project === 'undefined' || project.length == 0) {
-        if (confirm('You forgot to give your project a name and "Create" it. Would you like to do it now?')) {
-            location.href = 'index.html';
-        } else {
-            $(".project-title").html('project')
-           return;
-        }
-    };*/
-    
 
     /*let task 
 
