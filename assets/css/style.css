@@ -56,6 +56,7 @@ h6 {
     padding: 0;
 }
  
+
 /*--------------------- Fixed Header ---------------------*/
  
 nav {
@@ -64,12 +65,13 @@ nav {
 }
  
 #firstHeader {
-    height: 10.5em;
+    height: 10rem;
 }
  
 .container-fluid {
     padding: 0;
 }
+
  
 #nav-container {
     width: 100vw;
@@ -105,7 +107,7 @@ nav {
 /* Page Title */
 .page-title-container {
     position: relative;
-    margin-top: 3.8em;
+    margin-top: 2.6rem;
  
 }
  
@@ -173,23 +175,23 @@ nav {
  
 .back-container {
     align-items: center;
-    height: 2.2em;
-    margin-bottom: 1em;
-    margin-left: 1em;
+    height: 1.6rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
  
 }
  
 .forward-container {
     align-items: center;
-    height: 2.2em;
-    margin-bottom: 1em;
-    margin-right: 1em;
+    height: 1.6rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
  
 }
  
 .fa-chevron-left,
 .fa-chevron-right {
-    font-size: 2em;
+    font-size: 1.6rem;
     color: var(--clr--mainLight);
  
 }
@@ -228,21 +230,11 @@ nav {
 
 
 
-#projectReset {
-    background-color: var(--clr-light);
-    border-color: var(--clr-light);
+/*  moved to script.js #projectReset */
  
-}
- 
-#create-project-button {
-    background-color: var(--clr-green);
-}
  
 .start-button {
-    background-color: rgb(5, 199, 5, .5) important!;
-    border-color: var(--clr-green) important!;
-    outline: none;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-weight: 200;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -277,7 +269,7 @@ nav {
     position: relative;
 }
  
-.mytime {
+.mytime { /* Page title text */
     position: absolute;
     top: 0;
     font-size: 6em;
@@ -288,7 +280,7 @@ nav {
  
 .index-main-container {
     position: relative;
-    margin: 11em 1em 1em;
+    margin: 10em 1em 1em;
     height: 50vh;
     overflow: auto;
     text-align: center;
@@ -307,43 +299,52 @@ nav {
     font-size: 13em;
     text-align: center;
 }
- 
-.newProjectForm {
-    margin-bottom: 8em;
+
+/* Form */
+
+.newProjectForm { /* Project creation field */
+    margin-bottom: 7.5em;
 }
  
-#newProject {
+#newProject { /* New MyTime Project: title */
     color: var(--clr-purpleTitle);
-    font-weight: 300;
-    font-size: 1.6em;
-    margin-bottom: -0.1rem;
+    font-weight: 200;
+    font-size: 1.4em;
+    margin-bottom: 0;
     padding-left: .3rem;
 }
  
-.new-projectName>p {
+.new-projectName>p { /* name display text */
     padding: 0;
     color: var(--clr-purple);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     letter-spacing: 1px;
-    font-weight: 300;
+    font-weight: 400;
  
 }
  
 /* form display */
+
+/* Button styles */
+#create-project-button button,
+#projectReset button {
+    font-size: 1.2rem;
+    padding: .375rem .75rem;
+}
  
-#accept-project {
+#accept-project { /* name display & Cancel button field */
     display: none;
 }
  
-#create-project-form {
+#create-project-form { /* name input & Enter button field */
     display: flex;
 }
  
-.accept-project#projectReset {
+.accept-project#projectReset { /* Cancel button on accept-project field */
     order: 2;
 }
  
-.accept-project#project-name-display {
+.accept-project#project-name-display { /* Name display on accept-project field */
     order: 1;
 }
 
@@ -353,7 +354,7 @@ nav {
     display: none;
     position: absolute;
     background-color: rgb(199, 102, 5, .4);
-    border: 1px solid rgb(199, 102, 5, .7);
+    border: 1px solid rgb(199, 102, 5, .6);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -388,8 +389,8 @@ nav {
     color: white;
     font-size: 1.4em;
     font-weight: 200;
-    background-color: rgba(253, 142, 32, 0.4);
-    border: 1px solid rgb(199, 102, 5);
+    background-color: rgba(241,174, 105);
+    border: 1px solid white;
     padding: 0;
     margin: .2rem 7.2rem;
     border-radius: 8%;
@@ -409,7 +410,7 @@ nav {
 /*---------------------------- Tasks -------------------------*/
  
  
-.tasks-container h5 {
+.tasks-container h5 { /* task titles - default & new */
     color: var(--clr--mainLight);
     margin-top: .5em;
     margin-bottom: .8em;
@@ -422,38 +423,38 @@ nav {
 }
 
 
-.defaults-container-top {
-    top: 9.6rem;
+.defaults-container-top { /* defaults field */
+    top: 9.58rem;
     background-color: white;
 }
-.newTasks {
+.newTasks { /* new tasks display field */
     overflow: scroll;
-    margin-top: 10.5rem;
+    margin-top: 10.3rem;
     
 }
 
-.tasksForm {
-    bottom: 9rem;
+.tasksForm { /* new tasks creation field */
+    bottom: 8rem;
 }
 /* Form container*/
  
-.create-tasks {
+.create-tasks { /* new tasks inside form field */
     margin-top: 2em;
 }
  
 /* Add/Remove Tasks */
  
-#defaultTitle {
+#defaultTitle { /* Title - Default Tasks */
     margin-bottom: .6rem;
  
 }
  
-#createTitle {
+#createTitle { /* Title - New Project Tasks */
     margin-bottom: .8rem;
 }
  
  
-#showTasks {
+#showTasks { /* New Task button */
     margin: 1.2em 0 0;
     background-color: rgb(3, 153, 240);
     padding: 4px 6px;
@@ -461,26 +462,21 @@ nav {
     font-size: 1.1em;
     font-weight: 200;
 }
+
  
-#task-name {
-    display: flex;
-}
- 
-.task-input {
+.task-input input{ /* input field for new tasks */
     width: 100%;
     height: 2.4rem;
     margin: 0;
-    font-size: 1em;
 }
  
 /* Add /Remove Button */
  
-.task-button {
+.task-button { /* add + button and remove - button */
     padding: 0;
- 
 }
  
-.task-icon {
+.task-icon { /* + & - */
    
     font-size: 2.4rem;
     color: rgb(3, 153, 240);
@@ -488,12 +484,12 @@ nav {
  
 /* List Element Style */
 
-#taskList {
+#taskList { /* default task ul*/
     margin-left: 0;
     margin-bottom: .6rem;
 }
 
-#taskList > li {
+#taskList > li { /* default task li */
     list-style-type: none;
     margin-bottom: .8rem;
     color: var(--clr-title);
@@ -501,45 +497,44 @@ nav {
     font-weight: 500;
 }
 
-#taskItems {
+#taskItems { /* new tasks ul */
     margin-left: 0;
     padding-left: 0;
 }
 
-li.task {
+li.taskItem { /* new tasks li */
+    width: 100%;
     list-style-type: none;
     height: 2.4rem;
-    
     margin-bottom: 1rem;
     color: var(--clr-title);
     font-size: 1.2em;
     font-weight: 500;
- 
+    overflow: hidden;
 }
- 
-.remove {
-    padding-left: 2.6rem; 
-    width: 4.8rem;
-    display: flex;
+
+.taskName {
+    margin-top: .2rem;
+    float: left;
+}
+
+.remove { /* remove - button */
     float: right;
+    background-color: transparent;
+
 }
  
 /* Name Is Empty String Prompt */
 
 .noName {
     display: none;
-    position: absolute;
     background-color: rgb(232, 194, 164);
-    border: 1px solid rgb(199, 102, 5, .7);
-    top: 21rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
+    border: 1px solid rgb(199, 102, 5, .5);
+    text-align: center;
+    margin: 0 auto;
+    bottom: 20rem;
     height: 10rem;
-    width: 100%;
+    width: 80%;
     border-radius: 2%;
     z-index: 999;
     -webkit-border-radius: 2%;
@@ -552,7 +547,7 @@ li.task {
 #tryAgainOk {
     position: relative;
     display: block;
-    margin: 10% auto 6%;
+    margin: 2rem auto 1rem;
     padding: 0 auto;
     width: auto;
     color: white;
@@ -566,8 +561,8 @@ li.task {
     font-size: 1.4em;
     font-weight: 200;
     background-color: rgba(253, 142, 32, 0.4);
-    border: 1px solid rgb(199, 102, 5);
-    padding: 0;
+    border: 1px solid white;
+    padding: 0 1rem;
     margin: .2rem 7.2rem;
     border-radius: 8%;
     -webkit-border-radius: 8%;

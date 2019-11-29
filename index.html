@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
 
 </head>
 
 <body>
+   
     <!-- Fixed header / Navigation -->
     <header class="container d-block">
         <nav class="navbar navbar-default fixed-top p-0" id="firstHeader">
@@ -41,58 +42,50 @@
         <div class="row justify-content-center no-gutters w-100">
             <div id="messageOk">Give your project a name</div>
             <button type="button" id="nameOk" class="btn btn-default-light w-100" aria-label="Close">
-               <p class="ok">OK</p>
+                <p class="ok">OK</p>
             </button>
-    </div>
         </div>
+    </div>
 
     <!--Create Project Form-->
-    
+
     <div class="newProjectForm fixed-bottom mr-2 ml-2">
- 
- 
-            <label for="projectName" id="newProject" class="mr-2 ml-2">New MyTime Project:</label>
-            <div class="row no-gutters col-12" id="accept-project">
-                <div id="project-name-display" class="new-projectName align-items-center col-9 mb-3"></div>
-                <button type="button" id="projectReset" class="btn btn-secondary col-3 mb-3">Cancel</button>
+
+
+        <label for="projectName" id="newProject" class="mr-2 ml-2">New MyTime Project:</label>
+        <div class="row no-gutters col-12" id="accept-project">
+            <div id="project-name-display" class="new-projectName align-items-center col-9 mb-3"></div>
+            <button type="button" id="projectReset" class="btn btn-secondary col-3 mb-3">Cancel</button>
+        </div>
+
+        <form class="form-group projectForm row no-gutters mr-2 ml-2" id="create-project-form">
+            <input id="projectName" type="text" class="d-flex col-9" placeholder="New project name"
+                required>
+            <button type="button" class="btn btn-success col-3" id="create-project-button">Enter</button>
+        </form>
+    </div>
+
+    <!-- Fixed footer / Actions / Navigation -->
+    <footer>
+        <nav class="navbar navbar-default fixed-bottom p-0">
+            <!-- Action buttons-->
+
+            <div class="d-flex col justify-content-center actions-container">
+                <a class="p-0 ml-0 mr-0 w-100" id="toTasks"><button type="button"
+                        class="btn btn-success start-button w-100 m-0" id="save-project">Create</button></a>
             </div>
-            
-            <form class="form-group projectForm row no-gutters mr-2 ml-2" id="create-project-form">
-                <input id="projectName"  type="text"  class="form-control d-flex col-10"
-                    placeholder="New project name" required>
-                <button type="button" class="btn btn-success col-2" id="create-project-button">Enter</button>
-            </form>
-        </div>
-     
-     
-        <div class="title-container" id="projectTitle" data-project-name-display>
-        </div>
-     
-     
-        
-     
-        <!-- Fixed footer / Actions / Navigation -->
-        <footer>
-            <nav class="navbar navbar-default fixed-bottom p-0">
-                <!-- Action buttons-->
-               
-                <div class="d-flex col justify-content-center actions-container">
-                        <a class="p-0 ml-0 mr-0 w-100" id="toTasks"><button type="button" class="btn btn-success start-button w-100 m-0" 
-                       id="save-project">Create</button></a>
+
+            <!-- Bottom-navigation -->
+            <div class="container-fluid nav-container-bottom">
+                <div class="nav navbar-nav navbar-left back-container">
+
                 </div>
-             
-                <!-- Bottom-navigation -->
-                <div class="container-fluid nav-container-bottom">
-                    <div class="nav navbar-nav navbar-left back-container">
-     
-                    </div>
-                    <div class="nav navbar-nav navbar-right forward-container">
-                        <a href="tasks.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
-                    </div>
+                <div class="nav navbar-nav navbar-right forward-container">
+                    <a href="tasks.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
                 </div>
-            </nav>
-        </footer>
-    
+            </div>
+        </nav>
+    </footer>
     <!-- jQuery / js -->
 
 </body>

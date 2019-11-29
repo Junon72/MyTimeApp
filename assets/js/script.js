@@ -3,12 +3,27 @@ $(document).ready(function () {
     /*Styles*/
     // save project button
     $("#save-project").css({
-        "background-color": "rgb(5, 199, 5, .5",
-        "border-color": "var(--clr-green)"
+        "background-color": "rgb(5, 199, 5, .3",
+        "border-style": "none",
+        "box-shadow": "none"
     });
-    $("#save-tasks").css({
-        "background-color": "rgb(5, 199, 5, .5",
-        "border-color": "var(--clr-green)"
+
+    $('#projectName').css({
+        "font-size": "1.2rem",
+        "font-weight": "200",
+        "padding": "0 0 0 .5rem",
+        "box-shadow": "none"
+    });
+
+    $('#projectReset').css({
+        "background-color": "var(--clr-middle)",
+        "border-style": "none"
+    });
+
+    $('#create-project-button').css({
+        "background-color": "var(--clr-green)",
+        "border-style": "none",
+        "box-shadow": "none"
     });
 
 
@@ -84,7 +99,7 @@ $(document).ready(function () {
         $("#toTasks").attr("href", "tasks.html", "target", "_blank");
         $('#save-project').css({
             "background-color": "var(--clr-green)",
-            "border-color": "var(--clr-green)"
+            "border-color": "rgb(30,126,52)"
         });
 
     };
@@ -96,14 +111,31 @@ $(document).ready(function () {
         $(".fa-hourglass").css({
             "color": "rgba(94, 1, 94, 0.3)"
         });
+        projectNameInput.disabled = true;
+        $('#projectName').css({
+            "color": "red",
+            "border-style": "none",
+            "border-color": "none",
+            "background-color": "transparent"
+        });
+        $('body').css({
+            "background-color": "transparent"
+        })
         nameNotOkPrompt.addEventListener('click', function () {
             $("#noNamePrompt").css({
                 "display": "none"
+            });
+            $('#projectName').css({
+                "color": "rgb(33, 37, 41)",
+                "border-style": "",
+                "border-color": "",
+                "background-color": ""
             });
             nameNotOkPrompt.addEventListener('click', (this));
             $(".fa-hourglass").css({
                 "color": "rgba(94, 1, 94, 0.6)"
             });
+            projectNameInput.disabled = false;
         });
 
     };
