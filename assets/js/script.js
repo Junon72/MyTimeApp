@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    
+
     /*Styles*/
     // save project button
     $("#save-project").css({
@@ -86,6 +88,7 @@ $(document).ready(function () {
         saveProjectButton.removeEventListener('click', saveProjectToLocal);
         $("#toTasks").removeAttr("href");
         $("#save-project").css({
+            "cursor": "default",
             "background-color": "rgb(5, 199, 5, .5",
             "border-color": "var(--clr-green)"
         });
@@ -96,8 +99,9 @@ $(document).ready(function () {
     function addProjectButtonListener() {
 
         saveProjectButton.addEventListener('click', saveProjectToLocal());
-        $("#toTasks").attr("href", "tasks.html", "target", "_blank");
+        $("#toTasks").attr("href", "tasks.html");
         $('#save-project').css({
+            "cursor": "pointer",
             "background-color": "var(--clr-green)",
             "border-color": "rgb(30,126,52)"
         });
