@@ -20,6 +20,7 @@ $(document).ready(function setProject() {
 
     // setting the project name title
     let project;
+
     if (localStorage.getItem('project')) {
         project = localStorage.getItem('project')
     } else {
@@ -28,8 +29,8 @@ $(document).ready(function setProject() {
         } else {
             project = ('Unnamed project');
             localStorage.setItem('project', project);
-        }
-    }
+        };
+    };
 
     $(".project-title").text(project);
 
@@ -41,6 +42,9 @@ $(document).ready(function setProject() {
             "background-color": "var(--clr-green)",
             "border-color": "rgb(30,126,52)"
         });
+        $('#save-tasks').on('click', ()=> {
+            setupRecord();
+        });
     };
 
     function deactivateStartRecordingButton() {
@@ -50,17 +54,18 @@ $(document).ready(function setProject() {
             "background-color": "rgb(5, 199, 5, .3",
             "border-color": "var(--clr-green)"
         });
+        $('#save-tasks').off('click');
     };
 
     /* SET UP ADD TASKS FUNCTION */
    
     // Selected elements
-    const $newTaskButton = $('#newTaskButton');
-    const $newTaskForm = $('#newTaskForm');
-    const $nameInput = $('input:text');
+    const $newTaskButton = $('#newTaskButton'); // Initiates a new task entry
+    const $newTaskForm = $('#newTaskForm'); // Form containing tasks input and add button
+    const $nameInput = $('input:text'); // IS var task
 
-    const $emptyName = $('#emptyNamePrompt');
-    const $taskItems = $('#taskItems');
+    const $emptyName = $('#emptyNamePrompt'); // Prompt message when task input field is empty 
+    const $taskItems = $('#taskItems'); // <ul> element to display list of new tasks - taskLIST
 
     // Beginning setup of the task form
     $newTaskForm.show();
