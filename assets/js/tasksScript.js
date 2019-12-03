@@ -191,11 +191,18 @@ $(document).ready(function setProject() {
     $newTaskForm.on('submit', (e) => {
         e.preventDefault();
         var task = $nameInput.val();
-        // validation of the provided entry
+        
+        // validation of the provided entry - null or empty string/ duplicate name
         task = jQuery.trim(task);
+       
         if (task === null || task == "" || task.length === 0) {
             emptyNamePrompt();
             console.log('Name was not valid: name was empty string or no name was provided.');
+        
+        } else if (isNameDuplicate() === true) {
+            nameIsDuplicatePrompt();
+            console.log('Name was not valid: name "' + task + '" already exists.');
+        
         } else {
 
             function notify() { // notify if 'submit' event occurs and log the element 
@@ -245,8 +252,21 @@ $(document).ready(function setProject() {
         $('.newTasks').scrollTop($('.newTasks')[0].scrollHeight);
     });
 
+    
+     /* TEST IF THE NEW TASK NAME ALREADY EXISTS */
+    // the test is referenced from https://www.tutorialrepublic.com/faq/how-to-check-if-an-array-includes-an-object-in-javascript.php
 
-    /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION */
+    function isNameDuplicate() {
+
+        if (taskLIST.some(taskLIST => taskLIST.name === task)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+
+    /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION / NAME IS DUPLICATE NOTIFICATION*/
 
     // 'Empty' name notification.
     function emptyNamePrompt() {
@@ -264,6 +284,34 @@ $(document).ready(function setProject() {
             $emptyName.css({
                 "display": "none"
             });
+            $('input').css({
+                "color": "rgb(33, 37, 41)",
+                "border-style": "",
+                "border-color": "",
+                "background-color": ""
+            });
+            $('#nameInput').prop("disabled", false);
+            $nameInput.val('');
+        });
+    };
+
+    // Task name already exists notification.
+
+    function nameIsDuplicatePrompt() {
+        $dupleName.css({
+            "display": "block"
+        });
+        $('#nameInput').css({
+            "color": "red",
+            "border-style": "none",
+            "border-color": "none",
+            "background-color": "transparent"
+        });
+        $('#nameInput').prop("disabled", true);
+        $dupleName.on('click', function () {
+            $dupleName.css({
+                "display": "none"
+            })
             $('input').css({
                 "color": "rgb(33, 37, 41)",
                 "border-style": "",
