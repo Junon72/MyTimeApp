@@ -2,13 +2,18 @@ $(document).ready(function setProject() {
 
     /* STYLES */
     // save project button
-    $("#save-project").css({
-        "background-color": "rgb(5, 199, 5, .5",
-        "border-color": "var(--clr-green)"
-    });
     $("#save-tasks").css({
-        "background-color": "rgb(5, 199, 5, .5",
-        "border-color": "var(--clr-green)"
+        "background-color": "rgb(5, 199, 5, .3",
+        "border-style": "none",
+        "box-shadow": "none",
+        "cursor": "default"
+    });
+
+    $('#nameInput').css({
+        "font-size": "1.2rem",
+        "font-weight": "200",
+        "padding": "0 0 0 .5rem",
+        "box-shadow": "none"
     });
 
     /* SET UP PROJECT TO ADD TASKS */
@@ -198,7 +203,7 @@ $(document).ready(function setProject() {
     });
 
     /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION */
-    
+
     // 'Empty' name notification.
     function emptyNamePrompt() {
         $emptyName.css({
