@@ -157,9 +157,12 @@ $(document).ready(function setProject() {
             console.log('Confirming the activated element id ' + storageKey + ' is the localStorage key for the task entry ' + targetTask.name);
             console.log('Confirming entry name ' + targetTask.name + ' with entry id ' + targetTask.id + ' at index location ' + location + ' was removed!');
 
-            /* Removed code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
+            /* Removed test (axed ? false : true)
             //targetTask['axed'] = true; 
             //console.table(taskLIST); */
+            // Code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
+            // Test result: target task item axed key value was changed from false to true
+
 
             taskLIST.splice(location, 1);
             localStorage.setItem("TASKS", JSON.stringify(taskLIST));
@@ -176,10 +179,12 @@ $(document).ready(function setProject() {
                 console.table(taskLIST);
             };
         });
-        $taskItems.before($item);
+        // set the new item at the end of the list
+        $taskItems.after($item);        
         activateStartRecordingButton();
     };
-    /* Removed code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
+    /* Removed test
+    //Test: axed: false to true.
 //};*/
 
     // Event handler for new task item entries 
@@ -205,7 +210,8 @@ $(document).ready(function setProject() {
             added = time.toLocaleString();
             //console.log(added);
 
-            /* Removed code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
+            /* Removed test
+            //Test: axed: false to true.
             //addToTasks(task, id, 0, false, 0, 0, 0, 0, false); - tasks list object including 'axed' key*/
             addToTasks(task, id, 0, 0, 0, 0, 0, false);
 
@@ -213,7 +219,7 @@ $(document).ready(function setProject() {
                 name: task,
                 id: id,
                 added: added,
-                /* Removed code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
+                /* Removed test
                 //axed: false,*/
                 start: 0,
                 end: 0,
@@ -238,6 +244,7 @@ $(document).ready(function setProject() {
         $newTaskForm.show();
         $('.newTasks').scrollTop($('.newTasks')[0].scrollHeight);
     });
+
 
     /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION */
 

@@ -57,12 +57,14 @@
                 <h5 class="tasksTitles mb-2" id="createTitle">New project tasks:</h5>
             </div>
             <!-- Create tasks container -->
-            <div class="newTasks h-100 w-100 d-block">
+            <div class="spacingContainerTop"></div>
+            <div class="newTasks h-100 w-100 d-block" id="scrollTasks">
                 <!-- Tasks List -->
-                <ul id="taskItems" class="newItems p-0">
+                <ul id="taskItems" class="newItems">
 
                 </ul>
             </div>
+            <div class="spacingContainerBottom"></div>
         </div>
     </div>
     <!--Add/Remove Tasks-->
@@ -78,7 +80,7 @@
         </form>
         <form id="newTaskButton">
             <div class="newTaskButtonContainer">
-            <button type="button" class="btn btn-default" id="showTasks">New Task</button>
+                <button type="button" class="btn btn-default" id="showTasks">New Task</button>
             </div>
         </form>
     </div>
@@ -94,6 +96,16 @@
                 </button>
             </div>
         </div>
+        <!-- Name is duplicate -->
+        <div class="noName w-90 fade fixed-bottom show" id="duplicateNamePrompt">
+            <div class="row justify-content-center no-gutters">
+                <div class="col-12 wasDuple" id="tryAnotherOk">Task name already exists.</div>
+                <button type="button" id="newNameOk" class="btn btn-default-light d-block" aria-label="Close">
+                    <p class="taskOk">OK</p>
+                </button>
+            </div>
+        </div>
+        <!-- Bottom navigation -->
         <nav class="navbar navbar-default fixed-bottom p-0">
             <!-- Action buttons-->
             <div class="d-flex col justify-content-center actions-container">

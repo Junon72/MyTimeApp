@@ -1,6 +1,8 @@
-/* Font */
+
+/* ---------------------------- Font ---------------------------- */
 @import url('https://fonts.googleapis.com/css?family=Public+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
-/* Global*/
+
+/* ---------------------------- Global ---------------------------- */
  
 :root {
     /*Cyan deriv. */
@@ -27,7 +29,7 @@
     --clr-out: #798187;
 }
  
-/* Universal selector style */
+/* ---------------------------- Universal selector style */
 *,
 *::before,
 *::after {
@@ -35,7 +37,7 @@
     box-sizing: border-box;
 }
  
-/* General body styling */
+/* ---------------------------- General body styling */
 body {
     position: relative;
     font-family: 'Public Sans', sans-serif;
@@ -44,7 +46,7 @@ body {
     padding: 0;
 }
  
-/* General text styling */
+/* ---------------------------- General text styling */
 p,
 h1,
 h2,
@@ -57,7 +59,7 @@ h6 {
 }
  
 
-/*--------------------- Fixed Header ---------------------*/
+/* ---------------------------- Fixed Header ---------------------------- */
  
 nav {
     background: var(--clr-light);
@@ -79,7 +81,7 @@ nav {
     padding: 0;
 }
  
-/* Navigation Icons */
+/* ---------------------------- Navigation Icons */
 .home-container {
     float: left !important;
     align-items: center;
@@ -104,7 +106,7 @@ nav {
     color: var(--clr-out);
 }
  
-/* Page Title */
+/* ---------------------------- Page Title */
 .page-title-container {
     position: relative;
     margin-top: 2.6rem;
@@ -125,7 +127,7 @@ nav {
     font-size: 2em;
 }
  
-/* Title icons */
+/* ---------------------------- Title icons */
  
 #faRecTitle {
     color: var(--clr-rec);
@@ -136,7 +138,7 @@ nav {
     color: var(--clr-stop);
 }
  
-/* Title */
+/* ---------------------------- Title */
  
 .title-container {
     width: 100%;
@@ -253,7 +255,7 @@ nav {
     right: 0;
 }
  
-/* -------------------------- Main Content ---------------------------*/
+/* ---------------------------- Main Content ---------------------------- */
  
 .main-container {
     position: relative;
@@ -264,7 +266,7 @@ nav {
     overflow: auto;
 }
  
-/*--------------------- Index ------------------------------- */
+/*---------------------------- Index ---------------------------- */
  
 .index-page-title {
     position: absolute;
@@ -302,7 +304,7 @@ nav {
     text-align: center;
 }
 
-/* Form */
+/* ---------------------------- Form */
 
 .newProjectForm { /* Project creation field */
     margin-bottom: 7rem;
@@ -325,7 +327,7 @@ nav {
  
 }
  
-/* form display */
+/* ---------------------------- Form display */
 
 /* Button styles */
 #create-project-button button,
@@ -350,7 +352,7 @@ nav {
     order: 1;
 }
 
-/* No Name Prompt */
+/* ---------------------------- No Name Prompt */
 
 #noNamePrompt {
     display: none;
@@ -409,7 +411,7 @@ nav {
 }
 
 
-/*---------------------------- Tasks -------------------------*/
+/* ---------------------------- Tasks -------------------------*/
  
  
 .tasks-container h5 { /* task titles style - default & new */
@@ -431,13 +433,23 @@ nav {
     z-index: 700;
 }
 
-
+/* ---------------------------- New tasks */
 .newTasks { /* new tasks display field */
     overflow: scroll;
 }
 
+.spacingContainerTop {
+    
+    display: block;
+    height: 7.4rem;
+}
 
-/* Form container*/
+.spacingContainerBottom {
+    display: block;
+    height: 2.4rem;
+}
+
+/* ---------------------------- Form container*/
 
 .tasksForm { /* new tasks creation field */
     background-color: white;
@@ -465,7 +477,7 @@ nav {
     font-weight: 200;
 }
 
-/* Add/Remove Tasks */
+/* ---------------------------- Add/Remove Tasks */
  
 .task-input input{ /* input field for new tasks */
     width: 100%;
@@ -473,7 +485,7 @@ nav {
     margin: 0;
 }
  
-/* Add /Remove Button */
+/* ---------------------------- Add /Remove Button */
  
 .task-button { /* add + button and remove - button */
     padding: 0;
@@ -485,7 +497,7 @@ nav {
     color: rgb(3, 153, 240);
 }
  
-/* List Element Style */
+/* ---------------------------- List Element Style */
 
 #taskList { /* default task ul*/
     margin-left: 0;
@@ -527,7 +539,7 @@ li.taskItem { /* new tasks li */
 
 }
  
-/* Name Is Empty String Prompt */
+/* ---------------------------- Name Is Empty String Prompt */
 
 .noName {
     display: none;
@@ -649,7 +661,7 @@ li.taskItem { /* new tasks li */
  
 }
  
-/* Tasks */
+/* ---------------------------- Tasks */
  
 .tasksHeader {
     margin: 2.8rem 0 1rem;
