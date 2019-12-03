@@ -1,6 +1,6 @@
 $(document).ready(function setProject() {
 
-    /*Styles*/
+    /* STYLES */
     // save project button
     $("#save-project").css({
         "background-color": "rgb(5, 199, 5, .5",
@@ -11,7 +11,7 @@ $(document).ready(function setProject() {
         "border-color": "var(--clr-green)"
     });
 
-
+    /* SET UP PROJECT TO ADD TASKS */
 
     // setting the project name title
     let project;
@@ -28,10 +28,28 @@ $(document).ready(function setProject() {
 
     $(".project-title").text(project);
 
+    // setting the start project button activation function
+    function activateStartRecordingButton() {
+        $("#toRecord").attr("href", "tasksOO.html");
+        $('#save-tasks').css({
+            "cursor": "pointer",
+            "background-color": "var(--clr-green)",
+            "border-color": "rgb(30,126,52)"
+        });
+    };
 
+    function deactivateStartRecordingButton() {
+        $("#toRecord").removeAttr("href");
+        $('#save-tasks').css({
+            "cursor": "default",
+            "background-color": "rgb(5, 199, 5, .3",
+            "border-color": "var(--clr-green)"
+        });
+    };
 
+    /* SET UP ADD TASKS FUNCTION */
+   
     // Selected elements
-
     const $newTaskButton = $('#newTaskButton');
     const $newTaskForm = $('#newTaskForm');
     const $nameInput = $('input:text');
@@ -43,6 +61,8 @@ $(document).ready(function setProject() {
     $newTaskForm.show();
     $newTaskButton.hide();
 
+
+    /* LOCAL STORAGE SET UP */
     // Variables
     var taskLIST, id, added;
     var time = Date();
@@ -72,9 +92,10 @@ $(document).ready(function setProject() {
         });
     };
 
+    /* ADD AND REMOVE TASKS */
+
     // function to add tasks to the task list - taskLIST
     function addToTasks(task, id) {
-
 
         function notify() { // notify if 'submit' event occurs and log the element id and class
             console.log('Submit event occurred and a form', (event.target), 'was activated')
@@ -176,7 +197,8 @@ $(document).ready(function setProject() {
         $('.newTasks').scrollTop($('.newTasks')[0].scrollHeight);
     });
 
-
+    /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION */
+    
     // 'Empty' name notification.
     function emptyNamePrompt() {
         $emptyName.css({
