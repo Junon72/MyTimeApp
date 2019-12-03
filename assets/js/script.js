@@ -7,7 +7,8 @@ $(document).ready(function () {
     $("#save-project").css({
         "background-color": "rgb(5, 199, 5, .3",
         "border-style": "none",
-        "box-shadow": "none"
+        "box-shadow": "none",
+        "cursor": "default"
     });
 
     $('#projectName').css({

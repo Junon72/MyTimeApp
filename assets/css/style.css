@@ -1,4 +1,4 @@
-/* Fo/* Font */
+/* Font */
 @import url('https://fonts.googleapis.com/css?family=Public+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 /* Global*/
  
@@ -143,11 +143,12 @@ nav {
     display: block;
     margin-top: 1em;
     margin-left: 1em;
+    z-index: 800;
 }
  
 .project-title {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     color: var(--clr-purpleTitle);
 }
@@ -232,7 +233,7 @@ nav {
 
 /*  moved to script.js #projectReset */
  
- 
+
 .start-button {
     font-size: 1.2rem;
     font-weight: 200;
@@ -266,12 +267,13 @@ nav {
 /*--------------------- Index ------------------------------- */
  
 .index-page-title {
-    position: relative;
+    position: absolute;
 }
  
 .mytime { /* Page title text */
-    position: absolute;
-    top: 0;
+    position: relative;
+    margin-top: 5.8rem;
+    margin-left: -.3rem;
     font-size: 6em;
     color: white;
     font-size: 900;
@@ -280,7 +282,7 @@ nav {
  
 .index-main-container {
     position: relative;
-    margin: 10em 1em 1em;
+    margin: 22vh 1rem 1rem;
     height: 50vh;
     overflow: auto;
     text-align: center;
@@ -303,7 +305,7 @@ nav {
 /* Form */
 
 .newProjectForm { /* Project creation field */
-    margin-bottom: 7.5em;
+    margin-bottom: 7rem;
 }
  
 #newProject { /* New MyTime Project: title */
@@ -365,7 +367,7 @@ nav {
     height: 20rem;
     max-width: 20rem;
     border-radius: 50%;
-    z-index: 800;
+    z-index: 1050;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -410,10 +412,9 @@ nav {
 /*---------------------------- Tasks -------------------------*/
  
  
-.tasks-container h5 { /* task titles - default & new */
+.tasks-container h5 { /* task titles style - default & new */
     color: var(--clr--mainLight);
-    margin-top: .5em;
-    margin-bottom: .8em;
+    margin-top: .5rem;
     font-weight: 400;
     font-size: 1.2em;
     letter-spacing: 1.4px;
@@ -424,45 +425,47 @@ nav {
 
 
 .defaults-container-top { /* defaults field */
-    top: 9.58rem;
+    padding-top: 1rem;
+    top: 7.5rem;
     background-color: white;
-}
-.newTasks { /* new tasks display field */
-    overflow: scroll;
-    margin-top: 10.3rem;
-    
+    z-index: 700;
 }
 
-.tasksForm { /* new tasks creation field */
-    bottom: 8rem;
+
+.newTasks { /* new tasks display field */
+    overflow: scroll;
 }
+
+
 /* Form container*/
- 
-.create-tasks { /* new tasks inside form field */
-    margin-top: 2em;
+
+.tasksForm { /* new tasks creation field */
+    background-color: white;
+    bottom: 6rem;
+    z-index: 700;
 }
  
-/* Add/Remove Tasks */
- 
-#defaultTitle { /* Title - Default Tasks */
-    margin-bottom: .6rem;
- 
+.create-tasks { /* new tasks from inside form field */
+    margin-top: .5rem;
+    padding-bottom: 1.5rem;
 }
- 
-#createTitle { /* Title - New Project Tasks */
-    margin-bottom: .8rem;
+
+ .newTaskButtonContainer {
+    margin-top: .5rem;
+    padding-bottom: 1.5rem;
 }
- 
- 
+
 #showTasks { /* New Task button */
-    margin: 1.2em 0 0;
+    display: block;
+    margin: 1.2rem 0 0;
     background-color: rgb(3, 153, 240);
     padding: 4px 6px;
     color: white;
-    font-size: 1.1em;
+    font-size: 1.2rem;
     font-weight: 200;
 }
 
+/* Add/Remove Tasks */
  
 .task-input input{ /* input field for new tasks */
     width: 100%;
@@ -532,11 +535,11 @@ li.taskItem { /* new tasks li */
     border: 1px solid rgb(199, 102, 5, .5);
     text-align: center;
     margin: 0 auto;
-    bottom: 20rem;
+    bottom: 12rem;
     height: 10rem;
     width: 80%;
     border-radius: 2%;
-    z-index: 999;
+    z-index: 1050;
     -webkit-border-radius: 2%;
     -moz-border-radius: 2%;
     -ms-border-radius: 2%;
