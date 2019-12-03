@@ -54,7 +54,7 @@ $(document).ready(function setProject() {
     // before entering anything new - check the state of the localStorage
     // if there is a list already existing, render it to the tasks display ($taskItems)
     if (data) {
-        taskLIST = JSON.parse(data); // translate the JSON back to code
+        taskLIST = JSON.parse(data); // translate the JSON string back to readable code
         id = Date.now().toString();
         added = time.toLocaleString();
         loadTasks(taskLIST, id); // load the tasks to the display
@@ -64,34 +64,112 @@ $(document).ready(function setProject() {
         added = time.toLocaleString();
     };
 
+    // load tasks saved to the local storage to the tasks display -> add items and execute addToTask function
+    function loadTasks(array) {
+        array.forEach((item) => {
+            //addToTasks(item.name, item.id, item.added, item.axed, item.start, item.end, item.elapsed, item.breaks, item.defaults);
+            addToTasks(item.name, item.id, item.added, item.start, item.end, item.elapsed, item.breaks, item.defaults);
+        });
+    };
 
-   
-   
-   
-   
+    // function to add tasks to the task list - taskLIST
+    function addToTasks(task, id) {
+
+
+        function notify() { // notify if 'submit' event occurs and log the element id and class
+            console.log('Submit event occurred and a form', (event.target), 'was activated')
+        };
+        const $item = $( //sets the task item on tasks display
+            '<form class="deleteForm" id="' + id + '">' +
+            '<li class="taskItem justify-content-between">' +
+            '<p class="taskName">' + task +
+            '</p>' +
+            '<button type="submit" class="btn btn-default remove task-button" data-toggle="tooltip"  title="Remove task" id="' + id + '">' +
+            '<i class="fa fa-minus-circle task-icon">' +
+            '</i>' +
+            '</button>' +
+            '</li>' +
+            '</form>').on('submit', (e) => {
+            e.preventDefault();
+            notify();
+            const storageKey = event.target.getAttribute('id');
+            $(event.target).remove();
+            const targetTask = taskLIST.find(xitem => xitem.id === storageKey);
+
+
+            const location = taskLIST.indexOf(targetTask);
+            console.log('Confirming the activated element id ' + storageKey + ' is the localStorage key for the task entry ' + targetTask.name);
+            console.log('Confirming entry name ' + targetTask.name + ' with entry id ' + targetTask.id + ' at index location ' + location + ' was removed!');
+            // Removed code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
+            //targetTask['axed'] = true; 
+            //console.table(taskLIST);
+
+
+            taskLIST.splice(location, 1);
+            localStorage.setItem("TASKS", JSON.stringify(taskLIST));
+            if (taskLIST.length === 0) {
+                console.log('Tasks list is currently empty.');
+                deactivateStartRecordingButton();
+
+            } else {
+                console.log('Current task items saved to the local storage after remove task item event.');
+                console.table(taskLIST);
+            };
+        });
+        $taskItems.before($item);
+        activateStartRecordingButton();
+    };
+    //};
+
+    // Event handler for new task item entries 
     $newTaskForm.on('submit', (e) => {
         e.preventDefault();
-        var newName = $nameInput.val();
-        newName = jQuery.trim(newName);
-        console.log(newName)
-        console.log(newName.length) /* add input validation!!*/
-        if (newName === null || newName == "" || newName.length === 0) {
+        var task = $nameInput.val();
+        // validation of the provided entry
+        task = jQuery.trim(task);
+        if (task === null || task == "" || task.length === 0) {
             emptyNamePrompt();
-            console.log(typeof (newName));
+            console.log('Name was not valid: name was empty string or no name was provided.');
         } else {
-            newName = newName.charAt(0).toUpperCase() + newName.slice(1);
-            $taskItems.after(
-                '<form>' +
-                '<li class="task">' + newName +
-                '<button type="submit" class="btn btn-default remove task-button" id="removeTask" data-toggle="tooltip" title="Remove task"><i class="fa fa-minus-circle task-icon"></i></button>' +
-                '</li>' + '</form>');
 
+            function notify() { // notify if 'submit' event occurs and log the element 
+                console.log('New task entry ' + task + ' was submitted to the task list via ', (event.target))
+            };
+
+            task = task.charAt(0).toUpperCase() + task.slice(1);
+
+            notify();
+            id = Date.now().toString();
+            time = new Date();
+            added = time.toLocaleString();
+            //console.log(added);
+
+            //addToTasks(task, id, 0, false, 0, 0, 0, 0, false); - tasks list object including 'axed' key
+            addToTasks(task, id, 0, 0, 0, 0, 0, false);
+
+            taskLIST.push({ // List object to push each task to taskLIST
+                name: task,
+                id: id,
+                added: added,
+                //axed: false,
+                start: 0,
+                end: 0,
+                elapsed: 0,
+                breaks: 0,
+                defaults: false
+            });
+
+            localStorage.setItem("TASKS", JSON.stringify(taskLIST));
             $newTaskForm.hide();
             $newTaskButton.show();
             $nameInput.val('');
-        }
+
+            //console.log('Current task items saved to the local storage after add event.');
+            console.table(taskLIST);
+        };
     });
 
+    // display the new task button after submitting a task item to the list
     $('#showTasks').on('click', () => {
         $newTaskButton.hide();
         $newTaskForm.show();
@@ -99,14 +177,7 @@ $(document).ready(function setProject() {
     });
 
 
-    /* Removing Tasks */
-
-    $("#removeTask").on('submit', (e) => {
-        e.preventDefault();
-        $(this).remove(".task");
-    });
-
-
+    // 'Empty' name notification.
     function emptyNamePrompt() {
         $emptyName.css({
             "display": "block"
@@ -119,10 +190,4 @@ $(document).ready(function setProject() {
             $nameInput.val('')
         });
     };
-
-
-
-
-
-
 });
