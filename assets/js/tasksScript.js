@@ -191,7 +191,7 @@ $(document).ready(function setProject() {
     $newTaskForm.on('submit', (e) => {
         e.preventDefault();
         var task = $nameInput.val();
-        
+
         // validation of the provided entry - null or empty string/ duplicate name
         task = jQuery.trim(task);
        
@@ -326,6 +326,8 @@ $(document).ready(function setProject() {
     /* --------------------------- record.html page --------------------------- */
 
     
-
+function setupRecord() {
+        console.log('Record project setup successful');
+    };
 
 });
