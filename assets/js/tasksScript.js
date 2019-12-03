@@ -182,12 +182,25 @@ $(document).ready(function setProject() {
         $emptyName.css({
             "display": "block"
         });
-
+        $('#nameInput').css({
+            "color": "red",
+            "border-style": "none",
+            "border-color": "none",
+            "background-color": "transparent"
+        });
+        $('#nameInput').prop("disabled", true);
         $emptyName.on('click', function () {
             $emptyName.css({
                 "display": "none"
             });
-            $nameInput.val('')
+            $('input').css({
+                "color": "rgb(33, 37, 41)",
+                "border-style": "",
+                "border-color": "",
+                "background-color": ""
+            });
+            $('#nameInput').prop("disabled", false);
+            $nameInput.val('');
         });
     };
 });
