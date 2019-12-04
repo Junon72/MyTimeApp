@@ -35,6 +35,7 @@ $(document).ready(function setProject() {
 
     $(".project-title").text(project);
 
+
     // setting the start project button activation function
     function activateStartRecordingButton() {
         $("#toRecord").attr("href", "tasksOO.html");
@@ -75,7 +76,7 @@ $(document).ready(function setProject() {
 
     /* LOCAL STORAGE SET UP */
     // Variables
-    var taskLIST, id, added;
+    var taskLIST, id, added, task;
     var time = Date();
 
     // get task item from the localStorage
@@ -190,7 +191,7 @@ $(document).ready(function setProject() {
     // Event handler for new task item entries 
     $newTaskForm.on('submit', (e) => {
         e.preventDefault();
-        var task = $nameInput.val();
+        task = $nameInput.val();
 
         // validation of the provided entry - null or empty string/ duplicate name
         task = jQuery.trim(task);
