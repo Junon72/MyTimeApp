@@ -234,4 +234,17 @@ $(document).ready(function setProject() {
         $('#faRecTitle').removeClass('fa-circle-o').addClass('fa-circle');
     });
 
+    
 });
+        $('#recStop').on('click', (e) => {
+            e.preventDefault();
+            $('.tasksButton').prop("disabled", true);
+                $('.tasksButton').removeClass('recTaskButton').css({
+                    "background-color": "rgb(1, 69, 143, .4)"
+                });
+                $('.taskTime').removeClass('timeColor');
+        })
+    
+        /*$('.recTaskButton').prop("disabled", true);
+                $('.recTaskButton').removeClass('recTaskButton').addClass('btn-success');
+                $('.taskTime').removeClass('timeColor');*/

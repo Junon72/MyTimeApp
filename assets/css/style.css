@@ -150,10 +150,10 @@ nav {
 }
  
 .project-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 500;
     letter-spacing: 1px;
-    color: var(--clr-purpleTitle);
+    color: var(--clr-purple);
 }
  
 /* ------------------------ Fixed bottom ---------------------*/
@@ -161,7 +161,7 @@ nav {
 .actions-container {
     text-align: left;
     margin-top: .8rem;
-    margin-bottom: .8rem;
+    margin-bottom: .2rem;
     padding: 0;
 }
  
@@ -224,17 +224,20 @@ nav {
     margin-right: 1rem;
 }
  
-.pause {
+.pause,
+.rec {
     position: absolute;
     right: 5rem;
     padding: 0 1rem;
 }
  
-.stop {
+.stop,
+.check {
     padding: 0 1rem;
     position: absolute;
     right: 0;
 }
+
  
 /* ---------------------------- Main Content ---------------------------- */
  
@@ -349,7 +352,7 @@ nav {
 
 .defaults-container-top { /* defaults field */
     padding-top: 1rem;
-    top: 7.5rem;
+    top: 6.8rem;
     background-color: white;
     z-index: 700;
 }
@@ -390,7 +393,7 @@ nav {
 
 #showTasks { /* New Task button */
     display: block;
-    margin: 1.2rem 0 0;
+    margin: .5rem 0 0;
     background-color: rgb(3, 153, 240);
     padding: 4px 6px;
     color: white;
@@ -460,7 +463,7 @@ li.taskItem { /* new tasks li */
 
 }
 
-/*--------------------------- Recording ---------------------------*/
+/*--------------------------- RECORDING ---------------------------*/
 .mainRec {
     z-index: 850;
     padding-bottom: 3rem;
@@ -468,14 +471,14 @@ li.taskItem { /* new tasks li */
 
 .defaults-container-bottom {
     /*position: absolute;*/
-    bottom: -1.4rem;
+    bottom: -1.5rem;
     padding: 0 1rem;
     background-color: white;
     z-index: 880;
 }
 
 .showDefaults{
-    bottom: 7.2rem;
+    bottom: 6.5rem;
 }
 
 .projectTimeDisplay {
@@ -536,7 +539,7 @@ li.taskItem { /* new tasks li */
 /* --------------------------- Tasks */
  
 .tasksHeader {
-    margin: 1rem 0 1rem;
+    margin: .5rem 0 .5rem;
     color: var(--clr--mainLight);
     font-size: 1.1em;
     font-style: italic;
@@ -787,3 +790,11 @@ li.taskItem { /* new tasks li */
     margin: auto;
 }
 
+
+/*--------------------------- STOP ---------------------------*/
+
+.stoppedButton,
+.stoppedButton:hover {
+   background-color: rgb(1, 69, 143, .6);
+   color: white;
+}
