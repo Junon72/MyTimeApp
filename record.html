@@ -13,9 +13,9 @@
         type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script type="text/javascript" src="assets/js/recordO.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/record.js"></script>
 
 </head>
 
@@ -44,30 +44,31 @@
             </div>
             <!-- Project Title -->
             <div class="title-container">
-                <h4 class="project-title" id="rec-project-title"></h4> <!-- This is where the project title will be rendered -->
+                <h4 class="project-title" id="rec-project-title"></h4>
+                <!-- This is where the project title will be rendered -->
             </div>
-       
-       
-        <div class="projectTimeDisplay w-100">
-            <ul id="recordProject" class="p-0 m-0">
 
-                <li class="col-12 emptyRecHead recTask">
 
-                    <h6 class="headerTimeTitle col-6 pl-0 justify-content-start pt-0">Time</h6>
-                    <h6 class="headerTimeTitle col-3 pl-10 pt-0">Started</h6>
-                    <h6 class="headerTimeTitle col-3 pl-10 pt-0">Elapsed</h6>
-                </li>
+            <div class="projectTimeDisplay w-100">
+                <ul id="recordProject" class="p-0 m-0">
 
-                <li class="col-12 d-flex recProjectHeader recTask m-0 p-0">
+                    <li class="col-12 emptyRecHead recTask">
 
-                    <div class="col-6 projectClockDisplay p-0" id="dayTime">
-                        <p></p> <!-- This is where the day and the clock will be rendered -->
-                    </div>
-                    <p class="startTaskTime taskTime col-3 pl-10 pt-0" id="startProject"></p>
-                    <p class="elapsedTaskTime taskTime col-3 pl-10 pt-0" id="elapsedProject"></p>
-                </li>
-            </ul>
-        </div>
+                        <h6 class="headerTimeTitle col-6 pl-0 justify-content-start pt-0">Time</h6>
+                        <h6 class="headerTimeTitle col-3 pl-10 pt-0">Started</h6>
+                        <h6 class="headerTimeTitle col-3 pl-10 pt-0">Elapsed</h6>
+                    </li>
+
+                    <li class="col-12 d-flex recProjectHeader recTask m-0 p-0">
+
+                        <div class="col-6 projectClockDisplay p-0" id="dayTime">
+                            <p></p> <!-- This is where the day and the clock will be rendered -->
+                        </div>
+                        <p class="startTaskTime taskTime col-3 pl-10 pt-0" id="startProject"></p>
+                        <p class="elapsedTaskTime taskTime col-3 pl-10 pt-0" id="elapsedProject"></p>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
     <!-- Main content -->
@@ -77,7 +78,7 @@
         <div class="recTitles">
             <ul id="recordTasks" class="p-0">
                 <hr>
-               <!--This is where the tasks will be rendered -->
+                <!--This is where the tasks will be rendered -->
             </ul>
         </div>
 
@@ -102,31 +103,42 @@
             </li>
         </ul>
     </div>
+    <!-- Recording paused prompt -->
+    <div class="noName w-100 fade show" id="noNamePrompt">
+        <i class="fa fa-hourglass" id="hGlassFull" aria-hidden="true"></i>
+        <div class="row justify-content-center no-gutters w-100">
+            <div id="messageOk">RECORDING PAUSED</div>
+            <button type="button" id="nameOk" class="btn btn-default-light w-100" aria-label="Close">
+                <p class="ok col-6">Continue</p>
+            </button>
+        </div>
+    </div>
+
     <!-- Fixed footer / Actions / Navigation -->
     <footer>
         <nav class="navbar navbar-default fixed-bottom p-0">
-            
+
             <div class="d-flex col-12 actions-container">
 
-                
+
                 <div class="dateHeader col-6 p-0">
                     <p class="date ml-3" id="date"></p> <!-- This is where the date will be rendered -->
                 </div>
 
                 <!-- Action buttons-->
 
-                
-                    <button type="click" class="btn btn-default pause col-3"><i class="fa fa-pause-circle"
-                            aria-hidden="true"></i></button>
-                    <button type="click" class="btn btn-default stop col-3"><i class="fa fa-stop-circle"
-                            aria-hidden="true"></i></button>
-                
+
+                <button type="click" class="btn btn-default pause col-3" id="recPause"><i class="fa fa-pause-circle"
+                        aria-hidden="true"></i></button>
+                <button type="click" class="btn btn-default stop col-3" id="recStop"><i class="fa fa-stop-circle"
+                        aria-hidden="true"></i></button>
+
             </div>
 
             <!-- Bottom-navigation -->
             <div class="container-fluid nav-container-bottom w-100">
                 <div class="nav navbar-nav navbar-left col-2 back-container">
-                    <a href="tasksO.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                    <a href="tasks.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
                 </div>
                 <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
                     <a href="stop.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
