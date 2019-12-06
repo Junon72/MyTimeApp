@@ -38,7 +38,7 @@ $(document).ready(function setProject() {
 
     // setting the start project button activation function
     var activateStartRecordingButton = () => {
-        $("#toRecord").attr("href", "tasks.html");
+        $("#toRecord").attr("href", "record.html");
         $('#save-tasks').css({
             "cursor": "pointer",
             "background-color": "var(--clr-green)",
