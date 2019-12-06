@@ -37,19 +37,16 @@ $(document).ready(function setProject() {
 
 
     // setting the start project button activation function
-    function activateStartRecordingButton() {
-        $("#toRecord").attr("href", "tasksOO.html");
+    var activateStartRecordingButton = () => {
+        $("#toRecord").attr("href", "tasks.html");
         $('#save-tasks').css({
             "cursor": "pointer",
             "background-color": "var(--clr-green)",
             "border-color": "rgb(30,126,52)"
         });
-        $('#save-tasks').on('click', () => {
-            setupRecord();
-        });
     };
 
-    function deactivateStartRecordingButton() {
+   var deactivateStartRecordingButton = () => {
         $("#toRecord").removeAttr("href");
         $('#save-tasks').css({
             "cursor": "default",
@@ -60,16 +57,21 @@ $(document).ready(function setProject() {
     };
 
     /* SET UP ADD TASKS FUNCTION */
+    // Dynamic list with local storage tutorials:
+    // https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+    // https://www.youtube.com/watch?v=b8sUhU_eq3g&t=201s
 
-    // Selected elements
+
+    // Selected html elements
     const $newTaskButton = $('#newTaskButton'); // Initiates a new task entry
     const $newTaskForm = $('#newTaskForm'); // Form containing tasks input and add button
     const $nameInput = $('input:text'); // IS var task
 
     const $emptyName = $('#emptyNamePrompt'); // Prompt message when task input field is empty 
+    const $dupleName = $('#duplicateNamePrompt'); // Prompt message when task name already exists in a list 
     const $taskItems = $('#taskItems'); // <ul> element to display list of new tasks - taskLIST
 
-    // Beginning setup of the task form
+    // Starting setup of the task form
     $newTaskForm.show();
     $newTaskButton.hide();
 
@@ -133,7 +135,7 @@ $(document).ready(function setProject() {
     // function to add tasks to the task list - taskLIST
     function addToTasks(task, id) {
 
-        function notify() { // notify if 'submit' event occurs and log the element id and class
+        let notify = () => { // notify if 'submit' event occurs and log the element id and class
             console.log('Submit event occurred and a form', (event.target), 'was activated')
         };
         const $item = $( //sets the task item on tasks display
@@ -188,13 +190,14 @@ $(document).ready(function setProject() {
     //Test: axed: false to true.
 //};*/
 
-    // Event handler for new task item entries 
+    // Event handler for the new task item input form
     $newTaskForm.on('submit', (e) => {
         e.preventDefault();
         task = $nameInput.val();
+        task = jQuery.trim(task); // trims white space from front and back of the new name
+        task = task.charAt(0).toUpperCase() + task.slice(1); // Capitalizes the first letter
 
         // validation of the provided entry - null or empty string/ duplicate name
-        task = jQuery.trim(task);
        
         if (task === null || task == "" || task.length === 0) {
             emptyNamePrompt();
@@ -206,20 +209,21 @@ $(document).ready(function setProject() {
         
         } else {
 
-            function notify() { // notify if 'submit' event occurs and log the element 
+            let notify = () => { // notify if 'submit' event occurs and log the element 
                 console.log('New task entry ' + task + ' was submitted to the task list via ', (event.target))
             };
 
-            task = task.charAt(0).toUpperCase() + task.slice(1);
-
             notify();
+
             id = Date.now().toString(); // date to string creates a unique id (https://www.youtube.com/watch?v=W7FaYfuwu70)
             time = new Date();
             added = time.toLocaleString();
             //console.log(added);
 
             /* Removed test
-            //Test: axed: false to true.
+            //Test: axed: false to true.*/
+
+            /* NEW TASKS DATA CONSTRUCTOR
             //addToTasks(task, id, 0, false, 0, 0, 0, 0, false); - tasks list object including 'axed' key*/
             addToTasks(task, id, 0, 0, 0, 0, 0, false);
 
@@ -229,9 +233,9 @@ $(document).ready(function setProject() {
                 added: added,
                 /* Removed test
                 //axed: false,*/
-                start: 0,
-                end: 0,
-                elapsed: 0,
+                start: '00:00',
+                end: '00:00',
+                elapsed: '00:00',
                 breaks: 0,
                 defaults: false
             });
@@ -247,17 +251,17 @@ $(document).ready(function setProject() {
     });
 
     // display the new task button after submitting a task item to the list
-    $('#showTasks').on('click', () => {
+    $('#showTasks').on('click', (e) => {
+        e.preventDefault();
         $newTaskButton.hide();
         $newTaskForm.show();
-        $('.newTasks').scrollTop($('.newTasks')[0].scrollHeight);
     });
 
     
      /* TEST IF THE NEW TASK NAME ALREADY EXISTS */
     // the test is referenced from https://www.tutorialrepublic.com/faq/how-to-check-if-an-array-includes-an-object-in-javascript.php
 
-    function isNameDuplicate() {
+   let isNameDuplicate = () => {
 
         if (taskLIST.some(taskLIST => taskLIST.name === task)) {
             return true;
@@ -270,7 +274,7 @@ $(document).ready(function setProject() {
     /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION / NAME IS DUPLICATE NOTIFICATION*/
 
     // 'Empty' name notification.
-    function emptyNamePrompt() {
+    let emptyNamePrompt = () => {
         $emptyName.css({
             "display": "block"
         });
@@ -281,7 +285,8 @@ $(document).ready(function setProject() {
             "background-color": "transparent"
         });
         $('#nameInput').prop("disabled", true);
-        $emptyName.on('click', function () {
+        $emptyName.on('click', function (e) {
+            e.preventDefault();
             $emptyName.css({
                 "display": "none"
             });
@@ -298,7 +303,7 @@ $(document).ready(function setProject() {
 
     // Task name already exists notification.
 
-    function nameIsDuplicatePrompt() {
+    let nameIsDuplicatePrompt = () => {
         $dupleName.css({
             "display": "block"
         });
@@ -326,9 +331,6 @@ $(document).ready(function setProject() {
 
     /* --------------------------- record.html page --------------------------- */
 
-    
-function setupRecord() {
-        console.log('Record project setup successful');
-    };
+   // $('#save-tasks').on('click', () =>  console.log('Record project setup successful'));
 
 });
