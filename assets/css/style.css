@@ -25,7 +25,7 @@
     --clr-rec: rgb(199, 5, 5);
     --clr-active: rgb(197, 62, 21);
     --clr-stop: rgb(1, 69, 143);
-    --clr-pause: rgb(199, 102, 5);
+    --clr-pause: rgb(255, 128, 0);
     --clr-home: rgb(1, 134, 105);
     --clr-out: #798187;
 }
@@ -160,8 +160,8 @@ nav {
 
 .actions-container {
     text-align: left;
-    margin-top: .7rem;
-    margin-bottom: .5rem;;
+    margin-top: .8rem;
+    margin-bottom: .8rem;
     padding: 0;
 }
  
@@ -331,65 +331,6 @@ nav {
     order: 1;
 }
 
-/* ---------------------------- No Name Prompt */
-
-#noNamePrompt {
-    display: none;
-    position: absolute;
-    background-color: rgb(199, 102, 5, .4);
-    border: 1px solid rgb(199, 102, 5, .6);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    height: 20rem;
-    max-width: 20rem;
-    border-radius: 50%;
-    z-index: 1050;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-
-
-#messageOk {
-    position: relative;
-    display: block;
-    margin: 43% auto 6%;
-    padding: 0 auto;
-    width: auto;
-    color: white;
-    font-size: 1.6rem;
-    font-weight: 200;
-}
-.ok {
-    position: relative;
-    justify-content: center;
-    color: white;
-    font-size: 1.4em;
-    font-weight: 200;
-    background-color: rgba(241,174, 105);
-    border: 1px solid white;
-    padding: 0;
-    margin: .2rem 7.2rem;
-    border-radius: 8%;
-    -webkit-border-radius: 8%;
-    -moz-border-radius: 8%;
-    -ms-border-radius: 8%;
-    -o-border-radius: 8%;
-}
-
-
-#nameOK {
-    background-color: none;
-    margin: auto;
-}
-
-
 /* ---------------------------- Tasks -------------------------*/
  
  
@@ -519,77 +460,6 @@ li.taskItem { /* new tasks li */
 
 }
 
-/* ---------------------------- Name Is Duplicate Prompt */
-#tryAnotherOk {
-    position: relative;
-    display: block;
-    margin: 2rem auto 1rem;
-    padding: 0 auto;
-    width: auto;
-    color: white;
-    font-size: 1.6rem;
-    font-weight: 200;
-}
-
-#newNameOK {
-    background-color: none;
-    margin: auto;
-}
- 
-/* ---------------------------- Name Is Empty String Prompt */
-
-.noName {
-    display: none;
-    background-color: rgb(232, 194, 164);
-    border: 1px solid rgb(199, 102, 5, .5);
-    text-align: center;
-    margin: 0 auto;
-    bottom: 12rem;
-    height: 10rem;
-    width: 80%;
-    border-radius: 2%;
-    z-index: 1050;
-    -webkit-border-radius: 2%;
-    -moz-border-radius: 2%;
-    -ms-border-radius: 2%;
-    -o-border-radius: 2%;
-}
-
-
-#tryAgainOk {
-    position: relative;
-    display: block;
-    margin: 2rem auto 1rem;
-    padding: 0 auto;
-    width: auto;
-    color: white;
-    font-size: 1.6rem;
-    font-weight: 200;
-}
-.taskOk {
-    position: relative;
-    justify-content: center;
-    color: white;
-    font-size: 1.4em;
-    font-weight: 200;
-    background-color: rgba(253, 142, 32, 0.4);
-    border: 1px solid white;
-    padding: 0 1rem;
-    margin: .2rem 7.2rem;
-    border-radius: 8%;
-    -webkit-border-radius: 8%;
-    -moz-border-radius: 8%;
-    -ms-border-radius: 8%;
-    -o-border-radius: 8%;
-}
-
-
-#taskNameOK {
-    background-color: none;
-    margin: auto;
-}
-
-
 /*--------------------------- Recording ---------------------------*/
 .mainRec {
     z-index: 850;
@@ -654,9 +524,6 @@ li.taskItem { /* new tasks li */
     letter-spacing: 1px;
 }
  
- 
-
- 
 .dateHeader {
     display: flex;
     float: left;
@@ -664,10 +531,9 @@ li.taskItem { /* new tasks li */
     font-size: 1.6rem;
     font-weight: 700;
     opacity: .3;
- 
 }
  
-/* Tasks */
+/* --------------------------- Tasks */
  
 .tasksHeader {
     margin: 1rem 0 1rem;
@@ -677,7 +543,6 @@ li.taskItem { /* new tasks li */
     letter-spacing: 1.4px;
     font-weight: 400;
     cursor: pointer;
- 
 }
 
 .tasksHeaderTasks {
@@ -688,7 +553,6 @@ li.taskItem { /* new tasks li */
     letter-spacing: 1.4px;
     font-weight: 400;
     cursor: pointer;
- 
 }
  
 .recTask {
@@ -769,3 +633,157 @@ li.taskItem { /* new tasks li */
     -ms-transition: ease-in;
     -o-transition: ease-in;
  }
+
+ /* --------------------------- Prompts */
+
+/* ---------------------------- INDEX/ RECORD: No Name / Recording paused prompt */
+
+#noNamePrompt {
+    display: none;
+    position: absolute;
+    background-color: rgb(199, 102, 5, .4);
+    border: 1px solid rgb(199, 102, 5, .6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    height: 20rem;
+    max-width: 20rem;
+    border-radius: 50%;
+    z-index: 1050;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#pausePrompt {
+    display: none;
+    position: absolute;
+    background-color: rgb(232, 194, 164);
+    border: 1px solid rgb(199, 102, 5, .5);
+    top: 10rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    height: 20rem;
+    max-width: 20rem;
+    border-radius: 50%;
+    z-index: 1050;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+.message {
+    position: relative;
+    display: block;
+    margin: 43% auto 6%;
+    padding: 0 auto;
+    width: auto;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+
+#messagePause {
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+    font-size: 2.6rem;
+    margin: 40% auto 6%;
+}
+
+
+.ok {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 200;
+    background-color: rgba(241,174, 105);
+    border: 1px solid white;
+    padding: 0;
+    margin: auto;
+    -webkit-border-radius: 8%;
+    -moz-border-radius: 8%;
+    -ms-border-radius: 8%;
+    -o-border-radius: 8%;
+}
+
+
+#nameOK {
+    background-color: none;
+    margin: auto;
+}
+
+#continue {
+    background-color: var(--clr-rec);
+    border: 2px solid var(--clr-rec);
+}
+ 
+ 
+/* ---------------------------- TASKS: Name Is Empty String/ Duplicate Prompt */
+
+.noName {
+    display: none;
+    background-color: rgb(232, 194, 164);
+    border: 1px solid rgb(199, 102, 5, .5);
+    text-align: center;
+    margin: 0 auto;
+    bottom: 12rem;
+    height: 10rem;
+    width: 80%;
+    border-radius: 2%;
+    z-index: 1050;
+    -webkit-border-radius: 2%;
+    -moz-border-radius: 2%;
+    -ms-border-radius: 2%;
+    -o-border-radius: 2%;
+}
+
+
+#tryAgainOk,
+#tryAnotherOk {
+    position: relative;
+    display: block;
+    margin: 2rem auto 1rem;
+    padding: 0 auto;
+    width: auto;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+.taskOk {
+    position: relative;
+    justify-content: center;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 200;
+    background-color: rgba(253, 142, 32, 0.4);
+    border: 1px solid white;
+    padding: 0 1rem;
+    margin: .2rem 7.2rem;
+    border-radius: 8%;
+    -webkit-border-radius: 8%;
+    -moz-border-radius: 8%;
+    -ms-border-radius: 8%;
+    -o-border-radius: 8%;
+}
+
+
+#taskNameOK,
+#newNameOK {
+    background-color: none;
+    margin: auto;
+}
+

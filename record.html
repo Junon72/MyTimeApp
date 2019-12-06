@@ -91,25 +91,24 @@
         <ul id="recordDefaultTasks" class="defaults-list p-0">
             <hr>
             <li class="col-12 d-flex recTask">
-                <button type="click" class="btn btn-success defaultButton col-6" id="recLunch">Lunch</button>
+                <button type="click" class="btn btn-success defaultButton tasksButton col-6" id="recLunch">Lunch</button>
                 <p class="startTaskTime taskTime col-3" id="startLunch"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedLunch"></p>
             </li>
             <hr>
             <li class="col-12 d-flex recTask">
-                <button type="click" class="btn btn-success defaultButton col-6" id="recBreak">Break</button>
+                <button type="click" class="btn btn-success defaultButton tasksButton col-6" id="recBreak">Break</button>
                 <p class="startTaskTime taskTime col-3" id="startBreak"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedBreak"></p>
             </li>
         </ul>
     </div>
     <!-- Recording paused prompt -->
-    <div class="noName w-100 fade show" id="noNamePrompt">
-        <i class="fa fa-hourglass" id="hGlassFull" aria-hidden="true"></i>
+    <div class="recPaused w-100 fade show" id="pausePrompt">
         <div class="row justify-content-center no-gutters w-100">
-            <div id="messageOk">RECORDING PAUSED</div>
-            <button type="button" id="nameOk" class="btn btn-default-light w-100" aria-label="Close">
-                <p class="ok col-6">Continue</p>
+            <div class="message col-8" id="messagePause">PAUSED!</div>
+            <button type="button" id="recOk" class="btn btn-default-light w-100" aria-label="Continue">
+                <p class="ok col-5" id="continue">Continue</p>
             </button>
         </div>
     </div>

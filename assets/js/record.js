@@ -37,7 +37,7 @@ $(document).ready(function setProject() {
     //console.log(defaults)
 
     let setDefaultsToLocal = () => localStorage.setItem("DEFAULTS", JSON.stringify(defaults));
-    
+
 
     /* ------------------ SETUP RECORDING TASK ELEMENTS ------------------ */
 
@@ -54,7 +54,7 @@ $(document).ready(function setProject() {
 
     if (!taskLIST || taskLIST === null || taskLIST.length === 0) {
         console.log('There are no tasks added');
-        
+
     } else {
         console.table(taskLIST);
         console.log('Tasks are added to time recorder');
@@ -129,7 +129,7 @@ $(document).ready(function setProject() {
         elapsed = recorder.elapsed;
         var $item = $(
             '<li class="col-12 d-flex recTask">' +
-            '<button type="click" class="btn btn-success col-6" id="' + id + '">' + name +
+            '<button type="click" class="btn btn-success col-6 tasksButton" id="' + id + '">' + name +
             '</button>' +
             '<p class="startTaskTime taskTime col-3 pl-10" id="' + startId + '">' + start +
             '</p>' +
@@ -209,4 +209,29 @@ $(document).ready(function setProject() {
         $('#recBreak').siblings('.taskTime').addClass('timeColor');
         notify();
     });
+
+    /* Recording paused prompt */
+
+    $('#recPause').on('click', (e) => {
+        e.preventDefault();
+        $('#pausePrompt').css({
+            "display": "block"
+        });
+        $('.tasksButton').addClass('btn-success').css({
+            "background-color": "rgb(199, 102, 5)"
+        }).prop("disabled", true);
+        $('#faRecTitle').removeClass('fa-circle').addClass('fa-circle-o');
+    });
+
+    $('#continue').on('click', (e) => {
+        e.preventDefault();
+        $('#pausePrompt').css({
+            "display": "none"
+        });
+        $('.tasksButton').css({
+            "background-color": ""
+        }).prop("disabled", false);
+        $('#faRecTitle').removeClass('fa-circle-o').addClass('fa-circle');
+    });
+
 });
