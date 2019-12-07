@@ -41,10 +41,27 @@ $(document).ready(function () {
     const saveProjectButton = document.getElementById('save-project');
     const nameNotOkPrompt = document.getElementById('nameOk');
 
-    let projectTitle;
+    let projectTitle = localStorage.getItem('project');
+    if (projectTitle === null || projectTitle == "" || projectTitle.length === 0 || projectTitle === 'undefined') {
+       projectCreator();
+    } else {
+        if (projectNameForm.style.display === "none") {
+            projectNameForm.style.display = "flex";
+
+        } else {
+            projectNameForm.style.display = "none";
+            projectName.style.display = "flex";
+        }
+        addProjectButtonListener();
+        const pName = document.createElement('p');
+        pName.textContent = projectTitle;
+        projectNameDisplay.appendChild(pName);
+       
+    };
+
     //project creator gets the name input and creates a <p> element to display the name
     // for this constructor I used the code example from https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
-    const projectCreator = (text) => {
+    function projectCreator(text) {
         const pName = document.createElement('p');
         projectTitle = text;
         projectTitle = jQuery.trim(projectTitle);
@@ -53,7 +70,7 @@ $(document).ready(function () {
         projectNameDisplay.appendChild(pName);
     };
 
-    // clicking 'enter' submits the name value and the name form is hidden from view
+    // Pressing enter key or clicking 'enter' submits the name value and the name form is hidden from view
 
     projectCreateButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -86,7 +103,7 @@ $(document).ready(function () {
             projectNameForm.style.display = "flex";
         };
 
-        saveProjectButton.removeEventListener('click', saveProjectToLocal);
+        saveProjectButton.removeEventListener('submit', saveProjectToLocal);
         $("#toTasks").removeAttr("href");
         $("#save-project").css({
             "cursor": "default",
@@ -99,7 +116,7 @@ $(document).ready(function () {
 
     function addProjectButtonListener() {
 
-        saveProjectButton.addEventListener('click', saveProjectToLocal());
+        saveProjectButton.addEventListener('submit', saveProjectToLocal());
         $("#toTasks").attr("href", "tasks.html");
         $('#save-project').css({
             "cursor": "pointer",
@@ -148,23 +165,7 @@ $(document).ready(function () {
     function saveProjectToLocal() {
         localStorage.setItem('project', projectTitle);
         let project = localStorage.getItem('project');
-        console.log(project);
+        console.log('The project was given name ' + project + ' and saved to local storage.');
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });

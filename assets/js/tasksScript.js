@@ -93,7 +93,7 @@ $(document).ready(function setProject() {
     (function () {
         time = Date();
         var initTasks = time.toLocaleString();
-        if (!taskLIST) {
+        if (!taskLIST || taskLIST === null) {
             console.log(initTasks);
             console.log('No entries have been submitted to the task list yet');
         } else if (taskLIST.length === 0) {

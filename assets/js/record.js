@@ -58,6 +58,7 @@ $(document).ready(function setProject() {
     } else {
         console.table(taskLIST);
         console.log('Tasks are added to time recorder');
+        renderNew();
     };
 
     if (defData) { // if defaults have been already saved to local storage -> load
@@ -114,7 +115,7 @@ $(document).ready(function setProject() {
     };
 
     /* RENDER TASKS ON SCREEN */
-
+function renderNew() {
     // new tasks - https://medium.com/@pearlmcphee/build-a-dynamic-app-using-javascript-html-and-css-f0dfc136007a
     function notify() { // notify if 'submit' event occurs and log the element id and class
         console.log('Click event occurred on task', (event.target));
@@ -159,6 +160,7 @@ $(document).ready(function setProject() {
     };
     taskLIST.forEach(recorder => renderTasks(recorder));
     renderDefaults();
+};
 
 
     /*SET THE DEFAULTS*/

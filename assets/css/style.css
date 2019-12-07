@@ -9,14 +9,18 @@
     --clr-dark: rgb(105, 134, 140);
     --clr-middle: rgb(163, 196, 201);
     --clr-light: rgb(224, 230, 231);
+   
     /*Text*/
     --clr-mainDark: #13181B;
+    --clr--mainLight: #949a9f;
     --clr--mainLight: #949a9f;
     --clr-title: #4a1d68;
     --clr-purpleTitle: rgba(94, 1, 94);
     --clr-time: #05c766;
     --clr-success: #66C705;
- 
+    
+
+
     /*Buttons*/
     --clr-green: rgb(5, 199, 5);
     --clr-purple: rgba(94, 1, 94, 0.7);
