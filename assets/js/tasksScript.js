@@ -35,7 +35,6 @@ $(document).ready(function setProject() {
 
     $(".project-title").text(project);
 
-
     // setting the start project button activation function
     var activateStartRecordingButton = () => {
         $("#toRecord").attr("href", "record.html");
@@ -74,7 +73,6 @@ $(document).ready(function setProject() {
     // Starting setup of the task form
     $newTaskForm.show();
     $newTaskButton.hide();
-
 
     /* LOCAL STORAGE SET UP */
     // Variables
@@ -154,7 +152,6 @@ $(document).ready(function setProject() {
             const storageKey = event.target.getAttribute('id');
             $(event.target).remove();
             const targetTask = taskLIST.find(xitem => xitem.id === storageKey);
-
 
             const location = taskLIST.indexOf(targetTask);
             console.log('Confirming the activated element id ' + storageKey + ' is the localStorage key for the task entry ' + targetTask.name);
@@ -256,7 +253,6 @@ $(document).ready(function setProject() {
         $newTaskButton.hide();
         $newTaskForm.show();
     });
-
     
      /* TEST IF THE NEW TASK NAME ALREADY EXISTS */
     // the test is referenced from https://www.tutorialrepublic.com/faq/how-to-check-if-an-array-includes-an-object-in-javascript.php
@@ -269,7 +265,6 @@ $(document).ready(function setProject() {
             return false;
         }
     };
-
 
     /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION / NAME IS DUPLICATE NOTIFICATION*/
 
@@ -328,9 +323,4 @@ $(document).ready(function setProject() {
             $nameInput.val('');
         });
     };
-
-    /* --------------------------- record.html page --------------------------- */
-
-   // $('#save-tasks').on('click', () =>  console.log('Record project setup successful'));
-
 });

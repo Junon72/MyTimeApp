@@ -162,14 +162,14 @@ nav {
  
 /* ------------------------ Fixed bottom ---------------------*/
 
-.actions-container {
+.actions-container { /* container for the action buttons & date display */
     text-align: left;
     margin-top: .8rem;
     margin-bottom: .2rem;
     padding: 0;
 }
  
-.back-container {
+.back-container { /* bottom container for the right arrow */
     align-items: left;
     height: 1.3rem;
     margin-bottom: 1rem;
@@ -177,7 +177,7 @@ nav {
     padding-left: 1rem;
 }
  
-.forward-container {
+.forward-container { /* bottom container for the left arrow */
     align-items: end;
     height: 1.3rem;
     margin-bottom: 1rem;
@@ -192,11 +192,6 @@ nav {
  
 /* Action icons */
  
-.action {
-    font-size: 2.8em;
-    padding: 0;
-    margin-right: 1rem;
-}
  
 .fa-pause-circle {
     color: var(--clr-pause);
@@ -209,7 +204,7 @@ nav {
     font-size: 2.4rem;
 }
  
-#faRecButton {
+#faRecButton { /* fa-circle-o */
     color: var(--clr-rec);
     font-size: 2.4rem;
 }
@@ -221,14 +216,15 @@ nav {
  
 /*-----------Buttons----------*/
 
-.start-button {
+
+.start-button { /* Green buttons */
     font-size: 1.2rem;
-    font-weight: 200;
+    font-weight: 200 important!;
     margin-left: 1rem;
     margin-right: 1rem;
 }
  
-.pause,
+.pause, 
 .rec {
     position: absolute;
     right: 5rem;
@@ -245,7 +241,7 @@ nav {
  
 /* ---------------------------- Main Content ---------------------------- */
  
-.main-container {
+.main-container { /* main content container in general */
     position: relative;
     margin-top: 10.5em;
     margin-bottom: 8em;
@@ -256,11 +252,11 @@ nav {
  
 /*---------------------------- Index ---------------------------- */
  
-.index-page-title {
+.index-page-title { /* Big MyTime header container */
     position: relative;
 }
  
-.mytime { /* Page title text */
+.mytime { /* Big header text */
     position: absolute;
     top: 0;
     font-size: 6em;
@@ -276,7 +272,7 @@ nav {
     text-align: center;
 }
  
-.hourClassFull {
+.hourClassFull { 
     display: block;
 }
  
@@ -284,7 +280,7 @@ nav {
     text-align: center;
 }
  
-#hGlassFull {
+#hGlassFull { /* Logo hour glass */ 
     color: var(--clr-purple);
     font-size: 13em;
     text-align: center;
@@ -366,13 +362,13 @@ nav {
     overflow: scroll;
 }
 
-.spacingContainerTop {
-    
+.spacingContainerTop { 
+    /* Empty container at the top to make sure the upper tasks item will be always visible while the list is filled */
     display: block;
-    height: 7.4rem;
+    height: 5.6rem;
 }
-
 .spacingContainerBottom {
+    /* Empty container at the top to make sure the lowest tasks item will be visible when list is scrolled up */
     display: block;
     height: 2.4rem;
 }
@@ -390,7 +386,7 @@ nav {
     padding-bottom: 1.5rem;
 }
 
- .newTaskButtonContainer {
+ .newTaskButtonContainer { 
     margin-top: .5rem;
     padding-bottom: 1.5rem;
 }
@@ -456,44 +452,43 @@ li.taskItem { /* new tasks li */
     overflow: hidden;
 }
 
-.taskName {
+.taskName { /* dynamically created element */
     margin-top: .2rem;
     float: left;
 }
 
-.remove { /* remove - button */
+.remove { /* remove - dynamically created button element */
     float: right;
     background-color: transparent;
 
 }
 
-/*--------------------------- RECORDING ---------------------------*/
-.mainRec {
+/*--------------------------- RECORD ---------------------------*/
+.mainRec { /* main content container */
     z-index: 850;
     padding-bottom: 3rem;
 }
 
-.defaults-container-bottom {
-    /*position: absolute;*/
+.defaults-container-bottom {  /* container for the default tasks */
     bottom: -1.5rem;
     padding: 0 1rem;
     background-color: white;
     z-index: 880;
 }
 
-.showDefaults{
+.showDefaults{ /* defaults container visible state - behind toggle */
     bottom: 6.5rem;
 }
 
-.projectTimeDisplay {
+.projectTimeDisplay { /* Container for the project time elements at the top */
     background-color: white;
     padding: 0 1em .5em;;
 }
  
  
  
-.headerTimeTitle {
-    text-align: start;
+.headerTimeTitle { /* Time/ Started/ Elapsed */
+    text-align: start; 
     margin: 0 auto;
     padding: .3rem 1rem 0 1rem;
     color: var(--clr--mainLight);
@@ -502,27 +497,13 @@ li.taskItem { /* new tasks li */
     overflow: auto;
 }
  
-.projectTime>p {
-    padding: 0 1rem 0 1.7rem;
-    color: var(--clr-purple);
-    font-style: italic;
-    letter-spacing: 1px;
-    font-size: 1em;
-}
- 
-.titleWrap {
-    white-space: nowrap;
-    overflow: visible;
-
-}
-
-#rec-project-title {
+#rec-project-title { /* Project title in the header element */
     margin-top: 0;
     color: var(--clr-purple);
 
 }
  
-.projectClockDisplay {
+.projectClockDisplay { /* Clock at the top - Time */
     text-align: start;
     font-size: 1.2em;
     font-weight: 700;
@@ -531,7 +512,7 @@ li.taskItem { /* new tasks li */
     letter-spacing: 1px;
 }
  
-.dateHeader {
+.dateHeader {  /* Date display in a footer */
     display: flex;
     float: left;
     color: var(--clr-time);
@@ -542,7 +523,7 @@ li.taskItem { /* new tasks li */
  
 /* --------------------------- Tasks */
  
-.tasksHeader {
+.tasksHeader { /* New tasks header at the top */
     margin: .5rem 0 .5rem;
     color: var(--clr--mainLight);
     font-size: 1.1em;
@@ -559,7 +540,6 @@ li.taskItem { /* new tasks li */
     font-style: italic;
     letter-spacing: 1.4px;
     font-weight: 400;
-    cursor: pointer;
 }
  
 .recTask {
@@ -672,7 +652,7 @@ li.taskItem { /* new tasks li */
     position: absolute;
     background-color: rgb(232, 194, 164);
     border: 1px solid rgb(199, 102, 5, .5);
-    top: 10rem;
+    bottom: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
@@ -837,4 +817,38 @@ thead {
  
  h4.viewTitle{
      color: transparent;
+ }
+
+ /*--------------------------- SHARE ---------------------------*/
+
+ .attached {
+     display: inline-block;
+     text-align: center;
+ }
+
+ .attachedText {
+    font-size: .9rem;
+    color: var(--clr-purple);
+    font-style: italic;
+ }
+
+ .fa-paperclip {
+    font-size: 1.4rem;
+    color: var(--clr-purple);
+ }
+
+ #message {
+     box-sizing: border-box;
+     height: calc(100vh - 32em);
+ } 
+
+ /*--------------------------- EXIT ---------------------------*/
+
+ .exitText {
+     position: absolute;
+     bottom: .2rem;
+     color: var(--clr-purpleTitle);
+     font-size: 2.2rem;
+     font-weight: 300;
+
  }

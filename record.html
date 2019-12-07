@@ -16,21 +16,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="assets/js/record.js"></script>
-
 </head>
 
 <body>
     <!-- Fixed header / Navigation -->
     <header class="container d-block">
         <nav class="navbar navbar-default fixed-top p-0">
-
             <div class="container-fluid" id="nav-container">
+
                 <!-- Navigation Icons -->
                 <div class="nav navbar-nav navbar-left home-container">
-                    <a href="index.html" target="blank_"><span class="fa-icon"><i class="fa fa-home"
+                    <a href="index.html"><span class="fa-icon"><i class="fa fa-home"
                                 aria-hidden="true"></i></span></a>
                 </div>
                 <div class="nav navbar-nav navbar-center page-title-container">
+
                     <!-- Page Title -->
                     <div class="page-title">
                         <h4>Recording</h4>
@@ -38,32 +38,31 @@
                     </div>
                 </div>
                 <div class="nav navbar-nav navbar-right out-container">
-                    <a href="exit.html" target="blank_"><span class="fa-icon"><i class="fa fa-sign-out"
+                    <a href="exit.html"><span class="fa-icon"><i class="fa fa-sign-out"
                                 aria-hidden="true"></i></span></a>
                 </div>
             </div>
+
             <!-- Project Title -->
             <div class="title-container">
                 <h4 class="project-title" id="rec-project-title"></h4>
                 <!-- This is where the project title will be rendered -->
             </div>
 
-
+            <!-- Container for the project time elements -->
             <div class="projectTimeDisplay w-100">
                 <ul id="recordProject" class="p-0 m-0">
-
                     <li class="col-12 emptyRecHead recTask">
-
                         <h6 class="headerTimeTitle col-6 pl-0 justify-content-start pt-0">Time</h6>
                         <h6 class="headerTimeTitle col-3 pl-10 pt-0">Started</h6>
                         <h6 class="headerTimeTitle col-3 pl-10 pt-0">Elapsed</h6>
                     </li>
-
                     <li class="col-12 d-flex recProjectHeader recTask m-0 p-0">
-
                         <div class="col-6 projectClockDisplay p-0" id="dayTime">
                             <p></p> <!-- This is where the day and the clock will be rendered -->
                         </div>
+
+                        <!-- The actual times -->
                         <p class="startTaskTime taskTime col-3 pl-10 pt-0" id="startProject"></p>
                         <p class="elapsedTaskTime taskTime col-3 pl-10 pt-0" id="elapsedProject"></p>
                     </li>
@@ -71,9 +70,9 @@
             </div>
         </nav>
     </header>
+
     <!-- Main content -->
     <div class="main-container mainRec">
-
         <h5 class="tasksHeaderTasks">Tasks:</h5>
         <div class="recTitles">
             <ul id="recordTasks" class="p-0">
@@ -81,60 +80,58 @@
                 <!--This is where the tasks will be rendered -->
             </ul>
         </div>
-
     </div>
 
     <!-- Default Tasks-->
     <div class="defaults-container-bottom fixed-bottom">
-
         <h5 class="tasksHeader" data-toggle="tooltip" title="Show default tasks">Default tasks:</h5>
         <ul id="recordDefaultTasks" class="defaults-list p-0">
             <hr>
             <li class="col-12 d-flex recTask">
-                <button type="click" class="btn btn-success defaultButton tasksButton col-6" id="recLunch">Lunch</button>
+                <button type="click" class="btn btn-success defaultButton tasksButton col-6"
+                    id="recLunch">Lunch</button>
                 <p class="startTaskTime taskTime col-3" id="startLunch"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedLunch"></p>
             </li>
             <hr>
             <li class="col-12 d-flex recTask">
-                <button type="click" class="btn btn-success defaultButton tasksButton col-6" id="recBreak">Break</button>
+                <button type="click" class="btn btn-success defaultButton tasksButton col-6"
+                    id="recBreak">Break</button>
                 <p class="startTaskTime taskTime col-3" id="startBreak"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedBreak"></p>
             </li>
         </ul>
     </div>
-    <!-- Recording paused prompt -->
-    <div class="recPaused w-100 fade show" id="pausePrompt">
-        <div class="row justify-content-center no-gutters w-100">
-            <div class="message col-8" id="messagePause">PAUSED!</div>
-            <button type="button" id="recOk" class="btn btn-default-light w-100" aria-label="Continue">
-                <p class="ok col-5" id="continue">Continue</p>
-            </button>
-        </div>
-    </div>
 
     <!-- Fixed footer / Actions / Navigation -->
     <footer>
+        <!-- Bottom navigation -->
         <nav class="navbar navbar-default fixed-bottom p-0">
 
+            <!-- Recording paused prompt -->
+            <div class="recPaused w-100 fade show" id="pausePrompt">
+                <div class="row justify-content-center no-gutters w-100">
+                    <div class="message col-8" id="messagePause">PAUSED!</div>
+                    <button type="button" id="recOk" class="btn btn-default-light w-100" aria-label="Continue">
+                        <p class="ok col-5" id="continue">Continue</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Actions -->
             <div class="d-flex col-12 actions-container">
-
-
                 <div class="dateHeader col-6 p-0">
                     <p class="date ml-3" id="date"></p> <!-- This is where the date will be rendered -->
                 </div>
 
                 <!-- Action buttons-->
-
-
                 <button type="click" class="btn btn-default pause col-3" id="recPause"><i class="fa fa-pause-circle"
                         aria-hidden="true"></i></button>
-                <button type="click" class="btn btn-default stop col-3" id="recStop"><a href="stop.html"><i class="fa fa-stop-circle"
-                        aria-hidden="true"></i></a></button>
-
+                <button type="click" class="btn btn-default stop col-3" id="recStop"><a href="stop.html"><i
+                            class="fa fa-stop-circle" aria-hidden="true"></i></a></button>
             </div>
 
-            <!-- Bottom-navigation -->
+            <!-- Navigation -->
             <div class="container-fluid nav-container-bottom w-100">
                 <div class="nav navbar-nav navbar-left col-2 back-container">
                     <a href="tasks.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
@@ -143,7 +140,6 @@
                     <a href="stop.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
                 </div>
             </div>
-
         </nav>
     </footer>
 </body>

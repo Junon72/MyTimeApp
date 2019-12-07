@@ -24,12 +24,14 @@
     <header class="container d-block">
         <nav class="navbar navbar-default fixed-top p-0">
             <div class="container-fluid nav-container-top">
+
                 <!-- Navigation Icons -->
                 <div class="nav navbar-nav navbar-left home-container">
-                    <a href="index.html" target="blank_"><span class="fa-icon"><i class="fa fa-home"
+                    <a href="index.html"><span class="fa-icon"><i class="fa fa-home"
                                 aria-hidden="true"></i></span></a>
                 </div>
                 <div class="nav navbar-nav navbar-center page-title-container">
+
                     <!-- Page Title -->
                     <div class="page-title">
                         <h4>Share</h4>
@@ -37,55 +39,58 @@
                     </div>
                 </div>
                 <div class="nav navbar-nav navbar-right out-container">
-                    <a href="exit.html" target="blank_"><span class="fa-icon"><i class="fa fa-sign-out"
+                    <a href="exit.html"><span class="fa-icon"><i class="fa fa-sign-out"
                                 aria-hidden="true"></i></span></a>
                 </div>
             </div>
-             <!-- Project Title -->
-             <div class="title-container">
-                    <h4 class="project-title viewTitle" id="rec-project-title"></h4>
-                    <!-- This is where the project title will be rendered -->
-                </div>
+
+            <!-- Project Title -->
+            <div class="title-container">
+                <h4 class="project-title viewTitle" id="rec-project-title"></h4>
+                <!-- This is where the project title will be rendered -->
+            </div>
         </nav>
     </header>
+
     <!-- Main content -->
     <div class="mainShare-container">
-        <form action="">
+        <form class="mt-2">
             <div class="form-group">
-                <label for="">To:</label>
-                <input type="text" class="form-control" placeholder="Email">
+                <label for="mailTo">To:</label>
+                <input type="text" class="form-control mailTo" placeholder="Email: for who">
             </div>
             <div class="form-group">
-                <label for="">From:</label>
-                <input type="text" class="form-control" placeholder="Email">
+                <label for="mailForm">From:</label>
+                <input type="text" class="form-control mailFrom" placeholder="Email: from whom">
             </div>
             <div class="form-group">
                 <label for="">Message</label>
-                <textarea name="" id="" rows="10" class="form-control"></textarea>
+                <textarea type="text" name="message" id="message" class="form-control" placeholder="Leave a message"></textarea>
             </div>
         </form>
-
+        <div class="attached d-flex float-right mr-2"><p class="attachedText mr-2">Timesheet attached</p><i class="fa fa-paperclip"></i></div>
     </div>
+
     <!-- Fixed footer / Actions / Navigation -->
     <footer>
-            <nav class="navbar navbar-default fixed-bottom p-0">
-                    <!-- Action buttons-->
-                    <div class="d-flex col justify-content-center actions-container">
-                        <a class="p-0 ml-0 mr-0 w-100" id="toRecord"><button type="button"
-                                class="btn btn-success start-button w-100 m-0" id="save-tasks">Send</button></a>
-                    </div>
-                    <!-- Bottom-navigation -->
-                    <div class="container-fluid nav-container-bottom w-100">
-                        <div class="nav navbar-nav navbar-left col-2 back-container">
-                            <a href="view.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
-                            <a href="exit.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-        
-                </nav>
-        </footer>
+        <!-- Bottom-navigation -->
+        <nav class="navbar navbar-default fixed-bottom p-0">
+            <!-- Action buttons-->
+            <div class="d-flex col justify-content-center actions-container">
+                <a href="exit.html" class="p-0 ml-0 mr-0 w-100" id="toRecord"><button type="button"
+                     class="btn btn-success start-button w-100 m-0" id="save-tasks">Send</button></a>
+            </div>
+            <!-- Navigation -->
+            <div class="container-fluid nav-container-bottom w-100">
+                <div class="nav navbar-nav navbar-left col-2 back-container">
+                    <a href="view.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                </div>
+                <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
+                    <a href="exit.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </nav>
+    </footer>
 
 </body>
 

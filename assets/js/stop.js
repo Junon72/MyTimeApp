@@ -17,8 +17,6 @@ $(document).ready(function setProject() {
     $("#rec-project-title").text(project);
     $("#tableTitle").text(project);
 
-
-
     /* ------------------ SETUP LOCAL STORAGE ------------------ */
     var id;
 
@@ -36,8 +34,6 @@ $(document).ready(function setProject() {
     console.log('Tasks are ready to be loaded')
 
     //let setDefaultsToLocal = () => localStorage.setItem("DEFAULTS", JSON.stringify(defaults));
-
-
 
     /* RENDER TASKS ON SCREEN */
 
@@ -64,7 +60,6 @@ $(document).ready(function setProject() {
     taskLIST.forEach(recorder => renderTasks(recorder));
     renderDefaults();
 
-
     /*SET THE DEFAULTS*/
     //const renderDefaults = defaultsRecorder
 
@@ -89,5 +84,4 @@ $(document).ready(function setProject() {
         e.preventDefault();
         $('.defaults-container-bottom').toggleClass('showDefaults');
     })
-    
 });

@@ -15,11 +15,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
-
 </head>
 
 <body>
-   
     <!-- Fixed header / Navigation -->
     <header class="container d-block">
         <nav class="navbar navbar-default fixed-top p-0" id="firstHeader">
@@ -28,6 +26,7 @@
             </div>
         </nav>
     </header>
+
     <!-- Main content -->
     <div class="index-main-container d-flex justify-content-center align-items-center">
         <div class="row hourClassFull no-gutters">
@@ -48,41 +47,38 @@
     </div>
 
     <!--Create Project Form-->
-
     <div class="newProjectForm fixed-bottom mr-2 ml-2">
         <label for="projectName" id="newProject" class="mr-2 ml-2">MyTime Project:</label>
         <div class="row no-gutters col-12" id="accept-project">
             <div id="project-name-display" class="new-projectName align-items-center col-9 mb-3"></div>
             <button type="button" id="projectReset" class="btn btn-secondary col-3 mb-3">Cancel</button>
         </div>
-
         <form class="form-group projectForm row no-gutters mr-2 ml-2" id="create-project-form">
-            <input id="projectName" type="text" class="d-flex col-9" placeholder="New project name"
-                required>
+            <input id="projectName" type="text" class="d-flex col-9" placeholder="New project name" required>
             <button type="submit" class="btn btn-success col-3" id="create-project-button">Enter</button>
         </form>
     </div>
 
     <!-- Fixed footer / Actions / Navigation -->
     <footer>
+        <!-- Bottom-navigation -->
         <nav class="navbar navbar-default fixed-bottom p-0">
-            <!-- Action buttons-->
 
+            <!-- Action buttons-->
             <div class="d-flex col justify-content-center actions-container">
                 <a class="p-0 ml-0 mr-0 w-100" id="toTasks"><button type="submit"
                         class="btn btn-success start-button w-100 m-0" id="save-project">Create</button></a>
             </div>
-
-            <!-- Bottom-navigation -->
+            
+            <!-- Navigation-->
             <div class="container-fluid nav-container-bottom w-100">
                 <div class="nav navbar-nav navbar-left col-2 back-container">
-                   
+
                 </div>
                 <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
                     <a href="tasks.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
                 </div>
             </div>
-
         </nav>
     </footer>
 </body>

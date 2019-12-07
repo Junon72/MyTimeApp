@@ -115,52 +115,55 @@ $(document).ready(function setProject() {
     };
 
     /* RENDER TASKS ON SCREEN */
-function renderNew() {
-    // new tasks - https://medium.com/@pearlmcphee/build-a-dynamic-app-using-javascript-html-and-css-f0dfc136007a
-    function notify() { // notify if 'submit' event occurs and log the element id and class
-        console.log('Click event occurred on task', (event.target));
+    // new tasks - 
+    // for rendering local storage content dynamically I used code reference from 
+    // https://medium.com/@pearlmcphee/build-a-dynamic-app-using-javascript-html-and-css-f0dfc136007a
+    
+    function renderNew() {
+        function notify() { // notify if 'submit' event occurs and log the element id and class
+            console.log('Click event occurred on task', (event.target));
+        };
+
+        const renderTasks = recorder => {
+            name = recorder.name;
+            id = recorder.id;
+            const startId = id + 1;
+            const elapsedId = id + 2;
+            start = recorder.start;
+            elapsed = recorder.elapsed;
+            var $item = $(
+                '<li class="col-12 d-flex recTask">' +
+                '<button type="click" class="btn btn-success col-6 tasksButton" id="' + id + '">' + name +
+                '</button>' +
+                '<p class="startTaskTime taskTime col-3 pl-10" id="' + startId + '">' + start +
+                '</p>' +
+                '<p class="elapsedTaskTime taskTime col-3 pl-10" id="' + elapsedId + '">' + elapsed +
+                '</p>' +
+                '</li>' +
+                '<hr></hr>').on('click', (e) => {
+                e.preventDefault();
+                $('.recTaskButton').prop("disabled", false);
+                $('.recTaskButton').removeClass('recTaskButton').addClass('btn-success');
+                $('.taskTime').removeClass('timeColor');
+
+                $(event.target).prop("disabled", true);
+                $(event.target).removeClass('btn-success').addClass('recTaskButton');
+                $(event.target).siblings('.taskTime').addClass('timeColor');
+
+
+                const storageKeyButton = event.target.getAttribute('id');
+                console.log('This object ID is ' + storageKeyButton);
+                const startElement = $(event.target).siblings('.startTaskTime');
+                console.log(startElement);
+                const elapsedElement = $(event.target).siblings('.elapsedTaskTime');
+                console.log(elapsedElement);
+                notify(startElement, elapsedElement);
+            });
+            $('#recordTasks').after($item);
+        };
+        taskLIST.forEach(recorder => renderTasks(recorder));
     };
-
-    const renderTasks = recorder => {
-        name = recorder.name;
-        id = recorder.id;
-        const startId = id + 1;
-        const elapsedId = id + 2;
-        start = recorder.start;
-        elapsed = recorder.elapsed;
-        var $item = $(
-            '<li class="col-12 d-flex recTask">' +
-            '<button type="click" class="btn btn-success col-6 tasksButton" id="' + id + '">' + name +
-            '</button>' +
-            '<p class="startTaskTime taskTime col-3 pl-10" id="' + startId + '">' + start +
-            '</p>' +
-            '<p class="elapsedTaskTime taskTime col-3 pl-10" id="' + elapsedId + '">' + elapsed +
-            '</p>' +
-            '</li>' +
-            '<hr></hr>').on('click', (e) => {
-            e.preventDefault();
-            $('.recTaskButton').prop("disabled", false);
-            $('.recTaskButton').removeClass('recTaskButton').addClass('btn-success');
-            $('.taskTime').removeClass('timeColor');
-
-            $(event.target).prop("disabled", true);
-            $(event.target).removeClass('btn-success').addClass('recTaskButton');
-            $(event.target).siblings('.taskTime').addClass('timeColor');
-
-
-            const storageKeyButton = event.target.getAttribute('id');
-            console.log('This object ID is ' + storageKeyButton);
-            const startElement = $(event.target).siblings('.startTaskTime');
-            console.log(startElement);
-            const elapsedElement = $(event.target).siblings('.elapsedTaskTime');
-            console.log(elapsedElement);
-            notify(startElement, elapsedElement);
-        });
-        $('#recordTasks').after($item);
-    };
-    taskLIST.forEach(recorder => renderTasks(recorder));
     renderDefaults();
-};
 
 
     /*SET THE DEFAULTS*/
@@ -197,7 +200,6 @@ function renderNew() {
         $('#recLunch').prop("disabled", true);
         $('#recLunch').removeClass('btn-success').addClass('recTaskButton');
         $('#recLunch').siblings('.taskTime').addClass('timeColor');
-        notify();
     });
 
     $('#recBreak').on('click', (e) => {
@@ -209,7 +211,6 @@ function renderNew() {
         $('#recBreak').prop("disabled", true);
         $('#recBreak').removeClass('btn-success').addClass('recTaskButton');
         $('#recBreak').siblings('.taskTime').addClass('timeColor');
-        notify();
     });
 
     /* Recording paused prompt */
@@ -235,18 +236,13 @@ function renderNew() {
         }).prop("disabled", false);
         $('#faRecTitle').removeClass('fa-circle-o').addClass('fa-circle');
     });
-
-    
 });
-        $('#recStop').on('click', (e) => {
-            e.preventDefault();
-            $('.tasksButton').prop("disabled", true);
-                $('.tasksButton').removeClass('recTaskButton').css({
-                    "background-color": "rgb(1, 69, 143, .4)"
-                });
-                $('.taskTime').removeClass('timeColor');
-        })
-    
-        /*$('.recTaskButton').prop("disabled", true);
-                $('.recTaskButton').removeClass('recTaskButton').addClass('btn-success');
-                $('.taskTime').removeClass('timeColor');*/
+
+$('#recStop').on('click', (e) => {
+    e.preventDefault();
+    $('.tasksButton').prop("disabled", true);
+    $('.tasksButton').removeClass('recTaskButton').css({
+        "background-color": "rgb(1, 69, 143, .4)"
+    });
+    $('.taskTime').removeClass('timeColor');
+});

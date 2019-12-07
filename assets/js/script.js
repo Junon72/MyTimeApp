@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    
-
     /*Styles*/
     // save project button
     $("#save-project").css({
@@ -29,7 +27,6 @@ $(document).ready(function () {
         "box-shadow": "none"
     });
 
-
     //index
     //query selectors - this section is done using mainly JavaScript code, jQuery selectors  used for styling
     const projectNameForm = document.getElementById('create-project-form');
@@ -56,7 +53,6 @@ $(document).ready(function () {
         const pName = document.createElement('p');
         pName.textContent = projectTitle;
         projectNameDisplay.appendChild(pName);
-       
     };
 
     //project creator gets the name input and creates a <p> element to display the name
@@ -86,7 +82,7 @@ $(document).ready(function () {
                 projectName.style.display = "flex";
             }
             addProjectButtonListener();
-        }
+        };
     });
 
 
@@ -123,7 +119,6 @@ $(document).ready(function () {
             "background-color": "var(--clr-green)",
             "border-color": "rgb(30,126,52)"
         });
-
     };
 
     function noNamePrompt() {
@@ -159,7 +154,6 @@ $(document).ready(function () {
             });
             projectNameInput.disabled = false;
         });
-
     };
 
     function saveProjectToLocal() {
@@ -167,5 +161,4 @@ $(document).ready(function () {
         let project = localStorage.getItem('project');
         console.log('The project was given name ' + project + ' and saved to local storage.');
     };
-
 });
