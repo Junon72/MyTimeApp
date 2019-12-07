@@ -15,6 +15,8 @@ $(document).ready(function setProject() {
     let project = localStorage.getItem('project');
     // render the title
     $("#rec-project-title").text(project);
+    $("#tableTitle").text(project);
+
 
 
     /* ------------------ SETUP LOCAL STORAGE ------------------ */

@@ -42,11 +42,10 @@
                                 aria-hidden="true"></i></span></a>
                 </div>
             </div>
-            <!-- Project Title -->
 
             <!-- Project Title -->
             <div class="title-container">
-                <h4 class="project-title" id="rec-project-title"></h4>
+                <h4 class="project-title viewTitle" id="rec-project-title"></h4>
                 <!-- This is where the project title will be rendered -->
             </div>
 
@@ -87,20 +86,17 @@
     </div>
     <!-- Default Tasks-->
     <div class="defaults-container-bottom fixed-bottom">
-
         <h5 class="tasksHeader" data-toggle="tooltip" title="Show default tasks">Default tasks:</h5>
         <ul id="recordDefaultTasks" class="defaults-list p-0">
             <hr>
             <li class="col-12 d-flex recTask">
-                <button disabled class="btn btn-default stoppedButton col-6"
-                    id="recLunch">Lunch</button>
+                <button disabled class="btn btn-default stoppedButton col-6" id="recLunch">Lunch</button>
                 <p class="startTaskTime taskTime col-3" id="startLunch"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedLunch"></p>
             </li>
             <hr>
             <li class="col-12 d-flex recTask">
-                <button disabled  class="btn btn-default stoppedButton col-6"
-                    id="recBreak">Break</button>
+                <button disabled class="btn btn-default stoppedButton col-6" id="recBreak">Break</button>
                 <p class="startTaskTime taskTime col-3" id="startBreak"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedBreak"></p>
             </li>
@@ -108,24 +104,18 @@
     </div>
 
     <!-- Fixed footer / Actions / Navigation -->
-
-
     <footer>
         <nav class="navbar navbar-default fixed-bottom p-0">
-
             <div class="d-flex col-12 actions-container">
-
-
                 <div class="dateHeader col-6 p-0">
                     <p class="date ml-3" id="date"></p> <!-- This is where the date will be rendered -->
                 </div>
+
                 <!-- Action buttons-->
-
-                <button type="submit" class="btn btn-default rec col-3" id="backToRec"><a href="record.html"><i id="faRecButton"
-                        class="fa fa-circle" aria-hidden="true"></i></a></button>
-                <button type="submit" class="btn btn-default check col-3" id="toShare"><a href="view.html"><i class="fa fa-check-circle"
-                        aria-hidden="true"></i></a></button>
-
+                <button type="submit" class="btn btn-default rec col-3" id="backToRec"><a href="record.html"><i
+                            id="faRecButton" class="fa fa-circle" aria-hidden="true"></i></a></button>
+                <button type="submit" class="btn btn-default check col-3" id="toShare"><a href="view.html"><i
+                            class="fa fa-check-circle" aria-hidden="true"></i></a></button>
             </div>
 
             <!-- Bottom-navigation -->
@@ -134,12 +124,11 @@
                     <a href="record.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
                 </div>
                 <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
-                    <a href="share.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                    <a href="view.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
                 </div>
             </div>
         </nav>
     </footer>
-
 </body>
 
 </html>

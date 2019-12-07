@@ -798,3 +798,39 @@ li.taskItem { /* new tasks li */
    background-color: rgb(1, 69, 143, .6);
    color: white;
 }
+
+/*--------------------------- VIEW ---------------------------*/
+
+.mainView-container,
+.mainShare-container {
+    position: relative;
+    margin-top: 8rem;
+    margin-bottom: 8em;
+    margin-left: 1em;
+    margin-right: 1em;
+    overflow: auto;
+
+}
+ 
+.dateHeaderView {
+    color: var(--clr--mainLight);
+    font-size: 1.6rem;
+    font-weight: 700;
+    opacity: .3;
+}
+
+tbody,
+thead { 
+    text-align: left;
+    color: var(--clr-dark);
+ }
+
+ #tableTitle {
+    color: var(--clr--mainLight);
+    font-size: 1.6rem;
+    font-weight: 300;
+ }
+ 
+ h4.viewTitle{
+     color: transparent;
+ }

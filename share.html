@@ -13,6 +13,10 @@
         type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="assets/js/stop.js"></script>
+
 </head>
 
 <body>
@@ -37,14 +41,15 @@
                                 aria-hidden="true"></i></span></a>
                 </div>
             </div>
-            <!-- Project Title -->
-            <div class="title-container">
-                <h4 class="project-title"> Project 1</h4>
-            </div>
+             <!-- Project Title -->
+             <div class="title-container">
+                    <h4 class="project-title viewTitle" id="rec-project-title"></h4>
+                    <!-- This is where the project title will be rendered -->
+                </div>
         </nav>
     </header>
     <!-- Main content -->
-    <div class="main-container">
+    <div class="mainShare-container">
         <form action="">
             <div class="form-group">
                 <label for="">To:</label>
@@ -63,23 +68,24 @@
     </div>
     <!-- Fixed footer / Actions / Navigation -->
     <footer>
-        <nav class="navbar navbar-default fixed-bottom p-0">
-            <!-- Action buttons-->
-            <div class="d-flex w-100 justify-content-center actions-container">
-                <a href="exit.html" target="blank_" class="btn btn-success start-button w-100"
-                    id="goToRecord">Send</a>
-            </div>
-            <!-- Bottom-navigation -->
-            <div class="container-fluid nav-container-bottom w-100 p-0">
-                <div class="nav navbar-nav navbar-left back-container">
-                    <a href="view.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
-                </div>
-                <div class="nav navbar-nav navbar-right forward-container">
-                    <a href="exit.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </nav>
-    </footer>
+            <nav class="navbar navbar-default fixed-bottom p-0">
+                    <!-- Action buttons-->
+                    <div class="d-flex col justify-content-center actions-container">
+                        <a class="p-0 ml-0 mr-0 w-100" id="toRecord"><button type="button"
+                                class="btn btn-success start-button w-100 m-0" id="save-tasks">Send</button></a>
+                    </div>
+                    <!-- Bottom-navigation -->
+                    <div class="container-fluid nav-container-bottom w-100">
+                        <div class="nav navbar-nav navbar-left col-2 back-container">
+                            <a href="view.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
+                            <a href="exit.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+        
+                </nav>
+        </footer>
 
 </body>
 
