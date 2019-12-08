@@ -35,9 +35,23 @@ $(document).ready(function setProject() {
 
     //let setDefaultsToLocal = () => localStorage.setItem("DEFAULTS", JSON.stringify(defaults));
 
+    /* ------------------ SETUP RECORDING TASK ELEMENTS ------------------ */
+
+    // Check if recorded new tasks
+
+    if (!taskLIST || taskLIST === null || taskLIST.length === 0) {
+        console.log('There are no tasks added');
+        $('.defaults-container-bottom').toggleClass('showDefaults');
+
+    } else {
+        console.table(taskLIST);
+        console.log('Tasks are added to time recorder');
+        taskLIST.forEach(recorder => renderTasks(recorder));
+    };
+
     /* RENDER TASKS ON SCREEN */
 
-    const renderTasks = recorder => {
+    function renderTasks(recorder) {
         name = recorder.name;
         id = recorder.id;
         const startId = id + 1;
@@ -57,11 +71,9 @@ $(document).ready(function setProject() {
             $('#recordTasks').after($item);
         };
   
-    taskLIST.forEach(recorder => renderTasks(recorder));
     renderDefaults();
 
     /*SET THE DEFAULTS*/
-    //const renderDefaults = defaultsRecorder
 
     function renderDefaults() {
 

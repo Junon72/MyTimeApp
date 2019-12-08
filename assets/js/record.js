@@ -10,12 +10,12 @@ $(document).ready(function setProject() {
     let clock = () => $('#dayTime').text(moment().format('ddd HH:mm A'));
 
     setInterval(clock, 1000);
+    // for the displayed time functions I used Moments.js library-  
 
     // get the project name title
     let project = localStorage.getItem('project');
     // render the title
     $("#rec-project-title").text(project);
-
 
     /* ------------------ SETUP LOCAL STORAGE ------------------ */
     var id, added;
