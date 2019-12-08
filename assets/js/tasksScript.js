@@ -30,6 +30,7 @@ $(document).ready(function setProject() {
         } else {
             project = ('Project(default)');
             localStorage.setItem('project', project);
+            console.log('The project is named ' + project)
         };
     };
 
@@ -92,15 +93,14 @@ $(document).ready(function setProject() {
         time = Date();
         var initTasks = time.toLocaleString();
         if (!taskLIST || taskLIST === null) {
-            console.log(initTasks);
-            console.log('No entries have been submitted to the task list yet');
+            console.log('The application is getting the local time: ' + initTasks);
+            console.log('No entries have been submitted to the ' + project + ' tasks list yet.');
         } else if (taskLIST.length === 0) {
-            console.log('Task list is empty');
+            console.log('Task list is empty, all tasks from ' + project + ' have been removed.');
             deactivateStartRecordingButton();
         } else {
             added = time.toLocaleString();
-            console.log('At ' + added);
-            console.log('Following task item entries were added to the task list from local storage');
+            console.log(added + ', the following task item entries were added to the task list from local storage:');
             console.table(taskLIST);
             activateStartRecordingButton();
         };
@@ -171,7 +171,7 @@ $(document).ready(function setProject() {
                     1. when all task list entries have been removed
                     2. actual storage content after item was removed */
             if (taskLIST.length === 0) {
-                console.log('Tasks list is currently empty.');
+                console.log('Tasks list is currently empty, all tasks from ' + project + ' have been removed..');
                 deactivateStartRecordingButton();
 
             } else {

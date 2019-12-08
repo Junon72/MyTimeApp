@@ -10,7 +10,7 @@ $(document).ready(function setProject() {
     let clock = () => $('#dayTime').text(moment().format('ddd HH:mm A'));
 
     setInterval(clock, 1000);
-    // for the displayed time functions I used Moments.js library-  
+    // for the displayed time functions I used Moments.js library-  https://momentjs.com/ and provided documents https://momentjs.com/docs/
 
     // get the project name title
     let project = localStorage.getItem('project');
@@ -53,11 +53,11 @@ $(document).ready(function setProject() {
     // Check if tasks were added 
 
     if (!taskLIST || taskLIST === null || taskLIST.length === 0) {
-        console.log('There are no tasks added');
+        console.log('There are no new tasks to add.');
 
     } else {
         console.table(taskLIST);
-        console.log('Tasks are added to time recorder');
+        console.log('New tasks are added to the time recorder.');
         renderNew();
     };
 
@@ -67,9 +67,9 @@ $(document).ready(function setProject() {
         loadDefaults(defaults, id);
         console.table(defaults);
         if (defaults.length !== 0) {
-            console.log('Defaults were loaded successfully');
+            console.log('Default tasks will be loaded, and recorded values restored.');
         } else {
-            console.log('Error has ocurred: default tasks are missing');
+            console.log('Error has ocurred: default tasks are missing.');
         };
     } else { // if no defaults were loaded before -> load and save now
         time = new Date();
@@ -108,9 +108,9 @@ $(document).ready(function setProject() {
         setDefaultsToLocal();
         console.table(defaults);
         if (defaults.length !== 0) {
-            console.log('Defaults were loaded successfully');
+            console.log('Default tasks were loaded successfully.');
         } else {
-            console.log('Error has ocurred: default tasks are missing');
+            console.log('Error has ocurred: default tasks are missing.');
         };
     };
 
@@ -118,10 +118,10 @@ $(document).ready(function setProject() {
     // new tasks - 
     // for rendering local storage content dynamically I used code reference from 
     // https://medium.com/@pearlmcphee/build-a-dynamic-app-using-javascript-html-and-css-f0dfc136007a
-    
+
     function renderNew() {
         function notify() { // notify if 'submit' event occurs and log the element id and class
-            console.log('Click event occurred on task', (event.target));
+            console.log('Click event occurred on task ', (event.target));
         };
 
         const renderTasks = recorder => {
@@ -135,9 +135,9 @@ $(document).ready(function setProject() {
                 '<li class="col-12 d-flex recTask">' +
                 '<button type="click" class="btn btn-success col-6 tasksButton" id="' + id + '">' + name +
                 '</button>' +
-                '<p class="startTaskTime taskTime col-3 pl-10" id="' + startId + '">' + start +
+                '<p class="startTaskTime taskTime col-3" id="' + startId + '">' + start +
                 '</p>' +
-                '<p class="elapsedTaskTime taskTime col-3 pl-10" id="' + elapsedId + '">' + elapsed +
+                '<p class="elapsedTaskTime taskTime col-3" id="' + elapsedId + '">' + elapsed +
                 '</p>' +
                 '</li>' +
                 '<hr></hr>').on('click', (e) => {

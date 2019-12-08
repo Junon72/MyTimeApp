@@ -51,7 +51,7 @@
         <div class="tasks-container mt-0">
 
             <!-- Default Tasks List -->
-            <div class="defaults-container-top fixed-top ml-3 mr-3 pb-0">
+            <div class="defaults-container-top fixed-top pb-0">
                 <h5 class="tasksTitles mb-2" id="defaultTitle">Default tasks:</h5>
                 <ul id="taskList" class="p-0">
                     <li class="col-12 mb-2 p-0">Break</li>
@@ -74,7 +74,7 @@
     </div>
 
     <!--Add/Remove Tasks-->
-    <div class="tasksForm fixed-bottom ml-3 mr-3" id="createTasks">
+    <div class="tasksForm fixed-bottom" id="createTasks">
         <form id="newTaskForm">
             <div class="create-tasks d-flex">
                 <button type="submit" class="btn btn-default task-button" id="addTask" data-toggle="tooltip"
@@ -93,7 +93,8 @@
 
     <!-- Fixed footer / No name prompt / Actions / Navigation -->
     <footer>
-
+ <!-- Bottom-navigation -->
+        <nav class="navbar navbar-default fixed-bottom p-0">
         <!-- Name Is Empty String Prompt -->
         <div class="noName w-90 fade fixed-bottom show" id="emptyNamePrompt">
             <div class="row justify-content-center no-gutters">
@@ -107,13 +108,13 @@
         <!-- Name is duplicate -->
         <div class="noName w-90 fade fixed-bottom show" id="duplicateNamePrompt">
             <div class="row justify-content-center no-gutters">
-                <div class="col-12 wasDuple" id="tryAnotherOk">Task name already exists.</div>
+                <div class="col-12 wasDuple" id="tryAnotherOk">Name already exists.</div>
                 <button type="button" id="newNameOk" class="btn btn-default-light d-block" aria-label="Close">
                     <p class="taskOk">OK</p>
                 </button>
             </div>
         </div>
-          <!-- Bottom-navigation -->
+         <!-- Bottom-navigation -->
         <nav class="navbar navbar-default fixed-bottom p-0">
 
             <!-- Action buttons-->

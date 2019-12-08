@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+        
     /*Styles*/
     // save project button
     $("#save-project").css({
@@ -72,6 +72,7 @@ $(document).ready(function () {
         e.preventDefault();
         projectCreator(projectNameInput.value);
         if (projectTitle === null || projectTitle == "" || projectTitle.length === 0 || projectTitle === 'undefined') {
+            console.log('Project name entry was not valid: name included no characters or was made up of whitespace.');
             noNamePrompt();
         } else {
             if (projectNameForm.style.display === "none") {
@@ -90,7 +91,7 @@ $(document).ready(function () {
     //the <p> element displaying the name removed, name form displayed and the name form field is emptied.
     projectResetButton.addEventListener('click', (e) => {
         e.preventDefault();
-
+        console.log('Project name input was reset.')
         while (projectNameDisplay.firstChild) {
             projectNameDisplay.removeChild(projectNameDisplay.firstChild)
         }
@@ -122,6 +123,7 @@ $(document).ready(function () {
     };
 
     function noNamePrompt() {
+        console.log('No name prompt was activated.')
         $("#noNamePrompt").css({
             "display": "block"
         });
@@ -153,6 +155,7 @@ $(document).ready(function () {
                 "color": "rgba(94, 1, 94, 0.6)"
             });
             projectNameInput.disabled = false;
+            console.log('Input field was activated again.')
         });
     };
 
