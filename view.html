@@ -49,8 +49,8 @@
             </div>
             <!-- Project Title -->
             <div class="title-container">
-                <h4 class="project-title" id="rec-project-title"></h4>
-                <!-- This is where the project title will be rendered -->
+                <h4 class="project-title top-view-project-title" id="rec-project-title"></h4>
+                <!-- This is where the project title will be rendered again-->
             </div>
 
         </nav>
@@ -59,14 +59,14 @@
     <div class="mainView-container">
         <!-- Date -->
         <div class="date-container">
-            <div class="dateHeaderView col-12 justify-content-between p-0">
-                <span class="date col-5 ml-0" id="dayTime"></span>
-                <span class="date col-5" id="date"></span>
+            <div class="dateHeaderView d-flex col-12 justify-content-between p-0">
+                <span class="dateTop col-8" id="date"></span>
                 <!-- This is where the date will be rendered -->
             </div>
         </div>
         <div class="title-container">
             <h4 class="project-title rec-project-title" id="tableTitle"></h4>
+            <!-- This is where the project title will be rendered on the table -->
         </div>
         <!-- Date -->
         <table class="table table-striped table-m timesheet ml-3 col-12">
@@ -113,9 +113,9 @@
                     <th scope="row">--</th>
                     <th scope="row">--</th>
                 </tr>
-
             </tbody>
         </table>
+        <div class="dateBottom w-100 d-flex justify-content-end" id="dayTime"></div>
     </div>
     <!-- Fixed footer / Actions / Navigation -->
     <footer>

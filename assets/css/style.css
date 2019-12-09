@@ -653,7 +653,9 @@ li.taskItem { /* new tasks li */
 }
 
 /*--------------------------- VIEW ---------------------------*/
-
+table {
+    padding-bottom: 2rem;
+}
 .mainView-container,
 .mainShare-container {
     position: relative;
@@ -664,13 +666,6 @@ li.taskItem { /* new tasks li */
     overflow: auto;
 
 }
- 
-.dateHeaderView {
-    color: var(--clr--mainLight);
-    font-size: 1.6rem;
-    font-weight: 700;
-    opacity: .3;
-}
 
 tbody,
 thead { 
@@ -678,13 +673,33 @@ thead {
     color: var(--clr-dark);
  }
 
- #tableTitle {
-    color: var(--clr--mainLight);
-    font-size: 1.6rem;
+ .dateTop {
     font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--clr--mainLight);
+}
+
+ .dateBottom {
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--clr--mainLight);
+    font-style: italic;
+ }
+
+ #tableTitle {
+    text-align: center;
+    color: var(--clr--mainDark);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    font-style: italic;
+    opacity: .8;
+    margin-left: 1em;
+    margin-bottom: 2rem;
  }
  
- h4.viewTitle{
+
+ .top-view-project-title {
      color: transparent;
  }
 

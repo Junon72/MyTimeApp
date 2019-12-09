@@ -1,20 +1,41 @@
-$(document).ready(function setProject() {
+$(document).ready(function () {
 
     /* ------------------  PAGE SETUP ------------------ */
+    /* --------------------TIMES */
+    /* Project ended */
 
-    /* DATE */
-    const date = () => $('#date').text(moment().format('ll'));
-    date();
+    let ended = localStorage.getItem("STOPTIME");
+    let projectEnd = JSON.parse(ended);
 
-    /* DAY & TIME */
-    let clock = () => $('#dayTime').text(moment().format('ddd HH:mm A'));
+    if (!projectEnd || projectEnd === null) {
+        /* time stays flexible */
+        /* DATE */
+        const date = () => $('#date').text(moment().format('ll'));
+        date();
+    
+         /* DAY & TIME */
+       let clock = () => $('#dayTime').text(moment().format('ddd HH:mm A'));
+       clock();
+        setInterval(clock, 1000);
 
-    setInterval(clock, 1000);
+    } else {
+        /* time will be set to when stop button was clicked */
+        /* DATE */
+        let dateEnd = projectEnd[1];
+        $('#date').text(dateEnd);
+
+        /* DAY & TIME */
+        let clockEnd = projectEnd[2];
+        $('#dayTime').text(clockEnd);
+
+        let timeEnd = projectEnd[0];
+        console.log('Recording was stopped ' + timeEnd)
+    };
 
     // get the project name title
     let project = localStorage.getItem('project');
     // render the title
-    $("#rec-project-title").text(project);
+    $(".project-title").text(project);
     $("#tableTitle").text(project);
 
     /* ------------------ SETUP LOCAL STORAGE ------------------ */
@@ -31,7 +52,7 @@ $(document).ready(function setProject() {
 
     var defData = localStorage.getItem("DEFAULTS");
     var defaults = JSON.parse(defData);
-    console.log('Tasks are ready to be loaded')
+    console.log('Recorded tasks:')
 
     //let setDefaultsToLocal = () => localStorage.setItem("DEFAULTS", JSON.stringify(defaults));
 
@@ -45,7 +66,8 @@ $(document).ready(function setProject() {
 
     } else {
         console.table(taskLIST);
-        console.log('Tasks are added to time recorder');
+        console.table(defaults);
+        console.log('Recording was stopped and the tasks were set to inactive.');
         taskLIST.forEach(recorder => renderTasks(recorder));
     };
 
@@ -68,9 +90,9 @@ $(document).ready(function setProject() {
             '</p>' +
             '</li>' +
             '<hr></hr>')
-            $('#recordTasks').after($item);
-        };
-  
+        $('#recordTasks').after($item);
+    };
+
     renderDefaults();
 
     /*SET THE DEFAULTS*/

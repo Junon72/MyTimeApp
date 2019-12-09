@@ -26,6 +26,7 @@ $(document).ready(function () {
         "border-style": "none",
         "box-shadow": "none"
     });
+    
 
     //index
     //query selectors - this section is done using mainly JavaScript code, jQuery selectors  used for styling

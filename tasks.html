@@ -21,11 +21,10 @@
     <!-- Fixed header / Navigation -->
     <nav class="navbar navbar-default fixed-top p-0">
         <div class="container-fluid nav-container-top">
-            
+
             <!-- Navigation Icons -->
             <div class="nav navbar-nav navbar-left home-container">
-                <a href="index.html" data-toggle="tooltip"
-                title="Home"><span class="fa-icon"><i class="fa fa-home"
+                <a href="index.html" data-toggle="tooltip" title="Home"><span class="fa-icon"><i class="fa fa-home"
                             aria-hidden="true"></i></span></a>
             </div>
             <div class="nav navbar-nav navbar-center page-title-container">
@@ -37,8 +36,7 @@
                 </div>
             </div>
             <div class="nav navbar-nav navbar-right out-container">
-                <a href="exit.html" data-toggle="tooltip"
-                title="Exit"><span class="fa-icon"><i class="fa fa-sign-out"
+                <a href="exit.html" data-toggle="tooltip" title="Exit"><span class="fa-icon"><i class="fa fa-sign-out"
                             aria-hidden="true"></i></span></a>
             </div>
         </div>
@@ -89,53 +87,52 @@
         <form id="newTaskButton">
             <div class="newTaskButtonContainer">
                 <button type="button" class="btn btn-default" id="showTasks" data-toggle="tooltip"
-                title="Make a new task">New Task</button>
+                    title="Make a new task">New Task</button>
             </div>
         </form>
     </div>
 
     <!-- Fixed footer / No name prompt / Actions / Navigation -->
     <footer>
- <!-- Bottom-navigation -->
+        <!-- Prompts -->
         <nav class="navbar navbar-default fixed-bottom p-0">
-        <!-- Name Is Empty String Prompt -->
-        <div class="noName w-90 fade fixed-bottom show" id="emptyNamePrompt">
-            <div class="row justify-content-center no-gutters">
-                <div class="col-12" id="tryAgainOk">Give your task a name</div>
-                <button type="button" id="taskNameOk" class="btn btn-default-light d-block" aria-label="Close">
-                    <p class="taskOk">OK</p>
-                </button>
-            </div>
-        </div>
-
-        <!-- Name is duplicate -->
-        <div class="noName w-90 fade fixed-bottom show" id="duplicateNamePrompt">
-            <div class="row justify-content-center no-gutters">
-                <div class="col-12 wasDuple" id="tryAnotherOk">Name already exists.</div>
-                <button type="button" id="newNameOk" class="btn btn-default-light d-block" aria-label="Close">
-                    <p class="taskOk">OK</p>
-                </button>
-            </div>
-        </div>
-         <!-- Bottom-navigation -->
-        <nav class="navbar navbar-default fixed-bottom p-0">
-
-            <!-- Action buttons-->
-            <div class="d-flex col justify-content-center actions-container">
-                <a class="p-0 ml-0 mr-0 w-100" id="toRecord"><button type="button"
-                        class="btn btn-success start-button w-100 m-0" id="save-tasks">Start Project</button></a>
-            </div>
-
-          <!-- Navigation -->
-            <div class="container-fluid nav-container-bottom w-100">
-                <div class="nav navbar-nav navbar-left col-2 back-container">
-                    <a href="index.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
-                </div>
-                <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
-                    <a href="record.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+            <!-- Name Is Empty String Prompt -->
+            <div class="noName w-90 fade fixed-bottom show" id="emptyNamePrompt">
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-12" id="tryAgainOk">Give your task a name</div>
+                    <button type="button" id="taskNameOk" class="btn btn-default-light d-block" aria-label="Close">
+                        <p class="taskOk">OK</p>
+                    </button>
                 </div>
             </div>
-        </nav>
+
+            <!-- Name is duplicate -->
+            <div class="noName w-90 fade fixed-bottom show" id="duplicateNamePrompt">
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-12 wasDuple" id="tryAnotherOk">Name already exists.</div>
+                    <button type="button" id="newNameOk" class="btn btn-default-light d-block" aria-label="Close">
+                        <p class="taskOk">OK</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom-navigation -->
+                <!-- Action buttons-->
+                <div class="d-flex col justify-content-center actions-container">
+                    <a class="p-0 ml-0 mr-0 w-100" id="toRecord"><button type="button"
+                            class="btn btn-success start-button w-100 m-0" id="save-tasks">Start Project</button></a>
+                </div>
+
+                <!-- Navigation -->
+                <div class="container-fluid nav-container-bottom w-100">
+                    <div class="nav navbar-nav navbar-left col-2 back-container">
+                        <a href="index.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
+                        <a href="record.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </nav>
     </footer>
 </body>
 

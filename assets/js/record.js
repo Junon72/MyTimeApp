@@ -1,4 +1,4 @@
-$(document).ready(function setProject() {
+$(document).ready(function () {
 
     /* ------------------  PAGE SETUP ------------------ */
 
@@ -7,7 +7,7 @@ $(document).ready(function setProject() {
     date();
 
     /* DAY & TIME */
-    let clock = () => $('#dayTime').text(moment().format('ddd HH:mm A'));
+    let clock = () => $('#dayTime').text(moment().format('ddd hh:mm A'));
 
     setInterval(clock, 1000);
     // for the displayed time functions I used Moments.js library-  https://momentjs.com/ and provided documents https://momentjs.com/docs/
@@ -120,9 +120,6 @@ $(document).ready(function setProject() {
     // https://medium.com/@pearlmcphee/build-a-dynamic-app-using-javascript-html-and-css-f0dfc136007a
 
     function renderNew() {
-        function notify() { // notify if 'submit' event occurs and log the element id and class
-            console.log('Click event occurred on task ', (event.target));
-        };
 
         const renderTasks = recorder => {
             name = recorder.name;
@@ -147,12 +144,7 @@ $(document).ready(function setProject() {
                 $(event.target).prop("disabled", true).removeClass('btn-success').addClass('recTaskButton').siblings('.taskTime').addClass('timeColor');
 
                 const storageKeyButton = event.target.getAttribute('id');
-                console.log('This object ID is ' + storageKeyButton);
-                const startElement = $(event.target).siblings('.startTaskTime');
-                console.log(startElement);
-                const elapsedElement = $(event.target).siblings('.elapsedTaskTime');
-                console.log(elapsedElement);
-                notify(startElement, elapsedElement);
+                console.log('Task ' + name + ' with id ' + storageKeyButton + ' is being recorded');
             });
             $('#recordTasks').after($item);
         };
@@ -191,6 +183,7 @@ $(document).ready(function setProject() {
         $('.recTaskButton').prop("disabled", false).removeClass('recTaskButton').addClass('btn-success');
         $('.taskTime').removeClass('timeColor');
         $('#recLunch').prop("disabled", true).removeClass('btn-success').addClass('recTaskButton').siblings('.taskTime').addClass('timeColor');
+        console.log('Lunch time!');
     });
 
     $('#recBreak').on('click', (e) => {
@@ -198,7 +191,7 @@ $(document).ready(function setProject() {
         $('.recTaskButton').prop("disabled", false).removeClass('recTaskButton').addClass('btn-success');
         $('.taskTime').removeClass('timeColor');
         $('#recBreak').prop("disabled", true).removeClass('btn-success').addClass('recTaskButton').siblings('.taskTime').addClass('timeColor');
-        
+        console.log('Break time!');
     });
 
     /* Recording paused prompt */
@@ -212,6 +205,7 @@ $(document).ready(function setProject() {
             "background-color": "rgb(199, 102, 5)"
         }).prop("disabled", true).prop("title", "Paused");
         $('#faRecTitle').removeClass('fa-circle').addClass('fa-circle-o');
+        console.log('Recording is paused');
     });
 
     $('#continue').on('click', (e) => {
@@ -223,13 +217,23 @@ $(document).ready(function setProject() {
             "background-color": ""
         }).prop("disabled", false).prop("title", "Time recorder");
         $('#faRecTitle').removeClass('fa-circle-o').addClass('fa-circle');
+        console.log('Recording continues');
     });
-});
 
-$('#recStop').on('click', (e) => {
-    e.preventDefault();
-    $('.tasksButton').removeClass('recTaskButton').css({
-        "background-color": "rgb(1, 69, 143, .4)"
-    }).prop("disabled", true);
-    $('.taskTime').removeClass('timeColor');
+    /* Catch the project end time */
+
+    $('#recStop').on('click', () => {
+
+        let projectEnd = [];
+        let timeEnd = new moment().format('dddd, ll, hh:mm A');
+        let dateEnd = new moment().format('ll');
+        let clockEnd = new moment().format('ddd hh:mm A');
+
+        projectEnd.push(timeEnd, dateEnd, clockEnd);
+        localStorage.setItem("STOPTIME", JSON.stringify(projectEnd));
+
+        localStorage.getItem("STOPTIME", JSON.stringify(projectEnd));
+        let ended = projectEnd[0];
+        console.log('Project was stopped ' + ended);
+    });
 });
