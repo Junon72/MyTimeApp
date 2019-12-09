@@ -1,15 +1,14 @@
-
 /* ---------------------------- Font ---------------------------- */
 @import url('https://fonts.googleapis.com/css?family=Public+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 
 /* ---------------------------- Global ---------------------------- */
- 
+
 :root {
     /*Cyan deriv. */
     --clr-dark: rgb(105, 134, 140);
     --clr-middle: rgb(163, 196, 201);
     --clr-light: rgb(224, 230, 231);
-   
+
     /*Text*/
     --clr-mainDark: #13181B;
     --clr--mainLight: #949a9f;
@@ -18,7 +17,7 @@
     --clr-purpleTitle: rgba(94, 1, 94);
     --clr-time: #05c766;
     --clr-success: #66C705;
-    
+
 
 
     /*Buttons*/
@@ -33,7 +32,7 @@
     --clr-home: rgb(1, 134, 105);
     --clr-out: #798187;
 }
- 
+
 /* ---------------------------- Universal selector style */
 *,
 *::before,
@@ -41,7 +40,7 @@
     font-family: inherit;
     box-sizing: border-box;
 }
- 
+
 /* ---------------------------- General body styling */
 html,
 body {
@@ -51,9 +50,11 @@ body {
     min-width: 320px;
     min-height: 560px;
     overflow: auto;
+    box-sizing: border-box;
+   
 }
 
- 
+
 /* ---------------------------- General text styling */
 p,
 h1,
@@ -78,32 +79,32 @@ input,
 .newProjectForm,
 #accept-project,
 #createTasks,
-.noName { 
+.noName {
     max-width: 430px;
 }
 
 /* ---------------------------- Fixed Header ---------------------------- */
- 
+
 nav {
     background: var(--clr-light);
     z-index: 999;
 }
- 
+
 #firstHeader {
     height: 10rem;
 }
- 
+
 .container-fluid {
     padding: 0;
 }
 
- 
+
 #nav-container {
-   
+
     margin: 0;
     padding: 0;
 }
- 
+
 /* ---------------------------- Navigation Icons */
 .home-container {
     float: left !important;
@@ -111,37 +112,37 @@ nav {
     margin-top: 1em;
     margin-left: 1em;
 }
- 
+
 .out-container {
     float: right !important;
     align-items: center;
     margin-top: 1em;
     margin-right: 1em;
 }
- 
+
 .fa-home {
     font-size: 3em;
     color: var(--clr-home);
 }
- 
+
 .fa-sign-out {
     font-size: 3em;
     color: var(--clr-out);
 }
- 
+
 /* ---------------------------- Page Title */
 .page-title-container {
     position: relative;
     margin-top: 2.6em;
- 
+
 }
- 
+
 .page-title-icon {
     display: inline;
     font-size: 1.6em;
     color: var(--clr-dark);
 }
- 
+
 .page-title h4 {
     display: inline;
     margin-right: 0.4em;
@@ -149,20 +150,20 @@ nav {
     font-weight: 700;
     font-size: 1.6rem;
 }
- 
+
 /* ---------------------------- Title icons */
- 
+
 #faRecTitle {
     color: var(--clr-rec);
- 
+
 }
- 
+
 .fa-square {
     color: var(--clr-stop);
 }
- 
+
 /* ---------------------------- Title */
- 
+
 .title-container {
     width: 100%;
     display: block;
@@ -170,85 +171,90 @@ nav {
     margin-left: 1em;
     z-index: 800;
 }
- 
+
 .project-title {
     font-size: 1.6rem;
     font-weight: 500;
     letter-spacing: 1px;
     color: var(--clr-purple);
 }
- 
+
 /* ------------------------ Fixed bottom ---------------------*/
 
-.actions-container { /* container for the action buttons & date display */
+.actions-container {
+    /* container for the action buttons & date display */
     text-align: left;
     margin-top: .8em;
     margin-bottom: .2em;
     padding: 0;
 }
- 
-.back-container { /* bottom container for the right arrow */
+
+.back-container {
+    /* bottom container for the right arrow */
     align-items: left;
     height: 1.3em;
     margin-bottom: 1em;
     margin-top: 1em;
     padding-left: 1em;
 }
- 
-.forward-container { /* bottom container for the left arrow */
+
+.forward-container {
+    /* bottom container for the left arrow */
     align-items: end;
     height: 1.3em;
     margin-bottom: 1em;
     margin-right: 1em;
 }
- 
+
 .fa-chevron-left,
 .fa-chevron-right {
     font-size: 1.3rem;
     color: var(--clr--mainLight);
 }
- 
+
 /* Action icons */
- 
- 
+
+
 .fa-pause-circle {
     color: var(--clr-pause);
     font-size: 2.4rem;
- 
+
 }
- 
+
 .fa-stop-circle {
     color: var(--clr-stop);
     font-size: 2.4rem;
 }
- 
-#faRecButton { /* fa-circle-o */
+
+#faRecButton {
+    /* fa-circle-o */
     color: var(--clr-rec);
     font-size: 2.4rem;
 }
- 
+
 .fa-check-circle {
     color: var(--clr-green);
     font-size: 2.4rem;
 }
- 
+
 /*-----------Buttons----------*/
 
 
-.start-button { /* Green buttons */
+.start-button {
+    /* Green buttons */
     font-size: 1.2rem;
-    font-weight: 200 important!;
+    font-weight: 200 important !;
     margin-left: 1em;
     margin-right: 1em;
 }
- 
-.pause, 
+
+.pause,
 .rec {
     position: absolute;
     right: 5em;
     padding: 0 1em;
 }
- 
+
 .stop,
 .check {
     padding: 0 1em;
@@ -256,10 +262,11 @@ nav {
     right: 0;
 }
 
- 
+
 /* ---------------------------- Main Content ---------------------------- */
- 
-.main-container { /* main content container in general */
+
+.main-container {
+    /* main content container in general */
     position: relative;
     margin-top: 10.5em;
     margin-bottom: 8em;
@@ -267,21 +274,23 @@ nav {
     margin-right: 1em;
     overflow: auto;
 }
- 
+
 /*---------------------------- Index ---------------------------- */
- 
-.index-page-title { /* Big MyTime header container */
+
+.index-page-title {
+    /* Big MyTime header container */
     position: relative;
 }
- 
-.mytime { /* Big header text */
+
+.mytime {
+    /* Big header text */
     position: absolute;
     top: 0;
     font-size: 6em;
     color: white;
     font-size: 900;
 }
- 
+
 .index-main-container {
     position: relative;
     margin: 10em 1em 1em;
@@ -289,16 +298,17 @@ nav {
     overflow: auto;
     text-align: center;
 }
- 
-.hourClassFull { 
+
+.hourClassFull {
     display: block;
 }
- 
+
 .hour-class-home {
     text-align: center;
 }
- 
-#hGlassFull { /* Logo hour glass */ 
+
+#hGlassFull {
+    /* Logo hour glass */
     color: var(--clr-purple);
     font-size: 13em;
     text-align: center;
@@ -306,27 +316,30 @@ nav {
 
 /* ---------------------------- Form */
 
-.newProjectForm { /* Project creation field */
+.newProjectForm {
+    /* Project creation field */
     margin-bottom: 6.5rem;
 }
- 
-#newProject { /* New MyTime Project: title */
+
+#newProject {
+    /* New MyTime Project: title */
     color: var(--clr-purpleTitle);
     font-weight: 200;
     font-size: 1.4em;
     margin-bottom: 0;
     padding-left: .3rem;
 }
- 
-.new-projectName>p { /* name display text */
+
+.new-projectName>p {
+    /* name display text */
     padding: 0;
     color: var(--clr-purple);
     font-size: 1.4rem;
     letter-spacing: 1px;
     font-weight: 400;
- 
+
 }
- 
+
 /* ---------------------------- Form display */
 
 /* Button styles */
@@ -335,27 +348,32 @@ nav {
     font-size: 1.2rem;
     padding: .375em .75em;
 }
- 
-#accept-project { /* name display & Cancel button field */
+
+#accept-project {
+    /* name display & Cancel button field */
     display: none;
 }
- 
-#create-project-form { /* name input & Enter button field */
+
+#create-project-form {
+    /* name input & Enter button field */
     display: flex;
 }
- 
-.accept-project#projectReset { /* Cancel button on accept-project field */
+
+.accept-project#projectReset {
+    /* Cancel button on accept-project field */
     order: 2;
 }
- 
-.accept-project#project-name-display { /* Name display on accept-project field */
+
+.accept-project#project-name-display {
+    /* Name display on accept-project field */
     order: 1;
 }
 
 /* ---------------------------- Tasks -------------------------*/
- 
- 
-.tasks-container h5 { /* task titles style - default & new */
+
+
+.tasks-container h5 {
+    /* task titles style - default & new */
     color: var(--clr--mainLight);
     margin-top: .5em;
     margin-bottom: .8em;
@@ -369,7 +387,8 @@ nav {
 }
 
 
-.defaults-container-top { /* defaults field */
+.defaults-container-top {
+    /* defaults field */
     padding-top: 1em;
     top: 6.8em;
     background-color: white;
@@ -377,15 +396,17 @@ nav {
 }
 
 /* ---------------------------- New tasks */
-.newTasks { /* new tasks display field */
+.newTasks {
+    /* new tasks display field */
     overflow: scroll;
 }
 
-.spacingContainerTop { 
+.spacingContainerTop {
     /* Empty container at the top to make sure the upper tasks item will be always visible while the list is filled */
     display: block;
     height: 5.6em;
 }
+
 .spacingContainerBottom {
     /* Empty container at the top to make sure the lowest tasks item will be visible when list is scrolled up */
     display: block;
@@ -394,23 +415,26 @@ nav {
 
 /* ---------------------------- Form container*/
 
-.tasksForm { /* new tasks creation field */
+.tasksForm {
+    /* new tasks creation field */
     background-color: white;
     bottom: 6em;
     z-index: 700;
 }
- 
-.create-tasks { /* new tasks from inside form field */
+
+.create-tasks {
+    /* new tasks from inside form field */
     margin: .5em 1em 0;
     padding-bottom: 1.5em;
 }
 
- .newTaskButtonContainer { 
+.newTaskButtonContainer {
     margin-top: .5em;
     padding-bottom: 1.5em;
 }
 
-#showTasks { /* New Task button */
+#showTasks {
+    /* New Task button */
     display: block;
     margin: .5em 1em 0;
     background-color: rgb(3, 153, 240);
@@ -421,34 +445,39 @@ nav {
 }
 
 /* ---------------------------- Add/Remove Tasks */
- 
-.task-input input{ /* input field for new tasks */
+
+.task-input input {
+    /* input field for new tasks */
     width: 100%;
     height: 2.4em;
     margin: 0;
 }
- 
+
 /* ---------------------------- Add /Remove Button */
- 
-.task-button { /* add + button and remove - button */
+
+.task-button {
+    /* add + button and remove - button */
     padding: 0;
 }
- 
-.task-icon { /* + & - */
-   
+
+.task-icon {
+    /* + & - */
+
     font-size: 2.4rem;
     color: rgb(3, 153, 240);
 }
- 
+
 /* ---------------------------- List Element Style */
 
-#taskList { /* default task ul*/
+#taskList {
+    /* default task ul*/
     margin-left: 0;
     margin-bottom: .6em;
     margin-left: 1em;
 }
 
-#taskList > li { /* default task li */
+#taskList>li {
+    /* default task li */
     list-style-type: none;
     margin-bottom: .8em;
     color: var(--clr-title);
@@ -456,12 +485,14 @@ nav {
     font-weight: 500;
 }
 
-#taskItems { /* new tasks ul */
+#taskItems {
+    /* new tasks ul */
     margin-left: 0;
     padding-left: 0;
 }
 
-li.taskItem { /* new tasks li */
+li.taskItem {
+    /* new tasks li */
     width: 100%;
     list-style-type: none;
     height: 2.4em;
@@ -472,44 +503,52 @@ li.taskItem { /* new tasks li */
     overflow: hidden;
 }
 
-.taskName { /* dynamically created element */
+.taskName {
+    /* dynamically created element */
     margin-top: .2em;
     margin-right: 1em;
     float: left;
 }
 
-.remove { /* remove - dynamically created button element */
+.remove {
+    /* remove - dynamically created button element */
     float: right;
     background-color: transparent;
 
 }
 
 /*--------------------------- RECORD ---------------------------*/
-.mainRec { /* main content container */
+.mainRec {
+    /* main content container */
     z-index: 850;
     padding-bottom: 3em;
 }
 
-.defaults-container-bottom {  /* container for the default tasks */
+.defaults-container-bottom {
+    /* container for the default tasks */
     bottom: -1.5em;
     padding: 0 1em;
     background-color: white;
     z-index: 880;
 }
 
-.showDefaults{ /* defaults container visible state - behind toggle */
+.showDefaults {
+    /* defaults container visible state - behind toggle */
     bottom: 6.5rem;
 }
 
-.projectTimeDisplay { /* Container for the project time elements at the top */
+.projectTimeDisplay {
+    /* Container for the project time elements at the top */
     background-color: white;
-    padding: 0 1em .5em;;
+    padding: 0 1em .5em;
+    ;
 }
- 
- 
- 
-.headerTimeTitle { /* Time/ Started/ Elapsed */
-    text-align: start; 
+
+
+
+.headerTimeTitle {
+    /* Time/ Started/ Elapsed */
+    text-align: start;
     margin: 0 auto;
     /*padding: .3rem 1rem 0 1rem;*/
     color: var(--clr--mainLight);
@@ -517,14 +556,16 @@ li.taskItem { /* new tasks li */
     font-size: .8em;
     overflow: auto;
 }
- 
-#rec-project-title { /* Project title in the header element */
+
+#rec-project-title {
+    /* Project title in the header element */
     margin-top: 0;
     color: var(--clr-purple);
 
 }
- 
-.projectClockDisplay { /* Clock at the top - Time */
+
+.projectClockDisplay {
+    /* Clock at the top - Time */
     text-align: start;
     font-size: 1.2em;
     font-weight: 700;
@@ -532,8 +573,9 @@ li.taskItem { /* new tasks li */
     opacity: .4;
     letter-spacing: 1px;
 }
- 
-.dateHeader {  /* Date display in a footer */
+
+.dateHeader {
+    /* Date display in a footer */
     display: flex;
     float: left;
     color: var(--clr-time);
@@ -541,10 +583,11 @@ li.taskItem { /* new tasks li */
     font-weight: 700;
     opacity: .3;
 }
- 
+
 /* --------------------------- Tasks */
- 
-.tasksHeader { /* New tasks header at the top */
+
+.tasksHeader {
+    /* New tasks header at the top */
     margin: .5em 0 .5em;
     color: var(--clr--mainLight);
     font-size: 1.1em;
@@ -562,14 +605,14 @@ li.taskItem { /* new tasks li */
     letter-spacing: 1.4px;
     font-weight: 400;
 }
- 
+
 .recTask {
     display: flex;
     flex-flow: row;
     margin: .4em 0 0;
     padding: 0;
 }
- 
+
 .recTask>p.taskTime {
     text-align: center;
     margin: auto;
@@ -593,7 +636,7 @@ li.taskItem { /* new tasks li */
     -ms-transition: ease-in;
     -o-transition: ease-in;
 }
- 
+
 .btn.btn-success {
     background-color: var(--clr-green);
     border-style: none;
@@ -606,7 +649,7 @@ li.taskItem { /* new tasks li */
     -o-transition: ease-in;
 }
 
-.btn.btn-success:active, 
+.btn.btn-success:active,
 .btn.btn-success:hover {
     background-color: rgb(5, 199, 5, .3);
     border-style: none;
@@ -619,7 +662,7 @@ li.taskItem { /* new tasks li */
     -o-transition: ease-in;
 }
 
- .recTaskButton {
+.recTaskButton {
     text-align: left;
     font-weight: 300;
     color: var(--clr-rec);
@@ -631,7 +674,7 @@ li.taskItem { /* new tasks li */
     -o-transition: ease-in;
 }
 
- .btn.recTaskButton:disabled {
+.btn.recTaskButton:disabled {
     font-weight: 300;
     color: var(--clr-rec);
     font-style: italic;
@@ -640,22 +683,23 @@ li.taskItem { /* new tasks li */
     -moz-transition: ease-in;
     -ms-transition: ease-in;
     -o-transition: ease-in;
- }
+}
 
- 
+
 
 /*--------------------------- STOP ---------------------------*/
 
 .stoppedButton,
 .stoppedButton:hover {
-   background-color: rgb(1, 69, 143, .6);
-   color: white;
+    background-color: rgb(1, 69, 143, .6);
+    color: white;
 }
 
 /*--------------------------- VIEW ---------------------------*/
 table {
     padding-bottom: 2rem;
 }
+
 .mainView-container,
 .mainShare-container {
     position: relative;
@@ -668,25 +712,25 @@ table {
 }
 
 tbody,
-thead { 
+thead {
     text-align: left;
     color: var(--clr-dark);
- }
+}
 
- .dateTop {
+.dateTop {
     font-weight: 300;
     font-size: 1.5rem;
     color: var(--clr--mainLight);
 }
 
- .dateBottom {
+.dateBottom {
     font-size: 1rem;
     font-weight: 200;
     color: var(--clr--mainLight);
     font-style: italic;
- }
+}
 
- #tableTitle {
+#tableTitle {
     text-align: center;
     color: var(--clr--mainDark);
     font-size: 1.6rem;
@@ -696,46 +740,46 @@ thead {
     opacity: .8;
     margin-left: 1em;
     margin-bottom: 2rem;
- }
- 
+}
 
- .top-view-project-title {
-     color: transparent;
- }
 
- /*--------------------------- SHARE ---------------------------*/
+.top-view-project-title {
+    color: transparent;
+}
 
- .attached {
-     display: inline-block;
-     text-align: center;
- }
+/*--------------------------- SHARE ---------------------------*/
 
- .attachedText {
+.attached {
+    display: inline-block;
+    text-align: center;
+}
+
+.attachedText {
     font-size: .9rem;
     color: var(--clr-purple);
     font-style: italic;
- }
+}
 
- .fa-paperclip {
+.fa-paperclip {
     font-size: 1.4rem;
     color: var(--clr-purple);
- }
+}
 
- #message {
-     box-sizing: border-box;
-     height: calc(100vh - 32em);
- } 
+#message {
+    box-sizing: border-box;
+    height: calc(100vh - 32em);
+}
 
- /*--------------------------- EXIT ---------------------------*/
+/*--------------------------- EXIT ---------------------------*/
 
- .exitText {
-     position: absolute;
-     bottom: .2em;
-     color: var(--clr-purpleTitle);
-     font-size: 2.2rem;
-     font-weight: 300;
+.exitText {
+    position: absolute;
+    bottom: .2em;
+    color: var(--clr-purpleTitle);
+    font-size: 2.2rem;
+    font-weight: 300;
 
- }
+}
 
 /* --------------------------- Prompts */
 
@@ -812,11 +856,11 @@ thead {
     color: white;
     font-size: 1.4em;
     font-weight: 200;
-    background-color: rgba(241,174, 105);
+    background-color: rgba(241, 174, 105);
     border: 1px solid white;
     padding: 0;
     margin: auto;
-    -webkit-border-radius: 8%;
+    -webkit-border-radius: 4%;
     -moz-border-radius: 8%;
     -ms-border-radius: 8%;
     -o-border-radius: 8%;
@@ -832,13 +876,13 @@ thead {
     background-color: var(--clr-rec);
     border: 2px solid var(--clr-rec);
 }
- 
- 
+
+
 /* ---------------------------- TASKS: Name Is Empty String/ Duplicate Prompt */
 
 .noName {
     display: none;
-    position:absolute;
+    position: absolute;
     background-color: rgb(232, 194, 164);
     border: 1px solid rgb(199, 102, 5, .5);
     text-align: center;
@@ -866,6 +910,19 @@ thead {
     font-size: 1.6rem;
     font-weight: 200;
 }
+
+#giveProjectNameOk {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 1.8em auto .4em;
+    padding: 0 auto;
+    width: auto;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
 .taskOk {
     position: relative;
     justify-content: center;
@@ -876,11 +933,11 @@ thead {
     border: 1px solid white;
     padding: 0 1em;
     margin: .2em 7.2em;
-    border-radius: 8%;
-    -webkit-border-radius: 8%;
-    -moz-border-radius: 8%;
-    -ms-border-radius: 8%;
-    -o-border-radius: 8%;
+    border-radius: 4%;
+    -webkit-border-radius: 4%;
+    -moz-border-radius: 4%;
+    -ms-border-radius: 4%;
+    -o-border-radius: 4%;
 }
 
 #taskNameOK,
@@ -889,3 +946,54 @@ thead {
     margin: auto;
 }
 
+.backToProjectOk {
+    position: relative;
+    justify-content: start;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 200;
+    background-color: rgba(253, 142, 32, 0.4);
+    border: 1px solid white;
+    padding: 0 1em;
+    margin: .2em .2em .2em 0;
+    border-radius: 4%;
+    -webkit-border-radius: 4%;
+    -moz-border-radius: 4%;
+    -ms-border-radius: 4%;
+    -o-border-radius: 4%;
+}
+
+.taskOkCancel {
+    position: relative;
+    justify-content: end;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 200;
+    background-color: rgb(105, 134, 140);
+    border: 1px solid white;
+    padding: 0 1em;
+    margin: .2em 0em .2em .2em;
+    border-radius: 4%;
+    -webkit-border-radius: 4%;
+    -moz-border-radius: 4%;
+    -ms-border-radius: 4%;
+    -o-border-radius: 4%;
+}
+
+
+.noProjectName {
+    display: none;
+    position: absolute;
+    background-color: rgb(232, 194, 164);
+    border: 1px solid rgb(199, 102, 5, .5);
+    margin: 0 auto;
+    bottom: 12em;
+    height: 12em;
+    width: 80%;
+    border-radius: 2%;
+    z-index: 1050;
+    -webkit-border-radius: 2%;
+    -moz-border-radius: 2%;
+    -ms-border-radius: 2%;
+    -o-border-radius: 2%;
+}

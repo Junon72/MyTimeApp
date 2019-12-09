@@ -94,7 +94,7 @@ Create a project interface:
     - resetting the name input field.  
 4. Create button to accept the name and move to create tasks for the project.  
     - activating the button when there is name given, de-activating the button when there is no name provided.  
-    - prompt to inform user if they have not yet created project name which gives options:
+    - prompt to inform user if they have not yet created project name which gives options:  
         a. OK - to return and create a name now, or  
         b. Cancel - to name the project Project(default) and continue.  
     - stores name to local storage.  

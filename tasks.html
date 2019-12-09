@@ -96,6 +96,18 @@
     <footer>
         <!-- Prompts -->
         <nav class="navbar navbar-default fixed-bottom p-0">
+            <!-- No Project Name -->
+            <div class="noProjectName w-90 fade fixed-bottom show" id="nameYourProjectPrompt">
+                    <div class="row justify-content-center no-gutters">
+                        <div class="col-12" id="giveProjectNameOk">You didn't give your project a name. Would you like to do it now?</div>
+                        <button type="button" id="projectNameOk" class="btn btn-default-light col-4 d-block" aria-label="Close">
+                            <p class="backToProjectOk">OK</p>
+                        </button>
+                        <button type="button" id="projectNameDefault" class="btn btn-default-light col-4  d-block" aria-label="Close">
+                                <p class="taskOkCancel">Cancel</p>
+                            </button>
+                    </div>
+                </div>
             <!-- Name Is Empty String Prompt -->
             <div class="noName w-90 fade fixed-bottom show" id="emptyNamePrompt">
                 <div class="row justify-content-center no-gutters">
@@ -104,7 +116,7 @@
                         <p class="taskOk">OK</p>
                     </button>
                 </div>
-            </div>
+            </div> 
 
             <!-- Name is duplicate -->
             <div class="noName w-90 fade fixed-bottom show" id="duplicateNamePrompt">

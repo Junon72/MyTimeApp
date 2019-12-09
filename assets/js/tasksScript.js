@@ -19,20 +19,39 @@ $(document).ready(function setProject() {
 
     /* SET UP PROJECT TO ADD TASKS */
 
+    const $noProjectName = $('.noProjectName');
+
     // setting the project name title
-    let project;
+    var project;
 
     if (localStorage.getItem('project')) {
         project = localStorage.getItem('project')
     } else {
-        if (confirm('You haven yet to give your project a name. Would you like to name it now?')) {
+        $noProjectName.css({
+            "display": "block"
+        });
+        $('#projectNameOk').on('click', () => {
+            location.href = 'index.html';
+        });
+        $('#projectNameDefault').on('click', () => {
+            project = ('Project(default)');
+            localStorage.setItem('project', project);
+            $(".project-title").text(project);
+            console.log('The project is named ' + project);
+            $noProjectName.css({
+                "display": "none"
+            });
+
+        });
+    };
+    /*   if (confirm('You haven yet to give your project a name. Would you like to name it now?')) {
             location.href = 'index.html';
         } else {
             project = ('Project(default)');
             localStorage.setItem('project', project);
             console.log('The project is named ' + project)
         };
-    };
+    };*/
 
     $(".project-title").text(project);
 
@@ -46,7 +65,7 @@ $(document).ready(function setProject() {
         });
     };
 
-   var deactivateStartRecordingButton = () => {
+    var deactivateStartRecordingButton = () => {
         $("#toRecord").removeAttr("href");
         $('#save-tasks').css({
             "cursor": "default",
@@ -180,7 +199,7 @@ $(document).ready(function setProject() {
             };
         });
         // set the new item at the end of the list
-        $taskItems.after($item);        
+        $taskItems.after($item);
         activateStartRecordingButton();
     };
     /* Removed test
@@ -195,15 +214,15 @@ $(document).ready(function setProject() {
         task = task.charAt(0).toUpperCase() + task.slice(1); // Capitalizes the first letter
 
         // validation of the provided entry - null or empty string/ duplicate name
-       
+
         if (task === null || task == "" || task.length === 0) {
             emptyNamePrompt();
             console.log('Name was not valid: name was empty string or no name was provided.');
-        
+
         } else if (isNameDuplicate() === true) {
             nameIsDuplicatePrompt();
             console.log('Name was not valid: name "' + task + '" already exists.');
-        
+
         } else {
 
             let notify = () => { // notify if 'submit' event occurs and log the element 
@@ -253,11 +272,11 @@ $(document).ready(function setProject() {
         $newTaskButton.hide();
         $newTaskForm.show();
     });
-    
-     /* TEST IF THE NEW TASK NAME ALREADY EXISTS */
+
+    /* TEST IF THE NEW TASK NAME ALREADY EXISTS */
     // the test is referenced from https://www.tutorialrepublic.com/faq/how-to-check-if-an-array-includes-an-object-in-javascript.php
 
-   let isNameDuplicate = () => {
+    let isNameDuplicate = () => {
 
         if (taskLIST.some(taskLIST => taskLIST.name === task)) {
             return true;
