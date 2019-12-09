@@ -278,8 +278,7 @@ $(document).ready(function setProject() {
             "border-style": "none",
             "border-color": "none",
             "background-color": "transparent"
-        });
-        $('#nameInput').prop("disabled", true);
+        }).prop("disabled", true);
         $emptyName.on('click', function (e) {
             e.preventDefault();
             $emptyName.css({
@@ -307,8 +306,7 @@ $(document).ready(function setProject() {
             "border-style": "none",
             "border-color": "none",
             "background-color": "transparent"
-        });
-        $('#nameInput').prop("disabled", true);
+        }).prop("disabled", true);
         $dupleName.on('click', function () {
             $dupleName.css({
                 "display": "none"

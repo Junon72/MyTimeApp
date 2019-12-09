@@ -27,8 +27,10 @@
             <div class="container-fluid" id="nav-container">
                 <!-- Navigation Icons -->
                 <div class="nav navbar-nav navbar-left home-container">
-                    <a href="index.html"><span class="fa-icon"><i class="fa fa-home"
-                                aria-hidden="true"></i></span></a>
+                    <a href="index.html" data-toggle="tooltip" title="Exit">
+                        <span class="fa-icon"><i class="fa fa-home" aria-hidden="true"></i>
+                        </span>
+                    </a>
                 </div>
                 <div class="nav navbar-nav navbar-center page-title-container">
                     <!-- Page Title -->
@@ -38,8 +40,10 @@
                     </div>
                 </div>
                 <div class="nav navbar-nav navbar-right out-container">
-                    <a href="exit.html"><span class="fa-icon"><i class="fa fa-sign-out"
-                                aria-hidden="true"></i></span></a>
+                    <a href="exit.html" data-toggle="tooltip" title="Exit">
+                        <span class="fa-icon"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </span>
+                    </a>
                 </div>
             </div>
 
@@ -115,19 +119,29 @@
                 </div>
 
                 <!-- Action buttons-->
-                <button type="submit" class="btn btn-default rec col-3" id="backToRec"><a href="record.html"><i
-                            id="faRecButton" class="fa fa-circle" aria-hidden="true"></i></a></button>
-                <button type="submit" class="btn btn-default check col-3" id="toShare"><a href="view.html"><i
-                            class="fa fa-check-circle" aria-hidden="true"></i></a></button>
+                <button type="submit" class="btn btn-default rec col-3" id="backToRec">
+                    <a href="record.html" data-toggle="tooltip" title="Record">
+                        <i id="faRecButton" class="fa fa-circle" aria-hidden="true"></i>
+                    </a>
+                </button>
+                <button type="submit" class="btn btn-default check col-3" id="toShare">
+                    <a href="view.html" data-toggle="tooltip" title="Accept">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    </a>
+                </button>
             </div>
 
             <!-- Navigation -->
             <div class="container-fluid nav-container-bottom w-100">
                 <div class="nav navbar-nav navbar-left col-2 back-container">
-                    <a href="record.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                    <a href="record.html">
+                        <i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i>
+                    </a>
                 </div>
                 <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
-                    <a href="view.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                    <a href="view.html">
+                        <i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </nav>

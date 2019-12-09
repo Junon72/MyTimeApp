@@ -133,7 +133,7 @@ $(document).ready(function setProject() {
             elapsed = recorder.elapsed;
             var $item = $(
                 '<li class="col-12 d-flex recTask">' +
-                '<button type="click" class="btn btn-success col-6 tasksButton" id="' + id + '">' + name +
+                '<button type="click" class="btn btn-success col-6 tasksButton" id="' + id + '" data-toggle="tooltip" title="Time recorder">' + name +
                 '</button>' +
                 '<p class="startTaskTime taskTime col-3" id="' + startId + '">' + start +
                 '</p>' +
@@ -142,14 +142,9 @@ $(document).ready(function setProject() {
                 '</li>' +
                 '<hr></hr>').on('click', (e) => {
                 e.preventDefault();
-                $('.recTaskButton').prop("disabled", false);
-                $('.recTaskButton').removeClass('recTaskButton').addClass('btn-success');
+                $('.recTaskButton').prop("disabled", false).prop("title", "Recording").removeClass('recTaskButton').addClass('btn-success');
                 $('.taskTime').removeClass('timeColor');
-
-                $(event.target).prop("disabled", true);
-                $(event.target).removeClass('btn-success').addClass('recTaskButton');
-                $(event.target).siblings('.taskTime').addClass('timeColor');
-
+                $(event.target).prop("disabled", true).removeClass('btn-success').addClass('recTaskButton').siblings('.taskTime').addClass('timeColor');
 
                 const storageKeyButton = event.target.getAttribute('id');
                 console.log('This object ID is ' + storageKeyButton);
@@ -193,24 +188,17 @@ $(document).ready(function setProject() {
 
     $('#recLunch').on('click', (e) => {
         e.preventDefault();
-        $('.recTaskButton').prop("disabled", false);
-        $('.recTaskButton').removeClass('recTaskButton').addClass('btn-success');
+        $('.recTaskButton').prop("disabled", false).removeClass('recTaskButton').addClass('btn-success');
         $('.taskTime').removeClass('timeColor');
-
-        $('#recLunch').prop("disabled", true);
-        $('#recLunch').removeClass('btn-success').addClass('recTaskButton');
-        $('#recLunch').siblings('.taskTime').addClass('timeColor');
+        $('#recLunch').prop("disabled", true).removeClass('btn-success').addClass('recTaskButton').siblings('.taskTime').addClass('timeColor');
     });
 
     $('#recBreak').on('click', (e) => {
         e.preventDefault();
-        $('.recTaskButton').prop("disabled", false);
-        $('.recTaskButton').removeClass('recTaskButton').addClass('btn-success');
+        $('.recTaskButton').prop("disabled", false).removeClass('recTaskButton').addClass('btn-success');
         $('.taskTime').removeClass('timeColor');
-
-        $('#recBreak').prop("disabled", true);
-        $('#recBreak').removeClass('btn-success').addClass('recTaskButton');
-        $('#recBreak').siblings('.taskTime').addClass('timeColor');
+        $('#recBreak').prop("disabled", true).removeClass('btn-success').addClass('recTaskButton').siblings('.taskTime').addClass('timeColor');
+        
     });
 
     /* Recording paused prompt */
@@ -222,7 +210,7 @@ $(document).ready(function setProject() {
         });
         $('.tasksButton').addClass('btn-success').css({
             "background-color": "rgb(199, 102, 5)"
-        }).prop("disabled", true);
+        }).prop("disabled", true).prop("title", "Paused");
         $('#faRecTitle').removeClass('fa-circle').addClass('fa-circle-o');
     });
 
@@ -233,16 +221,15 @@ $(document).ready(function setProject() {
         });
         $('.tasksButton').css({
             "background-color": ""
-        }).prop("disabled", false);
+        }).prop("disabled", false).prop("title", "Time recorder");
         $('#faRecTitle').removeClass('fa-circle-o').addClass('fa-circle');
     });
 });
 
 $('#recStop').on('click', (e) => {
     e.preventDefault();
-    $('.tasksButton').prop("disabled", true);
     $('.tasksButton').removeClass('recTaskButton').css({
         "background-color": "rgb(1, 69, 143, .4)"
-    });
+    }).prop("disabled", true);
     $('.taskTime').removeClass('timeColor');
 });
