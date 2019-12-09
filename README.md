@@ -121,7 +121,7 @@ Create tasks interface:
     - navigate to recording page.
 7. Display default tasks - Break and Lunch.  
 
-Record time spend in each task:
+Recording interface to record time spend in tasks:
 
 1. Display project name.
     - get the name form the local storage.
@@ -133,83 +133,87 @@ Record time spend in each task:
 Planned:  
     - save time data of each task to local storage.  
     - start recording time users spends in the task and stop recording other tasks.  
-3. Time display for each task and for the project:
+3. Time display for each task and for the project:  
     a. starting time -> set to zero for now.  
     b. elapsed time -> set to zero for now.  
-    - get time from the local storage - values set to zero to start.
+    - get time from the local storage - values set to zero to start.  
 Planned:  
     - display the time when the record button was clicked for the first time and the recording of the tasks begun.  
     - display the elapsed time from the moment the recording of the task begun.  
-4. Display local time, date and the day of the week.
-5. Pause button.
+4. Display local time, date and the day of the week.  
+5. Pause button.  
     - display a prompt message the recording has been paused.  
     - display an OK button to continue recording.  
     - deactivate all task buttons.  
-Planned:
-    - pause all recordings and store the time data to the local storage.
-6. Stop button.
-    - navigate to recording stopped page for confirmation.
-Planned:
-    - stop all recordings and store the time data to the local storage.
+Planned:  
+    - pause all recordings and store the time data to the local storage.  
+6. Stop button.  
+    - navigate to recording stopped page for confirmation.  
+Planned:  
+    - stop all recordings and store the time data to the local storage.  
 
-Sopped recording view:
+Stopped recording view:  
 
-1. Display project name.
-    - get the name form the local storage.
+1. Display project name.  
+    - get the name form the local storage.  
 2. Inactive record button for each dynamically created task.  
     - get task name from local storage and display it in the button.  
-3. Display the time data of each task - currently set to zero by default.
-    - get time data from the local storage.
-4. Record button.
-    - returns to recording.
-5. Accept button.
-    - navigates to view tasks page.
+3. Display the time data of each task - currently set to zero by default.  
+    - get time data from the local storage.  
+4. Record button.  
+    - returns to recording.  
+5. Accept button.  
+    - navigates to view tasks page.  
 
-View timesheet:
+Timesheet viewer:  
 
-1. Display project name.
-    - get the name form the local storage.
+1. Display project name.  
+    - get the name form the local storage.  
 2. Display the stopping time, date and the day of the week.  
-3. Present the project data in a table:
-Planned:
-    - Each task with the starting time and elapsed time.
-    - Over all project starting time and elapsed time.
-    - Time spend for lunch and breaks.
-    - Time elapsed on pause.
-    - Number of breaks and pauses.
-    - Total time spend on tasks.
-4. Share button.
+3. Present the project data in a table:  
+Planned:  
+    - Each task with the starting time and elapsed time.  
+    - Over all project starting time and elapsed time.  
+    - Time spend for lunch and breaks.  
+    - Time elapsed on pause.  
+    - Number of breaks and pauses.  
+    - Total time spend on tasks.  
+4. Share button.  
     - navigates to share timesheet by email page.  
-Planned:
+Planned:  
     - translate the data to a suitable format to be send with an email.  
     - attach the file to the email to be send.  
 
-Sharing timesheet page:
+Sharing timesheet page:  
 
-1. Display form for email, subject and message fields:
-Planned:
+1. Display form for email, subject and message fields:  
+Planned:  
     - email validation.  
-2. Send button:
-    - navigates to the exit page.
-Planned:
-    - send email.
-    - prompt that sending mail succeeded.
+2. Send button:  
+    - navigates to the exit page.  
+Planned:  
+    - send email.  
+    - prompt that sending mail succeeded.  
     - prompt that sending mail did not succeed and what to do next.  
 
-Exit the project page:
+Exit the project page:  
 
-1. Start a new project button.
-    - navigates back to the start page.
-Planned:
-    - prompt with an option to reset all data.
+1. Start a new project button.  
+    - navigates back to the start page.  
+Planned:  
+    - prompt with an option to reset all data.  
 
-## Technologies  
+## Technologies  and libraries
 
-### technologies and libraries
+### Technologies
 
 - HTML ~ markup language used for construction and content structuring of the applications pages.
 - CSS ~ styling language was used for applications style, visual outlook and aesthetics.
-- JavaScript ~ programming language was used to built interactive user interface UI.  
+- JavaScript ~ programming language was used to built interactive user interface UI. 
+
+
+### Libraries
+
 - [Bootstrap 4 Framework](https://getbootstrap.com/) ~ library was used for structuring the core layout.  
 - [jQuery](https://jquery.com) ~ library was used to simplify DOM manipulation.
 - [Momentsjs](https://momentjs.com/) ~ library was used to display local time.
