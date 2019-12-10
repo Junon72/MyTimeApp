@@ -8,22 +8,22 @@
 [Users](#users)  
 2. [Planning](#planning)  
 3. [UX / UI](#ux-/-ui)  
-[User Stories](#user-stories)
-4. [Functions and features](#functions-and-features)
+[User Stories](#user-stories)  
+4. [Functions and features](#functions-and-features)  
 [Core functions](#core-functions)  
-[Realized functions](#realized-functions)
-[Planned functions](#planned-functions)
-5. [MyTime core features and requirements](#MyTime-core-features-and-requirements)
-[Create a project interface](#create-a-project-interface)
-[Create tasks interface](#create-tasks-interface)
-[Recording interface to record time spend in tasks](#recording-interface-to-record-time-spend-in-tasks)
-[Stopped recording view](#stopped-recording-view)
-[Timesheet viewer](#timesheet-viewer)
-[Share timesheet document](#share-timesheet-document)
-[Exit the project page](#exit-the-project-page)
-6. [Technologies and libraries](#technologies-and-libraries)
-[Technologies](#technologies)
-[Libraries](#libraries)
+[Realized functions](#realized-functions)  
+[Planned functions](#planned-functions)  
+5. [MyTime core features and requirements](#MyTime-core-features-and-requirements)  
+[Create a project interface](#create-a-project-interface)  
+[Create tasks interface](#create-tasks-interface)  
+[Recording interface to record time spend in tasks](#recording-interface-to-record-time-spend-in-tasks)  
+[Stopped recording view](#stopped-recording-view)  
+[Timesheet viewer](#timesheet-viewer)  
+[Share timesheet document](#share-timesheet-document)  
+[Exit the project page](#exit-the-project-page)  
+6. [Technologies and libraries](#technologies-and-libraries)  
+[Technologies](#technologies)  
+[Libraries](#libraries)  
 
 ## What is MyTime
 
@@ -186,7 +186,7 @@ Planned:
 5. Accept button.  
     - navigates to view tasks page.  
 
-#### Timesheet viewer
+#### Timesheet viewer
 
 1. Display project name.  
     - get the name form the local storage.  
