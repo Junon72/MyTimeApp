@@ -62,15 +62,15 @@
         <form class="mt-2">
             <div class="form-group">
                 <label for="mailTo">To:</label>
-                <input type="mail" class="form-control mailTo" placeholder="email@to_who.com">
+                <input type="email" class="form-control mailTo" id="mailTo" placeholder="email@to_who.com">
             </div>
             <div class="form-group">
-                <label for="mailForm">Subject:</label>
-                <input type="text" class="form-control mailFrom" placeholder="project timesheet notification">
+                <label for="subject">Subject:</label>
+                <input type="text" class="form-control mailFrom" id="subject" placeholder="project timesheet notification">
             </div>
             <div class="form-group">
-                <label for="">Message:</label>
-                <textarea type="text" name="message" id="message" class="form-control" placeholder="message"></textarea>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" class="form-control" placeholder="message"></textarea>
             </div>
         </form>
         <div class="attached d-flex float-right mr-2"><p class="attachedText mr-2">Timesheet attached</p><i class="fa fa-paperclip"></i></div>
@@ -82,9 +82,9 @@
         <nav class="navbar navbar-default fixed-bottom p-0">
             <!-- Action buttons-->
             <div class="d-flex col justify-content-center actions-container">
-                <a href="exit.html" class="p-0 ml-0 mr-0 w-100" id="toRecord"><button type="button"
-                     class="btn btn-success start-button w-100 m-0" id="save-tasks">Send</button></a>
-            </div>
+                    <a role="button" href="exit.html" class="btn btn-success start-button w-100 m-0" id="toRecord"><p>Share</p></a>
+                </div>
+           
             <!-- Navigation -->
             <div class="container-fluid nav-container-bottom w-100">
                 <div class="nav navbar-nav navbar-left col-2 back-container">
