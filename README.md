@@ -53,7 +53,7 @@ The user interface should be intuitive and simple to use. The application is mea
 
     _"As a 'Student', I want to keep track on time I use for studying separate subjects, and make sure I take enough breaks, so I can maintain concentration without loosing time"._    
     
-    
+
     _"As a "Student", I want to learn to know better my own habits, so I can change the habits that are distracting or hindering my development."_  
 
 
@@ -173,7 +173,7 @@ Planned:
 Planned:  
     - stop all recordings and store the time data to the local storage.  
 
-#### Stopped recording view  
+#### Stopped recording view
 
 1. Display project name.  
     - get the name form the local storage.  
@@ -186,7 +186,7 @@ Planned:
 5. Accept button.  
     - navigates to view tasks page.  
 
-#### Timesheet viewer  
+#### Timesheet viewer
 
 1. Display project name.  
     - get the name form the local storage.  
