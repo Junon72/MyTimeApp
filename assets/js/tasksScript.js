@@ -103,12 +103,11 @@ $(document).ready(function setProject() {
     3. when a new task item was added */
 
    (function () {
-        //time = Date();
-        var initTasks = time.toLocaleString();
+        time = Date().toLocaleString();
         if (!taskLIST || taskLIST === null) {
-            console.log('At ' + initTasks + ' locale time, no entries have been submitted to the ' + project + ' tasks list yet.');
+            console.log('At ' + time + ' locale time, no entries have been submitted to the ' + project + ' tasks list yet.');
         } else if (taskLIST.length === 0) {
-            console.log('Task list is empty, all tasks from ' + project + ' have been removed at.' + intiTasks);
+            console.log('Task list is empty, all tasks from ' + project + ' have been removed at.' + time);
             deactivateStartRecordingButton();
         } else {
             added = time.toLocaleString();
@@ -144,7 +143,7 @@ $(document).ready(function setProject() {
     function addToTasks(task, id) {
 
         let notify = () => { // notify if 'submit' event occurs and log the element id and class
-            console.log('Submit event occurred and a form', (event.target), 'was activated')
+            console.log('Submit at ', (event.target), ' detected.')
         };
         const $item = $( //sets the task item on tasks display
             '<form class="deleteForm" id="' + id + '">' +
@@ -165,8 +164,7 @@ $(document).ready(function setProject() {
             // This code is used for matching the element id and data entry in local storage object for removal
             const targetTask = taskLIST.find(xitem => xitem.id === storageKey);
             const location = taskLIST.indexOf(targetTask);
-            console.log('Confirming the activated element id ' + storageKey + ' is the localStorage key for the task entry ' + targetTask.name);
-            console.log('Confirming entry name ' + targetTask.name + ' with entry id ' + targetTask.id + ' at index location ' + location + ' was removed!');
+            console.log('Entry name ' + targetTask.name + ' with entry id ' + targetTask.id + ' at index ' + location + ' was removed!');
 
             // Removes the target task from the local storage - slice + save the new object
             taskLIST.splice(location, 1);
