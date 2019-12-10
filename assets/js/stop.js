@@ -106,12 +106,12 @@ $(document).ready(function () {
         const startBreak = defaults[2].start;
         const elapsedBreak = defaults[2].elapsed;
 
-        $("#startProject").text(startProject)
-        $("#elapsedProject").text(elapsedProject)
-        $("#startLunch").text(startLunch)
-        $("#elapsedLunch").text(elapsedLunch)
-        $("#startBreak").text(startBreak)
-        $("#elapsedBreak").text(elapsedBreak)
+        $("#startProject").text(startProject);
+        $("#elapsedProject").text(elapsedProject);
+        $("#startLunch").text(startLunch);
+        $("#elapsedLunch").text(elapsedLunch);
+        $("#startBreak").text(startBreak);
+        $("#elapsedBreak").text(elapsedBreak);
     }
 
     $('h5.tasksHeader').on('click', (e) => {
