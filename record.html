@@ -82,8 +82,8 @@
     <div class="main-container mainRec">
         <h5 class="tasksHeaderTasks">Tasks:</h5>
         <div class="recTitles">
+            <hr>
             <ul id="recordTasks" class="p-0">
-                <hr>
                 <!--This is where the tasks will be rendered -->
             </ul>
         </div>
@@ -92,17 +92,17 @@
     <!-- Default Tasks-->
     <div class="defaults-container-bottom fixed-bottom">
         <h5 class="tasksHeader" data-toggle="tooltip" title="Show default tasks">Default tasks:</h5>
+        <hr>
         <ul id="recordDefaultTasks" class="defaults-list p-0">
-            <hr>
             <li class="col-12 d-flex recTask">
-                <button type="click" class="btn btn-success defaultButton tasksButton col-6"
+                <button class="btn btn-success defaultButton tasksButton col-6"
                     id="recLunch">Lunch</button>
                 <p class="startTaskTime taskTime col-3" id="startLunch"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedLunch"></p>
             </li>
-            <hr>
+    
             <li class="col-12 d-flex recTask">
-                <button type="click" class="btn btn-success defaultButton tasksButton col-6"
+                <button class="btn btn-success defaultButton tasksButton col-6"
                     id="recBreak">Break</button>
                 <p class="startTaskTime taskTime col-3" id="startBreak"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedBreak"></p>
@@ -119,8 +119,8 @@
             <div class="recPaused w-100 fade show" id="pausePrompt">
                 <div class="row justify-content-center no-gutters w-100">
                     <div class="message col-8" id="messagePause">PAUSED!</div>
-                    <button type="button" id="recOk" class="btn btn-default-light w-100" aria-label="Continue">
-                        <p class="ok col-5" id="continue">Continue</p>
+                    <button type="button" id="recOk" class="btn btn-default-light col-5 continue" aria-label="Continue">
+                        Continue
                     </button>
                 </div>
             </div>
@@ -132,11 +132,11 @@
                 </div>
 
                 <!-- Action buttons-->
-                <button type="click" class="btn btn-default pause col-3" id="recPause" data-toggle="tooltip"
+                <button class="btn btn-default pause col-3" id="recPause" data-toggle="tooltip"
                 title="Pause"><i class="fa fa-pause-circle"
                         aria-hidden="true"></i></button>
-                <button type="click" class="btn btn-default stop col-3" id="recStop" data-toggle="tooltip"
-                title="Stop"><a href="stop.html"><i class="fa fa-stop-circle" aria-hidden="true"></i></a></button>
+                <button class="btn btn-default stop col-3" id="recStop" data-toggle="tooltip"
+                title="Stop"><i class="fa fa-stop-circle" aria-hidden="true"></i></button>
             </div>
 
             <!-- Navigation -->

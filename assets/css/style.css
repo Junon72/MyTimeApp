@@ -281,7 +281,7 @@ nav {
 .main-container {
     /* main content container in general */
     position: relative;
-    margin-top: 10.5em;
+    margin-top: 11.2em;
     margin-bottom: 8em;
     margin-left: 1em;
     margin-right: 1em;
@@ -539,7 +539,7 @@ li.taskItem {
 
 .defaults-container-bottom {
     /* container for the default tasks */
-    bottom: -1.5em;
+    bottom: -1em;
     padding: 0 1em;
     background-color: white;
     z-index: 880;
@@ -622,7 +622,8 @@ li.taskItem {
 .recTask {
     display: flex;
     flex-flow: row;
-    margin: .4em 0 0;
+    margin-bottom: 1.2em;
+    margin-top: .3em;
     padding: 0;
 }
 
@@ -885,9 +886,10 @@ thead {
     margin: auto;
 }
 
-#continue {
-    background-color: var(--clr-rec);
-    border: 2px solid var(--clr-rec);
+#recOk {
+    background-color: rgba(253, 142, 32, 0.4);
+    border: 1px solid rgb(199, 102, 5, .5);
+    font-weight: 200;
 }
 
 

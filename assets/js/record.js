@@ -208,7 +208,7 @@ $(document).ready(function () {
         console.log('Recording is paused');
     });
 
-    $('#continue').on('click', (e) => {
+    $('#recOk').on('click', (e) => {
         e.preventDefault();
         $('#pausePrompt').css({
             "display": "none"
@@ -228,12 +228,15 @@ $(document).ready(function () {
         let timeEnd = new moment().format('dddd, ll, hh:mm A');
         let dateEnd = new moment().format('ll');
         let clockEnd = new moment().format('ddd hh:mm A');
+        let url = "stop.html";
 
         projectEnd.push(timeEnd, dateEnd, clockEnd);
         localStorage.setItem("STOPTIME", JSON.stringify(projectEnd));
 
         localStorage.getItem("STOPTIME", JSON.stringify(projectEnd));
-        let ended = projectEnd[0];
-        console.log('Project was stopped ' + ended);
+        //let ended = projectEnd[0];
+        //console.log('Project was stopped ' + ended);
+        $(location).attr("href", url);
+
     });
 });
