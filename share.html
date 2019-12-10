@@ -18,88 +18,89 @@
 </head>
 
 <body>
-    <!-- Fixed header / Navigation -->
-    <header class="container d-block">
-        <nav class="navbar navbar-default fixed-top p-0">
-            <div class="container-fluid nav-container-top">
+    <div class="wrap">
+        <!-- Fixed header / Navigation -->
+        <header class="container d-block">
+            <nav class="navbar navbar-default fixed-top p-0">
+                <div class="container-fluid nav-container-top">
 
-                <!-- Navigation Icons -->
-                <div class="nav navbar-nav navbar-left home-container">
-                    <a href="index.html" data-toggle="tooltip" title="Home">
-                        <span class="fa-icon"><i class="fa fa-home" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                </div>
-                <div class="nav navbar-nav navbar-center page-title-container">
+                    <!-- Navigation Icons -->
+                    <div class="nav navbar-nav navbar-left home-container">
+                        <a href="index.html" data-toggle="tooltip" title="Home">
+                            <span class="fa-icon"><i class="fa fa-home" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="nav navbar-nav navbar-center page-title-container">
 
-                    <!-- Page Title -->
-                    <div class="page-title">
-                        <h4>Share</h4>
-                        <i class="fa fa-envelope-o page-title-icon" aria-hidden="true"></i>
+                        <!-- Page Title -->
+                        <div class="page-title">
+                            <h4>Share</h4>
+                            <i class="fa fa-envelope-o page-title-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="nav navbar-nav navbar-right out-container">
+                        <a href="exit.html" data-toggle="tooltip" title="Exit">
+                            <span class="fa-icon">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
-                <div class="nav navbar-nav navbar-right out-container">
-                    <a href="exit.html" data-toggle="tooltip" title="Exit">
-                        <span class="fa-icon">
-                            <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        </span>
+
+                <!-- Project Title -->
+                <div class="title-container">
+                    <h4 class="project-title viewTitle" id="rec-project-title"></h4>
+                    <!-- This is where the project title will be rendered -->
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <div class="mainShare-container">
+            <form class="mt-2">
+                <div class="form-group">
+                    <label for="mailTo">To:</label>
+                    <input type="email" class="form-control mailTo" id="mailTo" placeholder="email@to_who.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" class="form-control mailFrom" id="subject"
+                        placeholder="project timesheet notification">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" class="form-control" placeholder="message"></textarea>
+                </div>
+            </form>
+            <div class="attached d-flex float-right mr-2">
+                <p class="attachedText mr-2">Timesheet attached</p><i class="fa fa-paperclip"></i>
+            </div>
+        </div>
+
+        <!-- Fixed footer / Actions / Navigation -->
+        <footer>
+            <!-- Bottom-navigation -->
+            <nav class="navbar navbar-default fixed-bottom p-0">
+                <!-- Action buttons-->
+                <div class="d-flex col justify-content-center actions-container">
+                    <a role="button" href="exit.html" class="btn btn-success start-button w-100 m-0" id="toRecord">
+                        <p>Share</p>
                     </a>
                 </div>
-            </div>
 
-            <!-- Project Title -->
-            <div class="title-container">
-                <h4 class="project-title viewTitle" id="rec-project-title"></h4>
-                <!-- This is where the project title will be rendered -->
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main content -->
-    <div class="mainShare-container">
-        <form class="mt-2">
-            <div class="form-group">
-                <label for="mailTo">To:</label>
-                <input type="email" class="form-control mailTo" id="mailTo" placeholder="email@to_who.com">
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" class="form-control mailFrom" id="subject"
-                    placeholder="project timesheet notification">
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea name="message" id="message" class="form-control" placeholder="message"></textarea>
-            </div>
-        </form>
-        <div class="attached d-flex float-right mr-2">
-            <p class="attachedText mr-2">Timesheet attached</p><i class="fa fa-paperclip"></i>
-        </div>
+                <!-- Navigation -->
+                <div class="container-fluid nav-container-bottom w-100">
+                    <div class="nav navbar-nav navbar-left col-2 back-container">
+                        <a href="view.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
+                        <a href="exit.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </footer>
     </div>
-
-    <!-- Fixed footer / Actions / Navigation -->
-    <footer>
-        <!-- Bottom-navigation -->
-        <nav class="navbar navbar-default fixed-bottom p-0">
-            <!-- Action buttons-->
-            <div class="d-flex col justify-content-center actions-container">
-                <a role="button" href="exit.html" class="btn btn-success start-button w-100 m-0" id="toRecord">
-                    <p>Share</p>
-                </a>
-            </div>
-
-            <!-- Navigation -->
-            <div class="container-fluid nav-container-bottom w-100">
-                <div class="nav navbar-nav navbar-left col-2 back-container">
-                    <a href="view.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
-                </div>
-                <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
-                    <a href="exit.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </nav>
-    </footer>
-
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

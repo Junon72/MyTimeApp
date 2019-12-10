@@ -18,132 +18,135 @@
 </head>
 
 <body>
-    <!-- Fixed header / Navigation -->
-    <header class="container d-block">
-        <nav class="navbar navbar-default fixed-top p-0">
+    <div class="wrap">
+        <!-- Fixed header / Navigation -->
+        <header class="container d-block">
+            <nav class="navbar navbar-default fixed-top p-0">
 
-            <div class="container-fluid" id="nav-container">
-                <!-- Navigation Icons -->
-                <div class="nav navbar-nav navbar-left home-container">
-                    <a href="index.html" data-toggle="tooltip" title="Home">
-                        <span class="fa-icon"><i class="fa fa-home" aria-hidden="true"></i>
-                        </span>
-                    </a>
-                </div>
-                <div class="nav navbar-nav navbar-center page-title-container">
-                    <!-- Page Title -->
-                    <div class="page-title">
-                        <h4>Timesheet</h4>
-                        <i class="fa fa-file-o page-title-icon" aria-hidden="true"></i>
+                <div class="container-fluid" id="nav-container">
+                    <!-- Navigation Icons -->
+                    <div class="nav navbar-nav navbar-left home-container">
+                        <a href="index.html" data-toggle="tooltip" title="Home">
+                            <span class="fa-icon"><i class="fa fa-home" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="nav navbar-nav navbar-center page-title-container">
+                        <!-- Page Title -->
+                        <div class="page-title">
+                            <h4>Timesheet</h4>
+                            <i class="fa fa-file-o page-title-icon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="nav navbar-nav navbar-right out-container">
+                        <a href="exit.html" data-toggle="tooltip" title="Exit">
+                            <span class="fa-icon">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
-                <div class="nav navbar-nav navbar-right out-container">
-                    <a href="exit.html" data-toggle="tooltip" title="Exit">
-                        <span class="fa-icon">
-                            <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        </span>
+                <!-- Project Title -->
+                <div class="title-container">
+                    <h4 class="project-title top-view-project-title" id="rec-project-title"></h4>
+                    <!-- This is where the project title will be rendered again-->
+                </div>
+
+            </nav>
+        </header>
+        <!-- Main content -->
+        <div class="mainView-container">
+            <!-- Date -->
+            <div class="date-container">
+                <div class="dateHeaderView d-flex col-12 justify-content-between p-0">
+                    <span class="dateTop col-8" id="date"></span>
+                    <!-- This is where the date will be rendered -->
+                </div>
+            </div>
+            <div class="title-container">
+                <h4 class="project-title rec-project-title" id="tableTitle"></h4>
+                <!-- This is where the project title will be rendered on the table -->
+            </div>
+            <!-- Date -->
+            <table class="table table-striped table-m timesheet ml-3 col-12">
+                <thead>
+                    <tr>
+                        <th scope="col">Task</th>
+                        <th scope="col">Start</th>
+                        <th scope="col">Elapsed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                        <th scope="row">--</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="dateBottom w-100 d-flex justify-content-end" id="dayTime"></div>
+        </div>
+        <!-- Fixed footer / Actions / Navigation -->
+        <footer>
+            <!-- Bottom navigation -->
+            <nav class="navbar navbar-default fixed-bottom p-0">
+                <!-- Action buttons-->
+                <div class="d-flex col justify-content-center actions-container">
+                    <a role="button" href="share.html" class="btn btn-success start-button w-100 m-0" id="toRecord">
+                        <p>Share</p>
                     </a>
                 </div>
-            </div>
-            <!-- Project Title -->
-            <div class="title-container">
-                <h4 class="project-title top-view-project-title" id="rec-project-title"></h4>
-                <!-- This is where the project title will be rendered again-->
-            </div>
 
-        </nav>
-    </header>
-    <!-- Main content -->
-    <div class="mainView-container">
-        <!-- Date -->
-        <div class="date-container">
-            <div class="dateHeaderView d-flex col-12 justify-content-between p-0">
-                <span class="dateTop col-8" id="date"></span>
-                <!-- This is where the date will be rendered -->
-            </div>
-        </div>
-        <div class="title-container">
-            <h4 class="project-title rec-project-title" id="tableTitle"></h4>
-            <!-- This is where the project title will be rendered on the table -->
-        </div>
-        <!-- Date -->
-        <table class="table table-striped table-m timesheet ml-3 col-12">
-            <thead>
-                <tr>
-                    <th scope="col">Task</th>
-                    <th scope="col">Start</th>
-                    <th scope="col">Elapsed</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                </tr>
-                <tr>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                </tr>
-                <tr>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                </tr>
-                <tr>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                </tr>
-                <tr>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                </tr>
-                <tr>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                </tr>
-                <tr>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                    <th scope="row">--</th>
-                </tr>
-            </tbody>
-        </table>
-        <div class="dateBottom w-100 d-flex justify-content-end" id="dayTime"></div>
+                <!-- Navigation -->
+                <div class="container-fluid nav-container-bottom w-100">
+                    <div class="nav navbar-nav navbar-left col-2 back-container">
+                        <a href="stop.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
+                        <a href="share.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+            </nav>
+        </footer>
     </div>
-    <!-- Fixed footer / Actions / Navigation -->
-    <footer>
-        <!-- Bottom navigation -->
-        <nav class="navbar navbar-default fixed-bottom p-0">
-            <!-- Action buttons-->
-            <div class="d-flex col justify-content-center actions-container">
-                    <a role="button" href="share.html" class="btn btn-success start-button w-100 m-0" id="toRecord"><p>Share</p></a>
-                </div>
-            
-            <!-- Navigation -->
-            <div class="container-fluid nav-container-bottom w-100">
-                <div class="nav navbar-nav navbar-left col-2 back-container">
-                    <a href="stop.html"><i class="fa fa-chevron-left menu-icons" aria-hidden="true"></i></a>
-                </div>
-                <div class="nav navbar-nav navbar-right col-2 forward-container m-0">
-                    <a href="share.html"><i class="fa fa-chevron-right menu-icons" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-        </nav>
-    </footer>
-
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/stop.js"></script>
-    
+
 </body>
 
 </html>
