@@ -199,7 +199,7 @@ nav {
 
 .back-container {
     /* bottom container for the right arrow */
-    align-items: left;
+    align-items: end;
     height: 1.3em;
     margin-bottom: 1em;
     margin-top: 1em;
@@ -251,7 +251,7 @@ nav {
 .start-button >p {
     /* Green buttons */
     font-size: 1.2rem;
-    font-weight: 200 important !;
+    font-weight: 200 !important;
     margin-left: 1em;
     margin-right: 1em;
     color: white;
@@ -299,10 +299,11 @@ nav {
 .mytime {
     /* Big header text */
     position: absolute;
-    top: 0;
+    margin-top: -.1em;
+    margin-left: -.1em;
     font-size: 6em;
     color: white;
-    font-size: 900;
+    font-weight: 800;
 }
 
 .index-main-container {
@@ -396,7 +397,7 @@ nav {
     font-size: 1em;
     letter-spacing: 1.4px;
     font-style: italic;
-    font-weight: 500i;
+    font-weight: 500;
     overflow: auto;
 }
 
@@ -637,19 +638,13 @@ li.taskItem {
     font-weight: 400;
     letter-spacing: 1px;
     transition: ease-in;
-    -webkit-transition: ease-in;
-    -moz-transition: ease-in;
-    -ms-transition: ease-in;
-    -o-transition: ease-in;
+   
 }
 
 .recTask>p.timeColor {
     color: var(--clr-rec);
     transition: ease-in;
-    -webkit-transition: ease-in;
-    -moz-transition: ease-in;
-    -ms-transition: ease-in;
-    -o-transition: ease-in;
+    
 }
 
 .btn.btn-success {
@@ -658,10 +653,6 @@ li.taskItem {
     box-shadow: none;
     font-weight: 300;
     transition: ease-in;
-    -webkit-transition: ease-in;
-    -moz-transition: ease-in;
-    -ms-transition: ease-in;
-    -o-transition: ease-in;
 }
 
 .btn.btn-success:active,
@@ -671,10 +662,6 @@ li.taskItem {
     box-shadow: none;
     font-weight: 300;
     transition: ease-in;
-    -webkit-transition: ease-in;
-    -moz-transition: ease-in;
-    -ms-transition: ease-in;
-    -o-transition: ease-in;
 }
 
 .recTaskButton {
@@ -683,10 +670,6 @@ li.taskItem {
     color: var(--clr-rec);
     font-size: 1.1rem;
     transition: ease-in;
-    -webkit-transition: ease-in;
-    -moz-transition: ease-in;
-    -ms-transition: ease-in;
-    -o-transition: ease-in;
 }
 
 .btn.recTaskButton:disabled {
@@ -694,10 +677,6 @@ li.taskItem {
     color: var(--clr-rec);
     font-style: italic;
     transition: ease-in;
-    -webkit-transition: ease-in;
-    -moz-transition: ease-in;
-    -ms-transition: ease-in;
-    -o-transition: ease-in;
 }
 
 
@@ -808,18 +787,11 @@ thead {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     height: 20em;
     max-width: 20em;
     border-radius: 50%;
     z-index: 1500;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+
 }
 
 #pausePrompt {
@@ -830,18 +802,10 @@ thead {
     bottom: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     height: 20rem;
     max-width: 20rem;
     border-radius: 50%;
     z-index: 1050;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
 }
 
 
@@ -849,7 +813,7 @@ thead {
     position: relative;
     display: block;
     margin: 43% auto 6%;
-    padding: 0 auto;
+    padding: 0;
     width: auto;
     color: white;
     font-size: 1.6rem;
@@ -875,15 +839,12 @@ thead {
     border: 1px solid white;
     padding: 0;
     margin: auto;
-    -webkit-border-radius: 4%;
-    -moz-border-radius: 8%;
-    -ms-border-radius: 8%;
-    -o-border-radius: 8%;
+    border-radius: 4%;
 }
 
 
 #nameOK {
-    background-color: none;
+    background-color: transparent;
     margin: auto;
 }
 
@@ -908,10 +869,7 @@ thead {
     width: 80%;
     border-radius: 2%;
     z-index: 1050;
-    -webkit-border-radius: 2%;
-    -moz-border-radius: 2%;
-    -ms-border-radius: 2%;
-    -o-border-radius: 2%;
+   
 }
 
 
@@ -920,7 +878,7 @@ thead {
     position: relative;
     display: block;
     margin: 1.5em auto .1em;
-    padding: 0 auto;
+    padding: 0;
     width: auto;
     color: white;
     font-size: 1.6rem;
@@ -940,15 +898,11 @@ thead {
     padding: 0 1em;
     margin: .2em 7.2em;
     border-radius: 8%;
-    -webkit-border-radius: 8%;
-    -moz-border-radius: 8%;
-    -ms-border-radius: 8%;
-    -o-border-radius: 8%;
 }
 
 #taskNameOK,
 #newNameOK {
-    background-color: none;
+    background-color: transparent;
     margin: auto;
 }
 
@@ -956,7 +910,7 @@ thead {
 #taskNameOK:focus,
 #newNameOK:hover,
 #newNameOK:focus {
-    background-color: none;
+    background-color: transparent;
     margin: auto;
     color: white;
 }
@@ -967,7 +921,7 @@ thead {
     display: block;
     text-align: center;
     margin: 1.4em auto .6em;
-    padding: 0 auto;
+    padding: 0;
     width: auto;
     color: white;
     font-size: 1.3rem;
@@ -982,13 +936,8 @@ thead {
     font-weight: 200;
     background-color: rgba(253, 142, 32, 0.4);
     border: 1px solid white;
-    padding: auto;
     margin: .2em;
     border-radius: 8%;
-    -webkit-border-radius: 8%;
-    -moz-border-radius: 8%;
-    -ms-border-radius: 8%;
-    -o-border-radius: 8%;
 }
 
 #projectNameDefault {
@@ -999,13 +948,8 @@ thead {
     font-weight: 200;
     background-color: rgb(105, 134, 140);
     border: 1px solid white;
-    padding: auto;
     margin: .2em;
     border-radius: 8%;
-    -webkit-border-radius: 8%;
-    -moz-border-radius: 8%;
-    -ms-border-radius: 8%;
-    -o-border-radius: 8%;
 }
 
 
@@ -1020,8 +964,4 @@ thead {
     width: 90%;
     border-radius: 2%;
     z-index: 1050;
-    -webkit-border-radius: 2%;
-    -moz-border-radius: 2%;
-    -ms-border-radius: 2%;
-    -o-border-radius: 2%;
 }
