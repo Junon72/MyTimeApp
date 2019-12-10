@@ -238,9 +238,10 @@ Planned:
 
 ## Testing
 
-### Testing html
-
 For html testing, [W3C Markup Validation Service](#https://validator.w3.org/) was used.
+For 
+
+
 
 
 ## Technologies  and libraries

@@ -11,6 +11,7 @@ $(document).ready(function () {
 
     setInterval(clock, 1000);
     // for the displayed time functions I used Moments.js library-  https://momentjs.com/ and provided documents https://momentjs.com/docs/
+    // how to actually get Momentsjs working https://www.keycdn.com/support/moment-js-cdn and https://www.webfx.com/blog/web-design/javascript-dates-moment-js/ gave the needed answer
 
     // get the project name title
     let project = localStorage.getItem('project');
@@ -51,17 +52,16 @@ $(document).ready(function () {
     };
 
     // Check if tasks were added 
-
     if (!taskLIST || taskLIST === null || taskLIST.length === 0) {
         console.log('There are no new tasks to add.');
-
     } else {
         console.table(taskLIST);
         console.log('New tasks are added to the time recorder.');
         renderNew();
     };
 
-    if (defData) { // if defaults have been already saved to local storage -> load
+    // if defaults have been already saved to local storage -> load
+    if (defData) { 
         id = Date.now().toString();
         added = time.toLocaleString();
         loadDefaults(defaults, id);
@@ -71,7 +71,8 @@ $(document).ready(function () {
         } else {
             console.log('Error has ocurred: default tasks are missing.');
         };
-    } else { // if no defaults were loaded before -> load and save now
+    } else {
+         // if no defaults were loaded before -> load and save now
         time = new Date();
         added = time.toLocaleString();
         defaults = [{
@@ -107,6 +108,8 @@ $(document).ready(function () {
         ];
         setDefaultsToLocal();
         console.table(defaults);
+
+        // Check tand communicate if the defaults are saved.
         if (defaults.length !== 0) {
             console.log('Default tasks were loaded successfully.');
         } else {
@@ -118,9 +121,7 @@ $(document).ready(function () {
     // new tasks - 
     // for rendering local storage content dynamically I used code reference from 
     // https://medium.com/@pearlmcphee/build-a-dynamic-app-using-javascript-html-and-css-f0dfc136007a
-
     function renderNew() {
-
         const renderTasks = recorder => {
             name = recorder.name;
             id = recorder.id;
@@ -152,12 +153,9 @@ $(document).ready(function () {
     };
     renderDefaults();
 
-
     /*SET THE DEFAULTS*/
-    //const renderDefaults = defaultsRecorder
-
     function renderDefaults() {
-
+        // Values to get from local storage 
         const startProject = defaults[0]["start"];
         const elapsedProject = defaults[0]["elapsed"];
         const startLunch = defaults[1]["start"];
@@ -165,6 +163,7 @@ $(document).ready(function () {
         const startBreak = defaults[2]["start"];
         const elapsedBreak = defaults[2]["elapsed"];
 
+        // Rendering values
         $("#startProject").text(startProject)
         $("#elapsedProject").text(elapsedProject)
         $("#startLunch").text(startLunch)
@@ -173,6 +172,7 @@ $(document).ready(function () {
         $("#elapsedBreak").text(elapsedBreak)
     };
 
+    // Event listeners
     $('h5.tasksHeader').on('click', (e) => {
         e.preventDefault();
         $('.defaults-container-bottom').toggleClass('showDefaults');
@@ -194,8 +194,7 @@ $(document).ready(function () {
         console.log('Break time!');
     });
 
-    /* Recording paused prompt */
-
+    // Recording paused prompt 
     $('#recPause').on('click', (e) => {
         e.preventDefault();
         $('#pausePrompt').css({
@@ -220,8 +219,7 @@ $(document).ready(function () {
         console.log('Recording continues');
     });
 
-    /* Catch the project end time */
-
+    // Catch the project end time and save it to local storage
     $('#recStop').on('click', () => {
 
         let projectEnd = [];
@@ -234,9 +232,6 @@ $(document).ready(function () {
         localStorage.setItem("STOPTIME", JSON.stringify(projectEnd));
 
         localStorage.getItem("STOPTIME", JSON.stringify(projectEnd));
-        //let ended = projectEnd[0];
-        //console.log('Project was stopped ' + ended);
-        $(location).attr("href", url);
-
+        $(location).attr("href", url); // https://www.java67.com/2017/07/6-ways-to-redirect-web-page-using-JavaScript-and-jQuery.html
     });
 });

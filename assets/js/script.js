@@ -28,8 +28,7 @@ $(document).ready(function () {
     });
     
 
-    //index
-    //query selectors - this section is done using mainly JavaScript code, jQuery selectors  used for styling
+    // Selectors
     const projectNameForm = document.getElementById('create-project-form');
     const projectName = document.getElementById('accept-project');
     const projectNameDisplay = document.getElementById('project-name-display');
@@ -39,6 +38,7 @@ $(document).ready(function () {
     const saveProjectButton = document.getElementById('save-project');
     const nameNotOkPrompt = document.getElementById('nameOk');
 
+    // Input validation
     let projectTitle = localStorage.getItem('project');
     if (projectTitle === null || projectTitle == "" || projectTitle.length === 0 || projectTitle === 'undefined') {
        projectCreator();
@@ -68,7 +68,6 @@ $(document).ready(function () {
     };
 
     // Pressing enter key or clicking 'enter' submits the name value and the name form is hidden from view
-
     projectCreateButton.addEventListener('click', (e) => {
         e.preventDefault();
         projectCreator(projectNameInput.value);
@@ -87,6 +86,7 @@ $(document).ready(function () {
         };
     });
 
+    // Event listeners
 
     // the name value is displayed with a cancel button. On click,,
     //the <p> element displaying the name removed, name form displayed and the name form field is emptied.
@@ -123,6 +123,7 @@ $(document).ready(function () {
         });
     };
 
+    // Prompt
     function noNamePrompt() {
         console.log('No name prompt was activated.')
         $("#noNamePrompt").css({
@@ -160,6 +161,7 @@ $(document).ready(function () {
         });
     };
 
+    // Save the name to local storage
     function saveProjectToLocal() {
         localStorage.setItem('project', projectTitle);
         let project = localStorage.getItem('project');
