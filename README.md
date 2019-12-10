@@ -51,7 +51,7 @@ The user interface should be intuitive and simple to use. The application is mea
     - MyTime helps the students to track their time use when studying and plan better their time use.  
 
 
-    _"As a 'Student', I want to keep track on time I use for studying separate subjects, and make sure I take enough breaks, so I can maintain concentration without loosing time"._    
+    _"As a 'Student', I want to keep track on time I use for studying separate subjects, and make sure I take enough breaks, so I can maintain concentration without loosing time."_    
     
 
     _"As a "Student", I want to learn to know better my own habits, so I can change the habits that are distracting or hindering my development."_  
@@ -61,10 +61,22 @@ The user interface should be intuitive and simple to use. The application is mea
     - MyTime allows tracking time in different project tasks and can be used to produce a timesheet.  
     - The time sheet can be send to an employer or used for administration.  
 
+    _"As a 'Self employed', I want to be able to provide clear specification of time I have spend in different tasks I can refer to in billing."_
+
+    _"As a 'Self employed', I want to have a simple solution to create timesheets I can share with my employers by email."_
+
+    _"As a 'Self employed', I want to be able to keep track on time use to keep an eye on budget constrains of projects I do for others."_ 
+
+
 3. Small businesses working with hour based employees working on company premise or from home.  
-    - the employees can use MyTime to plan tasks and share registration of the used time for different tasks.  
+    - the employees can use MyTime to plan tasks and share registration of the used time for different tasks. 
+    
+    _"As a 'Small business", I want to have a simple solution for people we hire to register their working hours per task per project, they can easily share with the administration, without delays and extra paper hustle."_
+
+    _"As a 'Small business", I want to have a focused channel for communicating the working hours with employees who are not working on premise on daily bases."_
 
 4. Anybody interested in where does the time actually go.
+    - anybody can track their time use in various different instances, be it keeping track on fitness goals or sharing the burden of household chores. 
 
 ## Functions and features
 
@@ -269,3 +281,23 @@ Cloning:
 - the project is available for cloning and downloading, which both can be done by clicking the Clone or download button. The button can be found as well at right hand side, above the application directory commit list.  
 - clicking the button opens a dialogue, where the URL to the project can be copied. It is also possible to open the project in desktop or download the file in ZIP form.  
 - the URL address can be accessed, for example, from your IDE bash terminal and cloned to your workspace.  
+
+## References
+
+In general:
+For using the localStorage, JSON parsing, object constructors and arrow functions [TutorialRepublic](https://www.tutorialrepublic.com/)  
+website provided clear and instructive material.  
+ToDoList tutorials from [Web Dev Simplified](https://www.youtube.com/watch?v=W7FaYfuwu70) and  
+[Code Explained](https://www.youtube.com/watch?v=b8sUhU_eq3g&t=201s) were most helpful source of information to understand dynamically created elements and use of local storage.  
+Javascript & jQuery, by Jon Duckett (2104), has been as well very helpful source of knowledge, providing well structured package of information and illustrative examples.  
+Other helpful resources tackling HTML, CSS and JavaScript have been [W3School](shttps://www.w3schools.com/), [MDN web docs](https://developer.mozilla.org/en-US/) and [StackOverflow](https://stackoverflow.com/).
+Specifically [jQuery](https://jquery.com/) related questions were often answered by carefully studying [jQuery Documentation](https://api.jquery.com/).
+Similarly [Momentsjs](https://momentjs.com/) provides good [documentation](https://momentjs.com/docs/).  
+
+### Reference disclaimer
+
+Many different web sources were used to research techniques and methods to accomplish the following code.  
+Main sources for particular code blocks are mentioned in comments with the code.  
+The actual code is mostly put together using several sources, offering solution to a specific context,
+which I have deconstructed and reconstructed to suit the needs of this application.
+There might be overlapping with existing code out there in the vastness of the web and identical code snippets floating around, despite my efforts to reference, at least the main sources justly.  
