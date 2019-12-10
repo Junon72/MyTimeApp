@@ -6,31 +6,33 @@
 :root {
     /*Cyan deriv. */
     --clr-dark: rgb(105, 134, 140);
-    --clr-middle: rgb(163, 196, 201);
+    --clr-middle: rgb(163, 196, 201); /**/
     --clr-light: rgb(224, 230, 231);
 
     /*Text*/
-    --clr-mainDark: #13181B;
     --clr--mainLight: #949a9f;
-    --clr--mainLight: #949a9f;
-    --clr-title: #4a1d68;
-    --clr-purpleTitle: rgba(94, 1, 94);
+    --clr-title: #4a1d68; /* li */
+    --clr-purpleTitle: rgb(74, 29, 104);
     --clr-time: #05c766;
-    --clr-success: #66C705;
-
-
 
     /*Buttons*/
     --clr-green: rgb(5, 199, 5);
-    --clr-purple: rgba(94, 1, 94, 0.7);
-    --clr-magenta: rgb(199, 5, 199);
+    --clr-purple: rgba(94, 1, 94, 0.7); /* main */
     --clr-add: rgb(3, 153, 240);
     --clr-rec: rgb(199, 5, 5);
-    --clr-active: rgb(197, 62, 21);
     --clr-stop: rgb(1, 69, 143);
+    --clr-stopped: rgb(1, 69, 143, .6);
     --clr-pause: rgb(255, 128, 0);
     --clr-home: rgb(1, 134, 105);
     --clr-out: #798187;
+
+    /*Prompts*/
+
+    --clr-base: rgb(232, 194, 164);
+    --clr-buttonOk: rgba(253, 142, 32, 0.4);
+    --clr-buttonCancel: rgb(105, 134, 140);
+    --clr-border: rgb(199, 102, 5, .5);
+
 }
 
 /* ---------------------------- Universal selector style */
@@ -54,26 +56,37 @@ html,
 body {
     font-family: 'Public Sans', sans-serif;
     padding: 0;
+    margin: 0;
     min-width: 320px;
-    min-height: 560px;
+    max-width: 430px;
+    height: 100%;
     overflow: auto;
     box-sizing: border-box;
+    scrollbar-width: none;
 }
 
 .wrap {
     position: absolute;
     padding: 0;
     margin: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 @media screen and (min-width: 430px) {
     .wrap {
-        border: solid 1px var(--clr-light);
+        border-right: solid 1px var(--clr-light);
         width: 430px;
     }
+
+    .tasksForm,
+    .defaults-container-top,
+    .defaults-container-bottom,
+    .projectTimeDisplay {
+        border-right: solid 1px var(--clr-light);
+    }
+
 }
- @media screen and (max-width: 439px) {
+ @media screen and (max-width: 429px) {
      .wrap {
          border: none;
          width: 100vw;
@@ -215,8 +228,8 @@ nav {
 }
 
 .back-container {
-    /* bottom container for the right arrow */
-    align-items: start;
+    /* bottom container for the left arrow */
+    align-items: center;
     height: 1.3em;
     margin-bottom: 1em;
     margin-top: 1em;
@@ -224,11 +237,12 @@ nav {
 }
 
 .forward-container {
-    /* bottom container for the left arrow */
-    align-items: end;
+    /* bottom container for the right arrow */
+    align-items: center;
     height: 1.3em;
     margin-bottom: 1em;
     margin-right: 1em;
+   
 }
 
 .fa-chevron-left,
@@ -272,6 +286,10 @@ nav {
     margin-left: 1em;
     margin-right: 1em;
     color: white;
+}
+
+.stoppedButton {
+    height: 36px;
 }
 
 .start-button:hover {
@@ -325,8 +343,8 @@ nav {
 
 .index-main-container {
     position: relative;
-    margin: 10em 1em 1em;
-    height: 50vh;
+    margin: 0 1em;
+    height: 100vh;
     overflow: auto;
     text-align: center;
 }
@@ -431,6 +449,10 @@ nav {
 .newTasks {
     /* new tasks display field */
     overflow: scroll;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
 }
 
 .spacingContainerTop {
@@ -523,6 +545,7 @@ nav {
     padding-left: 0;
 }
 
+
 li.taskItem {
     /* new tasks li */
     width: 100%;
@@ -553,7 +576,12 @@ li.taskItem {
 .mainRec {
     /* main content container */
     z-index: 850;
-    padding-bottom: 3em;
+    margin-bottom: .5em;
+}
+
+.recTitles {
+    
+    padding-bottom: 6rem;
 }
 
 .defaults-container-bottom {
@@ -572,8 +600,7 @@ li.taskItem {
 .projectTimeDisplay {
     /* Container for the project time elements at the top */
     background-color: white;
-    padding: 0 1em .5em;
-    ;
+    padding: 0 1em .4em;
 }
 
 
@@ -612,6 +639,7 @@ li.taskItem {
     float: left;
     color: var(--clr-time);
     font-size: 1.6rem;
+    letter-spacing: -1.5px;
     font-weight: 700;
     opacity: .3;
 }
@@ -630,7 +658,7 @@ li.taskItem {
 }
 
 .tasksHeaderTasks {
-    margin: 1rem 0 1rem;
+    margin: 1.6rem 0 1rem;
     color: var(--clr--mainLight);
     font-size: 1.1em;
     font-style: italic;
@@ -783,12 +811,17 @@ thead {
 
 /*--------------------------- EXIT ---------------------------*/
 
-.exitText {
+.exitTextWrap {
     position: absolute;
+    bottom: 22%;
+}
+
+.exitText {
+    position: relative;
     bottom: .2em;
     color: var(--clr-purpleTitle);
     font-size: 2.2rem;
-    font-weight: 300;
+    font-weight: 200;
 
 }
 
@@ -816,7 +849,7 @@ thead {
     position: absolute;
     background-color: rgb(232, 194, 164);
     border: 1px solid rgb(199, 102, 5, .5);
-    bottom: 50%;
+    bottom: 8vh;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 20rem;
@@ -883,7 +916,7 @@ thead {
     margin: 0 auto;
     bottom: 12em;
     height: 10em;
-    width: 80%;
+    width: 85%;
     border-radius: 2%;
     z-index: 1050;
    
@@ -894,7 +927,7 @@ thead {
 #tryAnotherOk {
     position: relative;
     display: block;
-    margin: 1.5em auto .1em;
+    margin: 1.3em auto .5em;
     padding: 0;
     width: auto;
     color: white;

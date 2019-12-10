@@ -29,8 +29,8 @@ $(document).ready(function () {
         $('#dayTime').text(clockEnd);
 
         let timeEnd = projectEnd[0];
-        console.log('Recording was stopped ' + timeEnd)
-    };
+        console.log('Recording was stopped ' + timeEnd);
+    }
 
     // get the project name title
     let project = localStorage.getItem('project');
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     var defData = localStorage.getItem("DEFAULTS");
     var defaults = JSON.parse(defData);
-    console.log('Recorded tasks:')
+    console.log('Recorded tasks:');
 
     //let setDefaultsToLocal = () => localStorage.setItem("DEFAULTS", JSON.stringify(defaults));
 
@@ -67,9 +67,9 @@ $(document).ready(function () {
     } else {
         console.table(taskLIST);
         console.table(defaults);
-        console.log('Recording was stopped and the tasks were set to inactive.');
+        console.log('Tasks recording has been set inactive.');
         taskLIST.forEach(recorder => renderTasks(recorder));
-    };
+    }
 
     /* RENDER TASKS ON SCREEN */
 
@@ -89,9 +89,9 @@ $(document).ready(function () {
             '<p class="elapsedTaskTime taskTime col-3 pl-10" id="' + elapsedId + '">' + elapsed +
             '</p>' +
             '</li>' +
-            '<hr></hr>')
+            '<hr></hr>');
         $('#recordTasks').after($item);
-    };
+    }
 
     renderDefaults();
 
@@ -99,12 +99,12 @@ $(document).ready(function () {
 
     function renderDefaults() {
 
-        const startProject = defaults[0]["start"];
-        const elapsedProject = defaults[0]["elapsed"];
-        const startLunch = defaults[1]["start"];
-        const elapsedLunch = defaults[1]["elapsed"];
-        const startBreak = defaults[2]["start"];
-        const elapsedBreak = defaults[2]["elapsed"];
+        const startProject = defaults[0].start;
+        const elapsedProject = defaults[0].elapsed;
+        const startLunch = defaults[1].start;
+        const elapsedLunch = defaults[1].elapsed;
+        const startBreak = defaults[2].start;
+        const elapsedBreak = defaults[2].elapsed;
 
         $("#startProject").text(startProject)
         $("#elapsedProject").text(elapsedProject)
@@ -112,10 +112,10 @@ $(document).ready(function () {
         $("#elapsedLunch").text(elapsedLunch)
         $("#startBreak").text(startBreak)
         $("#elapsedBreak").text(elapsedBreak)
-    };
+    }
 
     $('h5.tasksHeader').on('click', (e) => {
         e.preventDefault();
         $('.defaults-container-bottom').toggleClass('showDefaults');
-    })
+    });
 });

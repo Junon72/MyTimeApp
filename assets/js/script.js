@@ -41,7 +41,8 @@ $(document).ready(function () {
     // Input validation
     let projectTitle = localStorage.getItem('project');
     if (projectTitle === null || projectTitle == "" || projectTitle.length === 0 || projectTitle === 'undefined') {
-       projectCreator();
+        console.log('There were no previously stored projects in local storage');
+        projectCreator();
     } else {
         if (projectNameForm.style.display === "none") {
             projectNameForm.style.display = "flex";
@@ -54,7 +55,7 @@ $(document).ready(function () {
         const pName = document.createElement('p');
         pName.textContent = projectTitle;
         projectNameDisplay.appendChild(pName);
-    };
+    }
 
     //project creator gets the name input and creates a <p> element to display the name
     // for this constructor I used the code example from https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
@@ -65,14 +66,14 @@ $(document).ready(function () {
         projectTitle = projectTitle.charAt(0).toUpperCase() + projectTitle.slice(1);
         pName.textContent = projectTitle;
         projectNameDisplay.appendChild(pName);
-    };
+    }
 
     // Pressing enter key or clicking 'enter' submits the name value and the name form is hidden from view
     projectCreateButton.addEventListener('click', (e) => {
         e.preventDefault();
         projectCreator(projectNameInput.value);
         if (projectTitle === null || projectTitle == "" || projectTitle.length === 0 || projectTitle === 'undefined') {
-            console.log('Project name entry was not valid: name included no characters or was made up of whitespace.');
+            console.log('Project name entry was not valid: name included no characters or was made up of whitespace');
             noNamePrompt();
         } else {
             if (projectNameForm.style.display === "none") {
@@ -83,7 +84,7 @@ $(document).ready(function () {
                 projectName.style.display = "flex";
             }
             addProjectButtonListener();
-        };
+        }
     });
 
     // Event listeners
@@ -92,14 +93,14 @@ $(document).ready(function () {
     //the <p> element displaying the name removed, name form displayed and the name form field is emptied.
     projectResetButton.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log('Project name input was reset.')
+        console.log('Project name input was reset');
         while (projectNameDisplay.firstChild) {
-            projectNameDisplay.removeChild(projectNameDisplay.firstChild)
+            projectNameDisplay.removeChild(projectNameDisplay.firstChild);
         }
         if (projectName.style.display === "flex") {
             projectName.style.display = "none";
             projectNameForm.style.display = "flex";
-        };
+        }
 
         saveProjectButton.removeEventListener('submit', saveProjectToLocal);
         saveProjectButton.removeAttribute("href");
@@ -109,7 +110,7 @@ $(document).ready(function () {
             "border-color": "var(--clr-green)"
         });
 
-        projectNameInput.value = ''
+        projectNameInput.value = '';
     });
 
     function addProjectButtonListener() {
@@ -121,11 +122,11 @@ $(document).ready(function () {
             "background-color": "var(--clr-green)",
             "border-color": "rgb(30,126,52)"
         });
-    };
+    }
 
     // Prompt
     function noNamePrompt() {
-        console.log('No name prompt was activated.')
+        console.log('Not valid input prompt activated');
         $("#noNamePrompt").css({
             "display": "block"
         });
@@ -141,7 +142,7 @@ $(document).ready(function () {
         });
         $('body').css({
             "background-color": "transparent"
-        })
+        });
         nameNotOkPrompt.addEventListener('click', function () {
             $("#noNamePrompt").css({
                 "display": "none"
@@ -157,14 +158,14 @@ $(document).ready(function () {
                 "color": "rgba(94, 1, 94, 0.6)"
             });
             projectNameInput.disabled = false;
-            console.log('Input field was activated again.')
+            console.log('Input field was activated');
         });
-    };
+    }
 
     // Save the name to local storage
     function saveProjectToLocal() {
         localStorage.setItem('project', projectTitle);
-        let project = localStorage.getItem('project');
-        console.log('The project was given name ' + project + ' and saved to local storage.');
-    };
+        //let project = localStorage.getItem('project');
+        console.log('Project was named ' + projectTitle);
+    }
 });

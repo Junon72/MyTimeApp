@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     var defData = localStorage.getItem("DEFAULTS");
     var defaults = JSON.parse(defData);
-    console.log('Tasks are ready to be loaded')
+    
     //console.log(defData);
     //console.log(defaults)
 
@@ -51,6 +51,7 @@ $(document).ready(function () {
         });
     };
 
+    console.log('Local storage has been checked');
     // Check if tasks were added 
     if (!taskLIST || taskLIST === null || taskLIST.length === 0) {
         console.log('There are no new tasks to add.');
@@ -58,7 +59,7 @@ $(document).ready(function () {
         console.table(taskLIST);
         console.log('New tasks are added to the time recorder.');
         renderNew();
-    };
+    }
 
     // if defaults have been already saved to local storage -> load
     if (defData) { 
@@ -67,10 +68,10 @@ $(document).ready(function () {
         loadDefaults(defaults, id);
         console.table(defaults);
         if (defaults.length !== 0) {
-            console.log('Default tasks will be loaded, and recorded values restored.');
+            console.log('Default tasks are added to the recorder. If there are already recorded values , the values are restored');
         } else {
             console.log('Error has ocurred: default tasks are missing.');
-        };
+        }
     } else {
          // if no defaults were loaded before -> load and save now
         time = new Date();
@@ -109,13 +110,13 @@ $(document).ready(function () {
         setDefaultsToLocal();
         console.table(defaults);
 
-        // Check tand communicate if the defaults are saved.
+        // Check and communicate if the defaults are saved.
         if (defaults.length !== 0) {
-            console.log('Default tasks were loaded successfully.');
+            console.log('Default tasks are added to the recorder.');
         } else {
             console.log('Error has ocurred: default tasks are missing.');
-        };
-    };
+        }
+    }
 
     /* RENDER TASKS ON SCREEN */
     // new tasks - 
@@ -133,9 +134,9 @@ $(document).ready(function () {
                 '<li class="col-12 d-flex recTask">' +
                 '<button type="click" class="btn btn-success col-6 tasksButton" id="' + id + '" data-toggle="tooltip" title="Time recorder">' + name +
                 '</button>' +
-                '<p class="startTaskTime taskTime col-3" id="' + startId + '">' + start +
+                '<p class="startTaskTime disabled taskTime col-3" id="' + startId + '">' + start +
                 '</p>' +
-                '<p class="elapsedTaskTime taskTime col-3" id="' + elapsedId + '">' + elapsed +
+                '<p class="elapsedTaskTime disabled taskTime col-3" id="' + elapsedId + '">' + elapsed +
                 '</p>' +
                 '</li>' +
                 '<hr></hr>').on('click', (e) => {
@@ -143,40 +144,38 @@ $(document).ready(function () {
                 $('.recTaskButton').prop("disabled", false).prop("title", "Recording").removeClass('recTaskButton').addClass('btn-success');
                 $('.taskTime').removeClass('timeColor');
                 $(event.target).prop("disabled", true).removeClass('btn-success').addClass('recTaskButton').siblings('.taskTime').addClass('timeColor');
-
                 const storageKeyButton = event.target.getAttribute('id');
                 console.log('Task ' + name + ' with id ' + storageKeyButton + ' is being recorded');
             });
             $('#recordTasks').after($item);
         };
         taskLIST.forEach(recorder => renderTasks(recorder));
-    };
+    }
     renderDefaults();
-
     /*SET THE DEFAULTS*/
     function renderDefaults() {
         // Values to get from local storage 
-        const startProject = defaults[0]["start"];
-        const elapsedProject = defaults[0]["elapsed"];
-        const startLunch = defaults[1]["start"];
-        const elapsedLunch = defaults[1]["elapsed"];
-        const startBreak = defaults[2]["start"];
-        const elapsedBreak = defaults[2]["elapsed"];
+        const startProject = defaults[0].start;
+        const elapsedProject = defaults[0].elapsed;
+        const startLunch = defaults[1].start;
+        const elapsedLunch = defaults[1].elapsed;
+        const startBreak = defaults[2].start;
+        const elapsedBreak = defaults[2].elapsed;
 
         // Rendering values
-        $("#startProject").text(startProject)
-        $("#elapsedProject").text(elapsedProject)
-        $("#startLunch").text(startLunch)
-        $("#elapsedLunch").text(elapsedLunch)
-        $("#startBreak").text(startBreak)
-        $("#elapsedBreak").text(elapsedBreak)
-    };
+        $("#startProject").text(startProject);
+        $("#elapsedProject").text(elapsedProject);
+        $("#startLunch").text(startLunch);
+        $("#elapsedLunch").text(elapsedLunch);
+        $("#startBreak").text(startBreak);
+        $("#elapsedBreak").text(elapsedBreak);
+    }
 
     // Event listeners
     $('h5.tasksHeader').on('click', (e) => {
         e.preventDefault();
         $('.defaults-container-bottom').toggleClass('showDefaults');
-    })
+    });
 
     $('#recLunch').on('click', (e) => {
         e.preventDefault();

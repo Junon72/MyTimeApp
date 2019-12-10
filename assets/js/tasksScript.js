@@ -25,7 +25,7 @@ $(document).ready(function setProject() {
     var project;
 
     if (localStorage.getItem('project')) {
-        project = localStorage.getItem('project')
+        project = localStorage.getItem('project');
     } else {
         $noProjectName.css({
             "display": "block"
@@ -42,7 +42,7 @@ $(document).ready(function setProject() {
                 "display": "none"
             });
         });
-    };
+    }
 
     $(".project-title").text(project);
 
@@ -95,7 +95,7 @@ $(document).ready(function setProject() {
 
     // get task item from the localStorage
     var data = localStorage.getItem("TASKS");
-    var taskLIST = JSON.parse(data);
+    taskLIST = JSON.parse(data);
 
     /* Tasks list content test and message with time reference: 
     1. when no entries were submitted before page load.
@@ -111,10 +111,10 @@ $(document).ready(function setProject() {
             deactivateStartRecordingButton();
         } else {
             added = time.toLocaleString();
-            console.log(added + ', the following task item entries were added to the task list from local storage:');
+            console.log(added + ', the following task item entries were added to the ' + project + ' task list from local storage:');
             console.table(taskLIST);
             activateStartRecordingButton();
-        };
+        }
     })();
 
     /* Before entering anything new - check the state of the localStorage
@@ -128,14 +128,14 @@ $(document).ready(function setProject() {
         taskLIST = []; // if no tasks, set taskLIST to an empty array
         id = Date.now().toString();
         added = time.toLocaleString();
-    };
+    }
 
     // load tasks saved to the local storage to the tasks display -> add items and execute addToTask function
     function loadTasks(array) {
         array.forEach((item) => {
             addToTasks(item.name, item.id, item.added, item.start, item.end, item.elapsed, item.breaks, item.defaults);
         });
-    };
+    }
 
     /* ADD AND REMOVE TASKS */
 
@@ -143,7 +143,7 @@ $(document).ready(function setProject() {
     function addToTasks(task, id) {
 
         let notify = () => { // notify if 'submit' event occurs and log the element id and class
-            console.log('Submit at ', (event.target), ' detected.')
+            console.log('Submit at ', (event.target), ' detected.');
         };
         const $item = $( //sets the task item on tasks display
             '<form class="deleteForm" id="' + id + '">' +
@@ -180,12 +180,12 @@ $(document).ready(function setProject() {
             } else {
                 console.log('Current task items saved to the local storage after remove task item event.');
                 console.table(taskLIST);
-            };
+            }
         });
         // set the new item at the end of the list
         $taskItems.after($item);
         activateStartRecordingButton();
-    };
+    }
 
     // Event handler for the new task item input form
     $newTaskForm.on('submit', (e) => {
@@ -203,7 +203,7 @@ $(document).ready(function setProject() {
             console.log('Name was not valid: name "' + task + '" already exists.');
         } else {
             let notify = () => { // notify if 'submit' event occurs and log the element 
-                console.log('New task entry ' + task + ' was submitted to the task list via ', (event.target))
+                console.log('New task entry ' + task + ' was submitted to the task list via ', (event.target));
             };
             notify();
 
@@ -236,7 +236,7 @@ $(document).ready(function setProject() {
 
             //console.log('Current task items saved to the local storage after add event.');
             console.table(taskLIST);
-        };
+        }
     });
 
     // display the new task button after submitting a task item to the list
@@ -301,7 +301,7 @@ $(document).ready(function setProject() {
         $dupleName.on('click', function () {
             $dupleName.css({
                 "display": "none"
-            })
+            });
             $('input').css({
                 "color": "rgb(33, 37, 41)",
                 "border-style": "",
