@@ -41,6 +41,14 @@
     box-sizing: border-box;
 }
 
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn:visited {
+    color: white;
+}
+
 /* ---------------------------- General body styling */
 html,
 body {
@@ -250,7 +258,7 @@ nav {
 }
 
 .start-button:hover {
-    
+
 }
 
 .pause,
@@ -916,17 +924,7 @@ thead {
     font-weight: 200;
 }
 
-#giveProjectNameOk {
-    position: relative;
-    display: block;
-    text-align: center;
-    margin: 1.8em auto .4em;
-    padding: 0 auto;
-    width: auto;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: 200;
-}
+
 
 .taskOk {
     position: relative;
@@ -938,11 +936,11 @@ thead {
     border: 1px solid white;
     padding: 0 1em;
     margin: .2em 7.2em;
-    border-radius: 4%;
-    -webkit-border-radius: 4%;
-    -moz-border-radius: 4%;
-    -ms-border-radius: 4%;
-    -o-border-radius: 4%;
+    border-radius: 8%;
+    -webkit-border-radius: 8%;
+    -moz-border-radius: 8%;
+    -ms-border-radius: 8%;
+    -o-border-radius: 8%;
 }
 
 #taskNameOK,
@@ -951,7 +949,29 @@ thead {
     margin: auto;
 }
 
-.backToProjectOk {
+#taskNameOK:hover,
+#taskNameOK:focus,
+#newNameOK:hover,
+#newNameOK:focus {
+    background-color: none;
+    margin: auto;
+    color: white;
+}
+
+
+#giveProjectNameOk {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 1.4em auto .6em;
+    padding: 0 auto;
+    width: auto;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
+#projectNameOk {
     position: relative;
     justify-content: start;
     color: white;
@@ -959,30 +979,30 @@ thead {
     font-weight: 200;
     background-color: rgba(253, 142, 32, 0.4);
     border: 1px solid white;
-    padding: 0 1em;
-    margin: .2em .2em .2em 0;
-    border-radius: 4%;
-    -webkit-border-radius: 4%;
-    -moz-border-radius: 4%;
-    -ms-border-radius: 4%;
-    -o-border-radius: 4%;
+    padding: auto;
+    margin: .2em;
+    border-radius: 8%;
+    -webkit-border-radius: 8%;
+    -moz-border-radius: 8%;
+    -ms-border-radius: 8%;
+    -o-border-radius: 8%;
 }
 
-.taskOkCancel {
+#projectNameDefault {
     position: relative;
-    justify-content: end;
+    text-align: center;
     color: white;
     font-size: 1.4em;
     font-weight: 200;
     background-color: rgb(105, 134, 140);
     border: 1px solid white;
-    padding: 0 1em;
-    margin: .2em 0em .2em .2em;
-    border-radius: 4%;
-    -webkit-border-radius: 4%;
-    -moz-border-radius: 4%;
-    -ms-border-radius: 4%;
-    -o-border-radius: 4%;
+    padding: auto;
+    margin: .2em;
+    border-radius: 8%;
+    -webkit-border-radius: 8%;
+    -moz-border-radius: 8%;
+    -ms-border-radius: 8%;
+    -o-border-radius: 8%;
 }
 
 
@@ -994,7 +1014,7 @@ thead {
     margin: 0 auto;
     bottom: 12em;
     height: 12em;
-    width: 80%;
+    width: 90%;
     border-radius: 2%;
     z-index: 1050;
     -webkit-border-radius: 2%;

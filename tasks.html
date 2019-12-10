@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/tasksScript.js"></script>
+    <script src="assets/js/tasksScript.js"></script>
 </head>
 
 <body>
@@ -56,8 +56,8 @@
                 <ul id="taskList" class="p-0">
                     <li class="col-12 mb-2 p-0">Break</li>
                     <li class="col-12 m-0 p-0">Lunch</li>
-                    <hr class="mb-2 mt-2">
                 </ul>
+                <hr class="mb-2 mt-2">
                 <h5 class="tasksTitles mb-2" id="createTitle">New project tasks:</h5>
             </div>
 
@@ -99,12 +99,12 @@
             <!-- No Project Name -->
             <div class="noProjectName w-90 fade fixed-bottom show" id="nameYourProjectPrompt">
                     <div class="row justify-content-center no-gutters">
-                        <div class="col-12" id="giveProjectNameOk">You didn't give your project a name. Would you like to do it now?</div>
+                        <div class="col-12" id="giveProjectNameOk">Would you like to give your project a name?</div>
                         <button type="button" id="projectNameOk" class="btn btn-default-light col-4 d-block" aria-label="Close">
-                            <p class="backToProjectOk">OK</p>
+                           OK
                         </button>
                         <button type="button" id="projectNameDefault" class="btn btn-default-light col-4  d-block" aria-label="Close">
-                                <p class="taskOkCancel">Cancel</p>
+                                Cancel
                             </button>
                     </div>
                 </div>
@@ -112,8 +112,8 @@
             <div class="noName w-90 fade fixed-bottom show" id="emptyNamePrompt">
                 <div class="row justify-content-center no-gutters">
                     <div class="col-12" id="tryAgainOk">Give your task a name</div>
-                    <button type="button" id="taskNameOk" class="btn btn-default-light d-block" aria-label="Close">
-                        <p class="taskOk">OK</p>
+                    <button type="button" id="taskNameOk" class="btn btn-default d-block taskOk" aria-label="Close">
+                      Ok  
                     </button>
                 </div>
             </div> 
@@ -122,17 +122,16 @@
             <div class="noName w-90 fade fixed-bottom show" id="duplicateNamePrompt">
                 <div class="row justify-content-center no-gutters">
                     <div class="col-12 wasDuple" id="tryAnotherOk">Name already exists.</div>
-                    <button type="button" id="newNameOk" class="btn btn-default-light d-block" aria-label="Close">
-                        <p class="taskOk">OK</p>
+                    <button type="button" id="newNameOk" class="btn btn-default d-block taskOk" aria-label="Close">
+                        Ok
                     </button>
                 </div>
             </div>
 
             <!-- Bottom-navigation -->
-                <!-- Action buttons-->
-                <div class="d-flex col justify-content-center actions-container">
-                    <a class="p-0 ml-0 mr-0 w-100" id="toRecord"><button type="button"
-                            class="btn btn-success start-button w-100 m-0" id="save-tasks">Start Project</button></a>
+                 <!-- Action buttons-->
+            <div class="d-flex col justify-content-center actions-container">
+                    <a role="button" href="record.html" class="btn btn-success start-button w-100 m-0" id="toRecord"><p>Start Project</p></a>
                 </div>
 
                 <!-- Navigation -->

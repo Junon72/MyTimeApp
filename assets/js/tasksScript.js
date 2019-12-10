@@ -55,10 +55,12 @@ $(document).ready(function setProject() {
 
     $(".project-title").text(project);
 
+    const startProjectButton = document.getElementById('toRecord');
+
     // setting the start project button activation function
     var activateStartRecordingButton = () => {
-        $("#toRecord").attr("href", "record.html");
-        $('#save-tasks').css({
+        startProjectButton.setAttribute("href", "record.html");
+        $('#toRecord').css({
             "cursor": "pointer",
             "background-color": "var(--clr-green)",
             "border-color": "rgb(30,126,52)"
@@ -66,8 +68,8 @@ $(document).ready(function setProject() {
     };
 
     var deactivateStartRecordingButton = () => {
-        $("#toRecord").removeAttr("href");
-        $('#save-tasks').css({
+        startProjectButton.removeAttribute("href");
+        $('#toRecord').css({
             "cursor": "default",
             "background-color": "rgb(5, 199, 5, .3",
             "border-color": "var(--clr-green)"
