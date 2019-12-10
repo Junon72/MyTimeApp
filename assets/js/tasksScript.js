@@ -41,23 +41,15 @@ $(document).ready(function setProject() {
             $noProjectName.css({
                 "display": "none"
             });
-
         });
     };
-    /*   if (confirm('You haven yet to give your project a name. Would you like to name it now?')) {
-            location.href = 'index.html';
-        } else {
-            project = ('Project(default)');
-            localStorage.setItem('project', project);
-            console.log('The project is named ' + project)
-        };
-    };*/
 
     $(".project-title").text(project);
 
     const startProjectButton = document.getElementById('toRecord');
 
     // setting the start project button activation function
+    // .set/removeAttribute methods were eventually chosen as the jQuery .attr/removeAttr or .prop or .on/off methods did not capture the hoped interaction
     var activateStartRecordingButton = () => {
         startProjectButton.setAttribute("href", "record.html");
         $('#toRecord').css({
@@ -105,7 +97,7 @@ $(document).ready(function setProject() {
     var data = localStorage.getItem("TASKS");
     var taskLIST = JSON.parse(data);
 
-    /* I. tasks list content message with time reference: 
+    /* Tasks list content test and message with time reference: 
     1. when no entries were submitted before page load.
     2. when no entries found when page refreshed 
     3. when a new task item was added */
@@ -114,10 +106,9 @@ $(document).ready(function setProject() {
         time = Date();
         var initTasks = time.toLocaleString();
         if (!taskLIST || taskLIST === null) {
-            console.log('The application is getting the local time: ' + initTasks);
-            console.log('No entries have been submitted to the ' + project + ' tasks list yet.');
+            console.log('At ' + initTasks + ' locale time, no entries have been submitted to the ' + project + ' tasks list yet.');
         } else if (taskLIST.length === 0) {
-            console.log('Task list is empty, all tasks from ' + project + ' have been removed.');
+            console.log('Task list is empty, all tasks from ' + project + ' have been removed at.' + intiTasks);
             deactivateStartRecordingButton();
         } else {
             added = time.toLocaleString();
@@ -128,7 +119,7 @@ $(document).ready(function setProject() {
     })();
 
     /* Before entering anything new - check the state of the localStorage
-            if there is a list already existing, render it to the tasks display ($taskItems) */
+            if there is a list already existing, load the list be rendered, else provide an empty array to populate */
     if (data) {
         taskLIST = JSON.parse(data); // translate the JSON string back to readable code
         id = Date.now().toString();
@@ -143,8 +134,6 @@ $(document).ready(function setProject() {
     // load tasks saved to the local storage to the tasks display -> add items and execute addToTask function
     function loadTasks(array) {
         array.forEach((item) => {
-            /* Removed code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
-            //addToTasks(item.name, item.id, item.added, item.axed, item.start, item.end, item.elapsed, item.breaks, item.defaults);*/
             addToTasks(item.name, item.id, item.added, item.start, item.end, item.elapsed, item.breaks, item.defaults);
         });
     };
@@ -172,23 +161,18 @@ $(document).ready(function setProject() {
             notify();
             const storageKey = event.target.getAttribute('id');
             $(event.target).remove();
-            const targetTask = taskLIST.find(xitem => xitem.id === storageKey);
 
+            // This code is used for matching the element id and data entry in local storage object for removal
+            const targetTask = taskLIST.find(xitem => xitem.id === storageKey);
             const location = taskLIST.indexOf(targetTask);
             console.log('Confirming the activated element id ' + storageKey + ' is the localStorage key for the task entry ' + targetTask.name);
             console.log('Confirming entry name ' + targetTask.name + ' with entry id ' + targetTask.id + ' at index location ' + location + ' was removed!');
 
-            /* Removed test (axed ? false : true)
-            //targetTask['axed'] = true; 
-            //console.table(taskLIST); */
-            // Code block was used to test the target item in tasks list object - if remove button was submitted axed value true;
-            // Test result: target task item axed key value was changed from false to true
-
-
+            // Removes the target task from the local storage - slice + save the new object
             taskLIST.splice(location, 1);
             localStorage.setItem("TASKS", JSON.stringify(taskLIST));
 
-            /* II. tasks list content message:
+            /* Testing tasks list content & message:
                     1. when all task list entries have been removed
                     2. actual storage content after item was removed */
             if (taskLIST.length === 0) {
@@ -204,53 +188,42 @@ $(document).ready(function setProject() {
         $taskItems.after($item);
         activateStartRecordingButton();
     };
-    /* Removed test
-    //Test: axed: false to true.
-//};*/
 
     // Event handler for the new task item input form
     $newTaskForm.on('submit', (e) => {
         e.preventDefault();
         task = $nameInput.val();
-        task = jQuery.trim(task); // trims white space from front and back of the new name
+        task = jQuery.trim(task); // trims white space from front and back of the new name - https://api.jquery.com/jQuery.trim/#jQuery-trim-str
         task = task.charAt(0).toUpperCase() + task.slice(1); // Capitalizes the first letter
 
         // validation of the provided entry - null or empty string/ duplicate name
-
         if (task === null || task == "" || task.length === 0) {
             emptyNamePrompt();
             console.log('Name was not valid: name was empty string or no name was provided.');
-
         } else if (isNameDuplicate() === true) {
             nameIsDuplicatePrompt();
             console.log('Name was not valid: name "' + task + '" already exists.');
-
         } else {
-
             let notify = () => { // notify if 'submit' event occurs and log the element 
                 console.log('New task entry ' + task + ' was submitted to the task list via ', (event.target))
             };
-
             notify();
 
-            id = Date.now().toString(); // date to string creates a unique id (https://www.youtube.com/watch?v=W7FaYfuwu70)
+            // Date to string method creates a unique ID, which helps to identify associate local storage object with matching ID
+            // Method is referenced from https://www.youtube.com/watch?v=W7FaYfuwu70
+            id = Date.now().toString(); 
             time = new Date();
             added = time.toLocaleString();
             //console.log(added);
 
-            /* Removed test
-            //Test: axed: false to true.*/
-
-            /* NEW TASKS DATA CONSTRUCTOR
-            //addToTasks(task, id, 0, false, 0, 0, 0, 0, false); - tasks list object including 'axed' key*/
+            /* NEW TASKS DATA CONSTRUCTOR */
             addToTasks(task, id, 0, 0, 0, 0, 0, false);
-
-            taskLIST.push({ // List object to push each task to taskLIST
+            
+            // List object to push each task to taskLIST
+            taskLIST.push({ 
                 name: task,
                 id: id,
                 added: added,
-                /* Removed test
-                //axed: false,*/
                 start: '00:00',
                 end: '00:00',
                 elapsed: '00:00',
@@ -276,7 +249,7 @@ $(document).ready(function setProject() {
     });
 
     /* TEST IF THE NEW TASK NAME ALREADY EXISTS */
-    // the test is referenced from https://www.tutorialrepublic.com/faq/how-to-check-if-an-array-includes-an-object-in-javascript.php
+    // the test is build referencing https://www.tutorialrepublic.com/faq/how-to-check-if-an-array-includes-an-object-in-javascript.php
 
     let isNameDuplicate = () => {
 
@@ -289,7 +262,7 @@ $(document).ready(function setProject() {
 
     /* ENTRY VALIDATION - EMPTY INPUT NOTIFICATION / NAME IS DUPLICATE NOTIFICATION*/
 
-    // 'Empty' name notification.
+    // 'Empty' name prompt.
     let emptyNamePrompt = () => {
         $emptyName.css({
             "display": "block"
@@ -316,8 +289,7 @@ $(document).ready(function setProject() {
         });
     };
 
-    // Task name already exists notification.
-
+    // Task name already exists prompt.
     let nameIsDuplicatePrompt = () => {
         $dupleName.css({
             "display": "block"
