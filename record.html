@@ -7,16 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Record time</title>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="assets/js/record.js"></script>
-
     <!-- Links -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-    
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/hourGlass.png">
 </head>
 
 <body>
@@ -29,7 +27,7 @@
                 <div class="nav navbar-nav navbar-left home-container">
                     <a href="index.html" data-toggle="tooltip" title="Home">
                         <span class="fa-icon">
-                        <i class="fa fa-home" aria-hidden="true"></i>
+                            <i class="fa fa-home" aria-hidden="true"></i>
                         </span>
                     </a>
                 </div>
@@ -79,7 +77,7 @@
     </header>
 
     <!-- Main content -->
-    
+
     <div class="main-container mainRec">
         <h5 class="tasksHeaderTasks">Tasks:</h5>
         <div class="recTitles">
@@ -96,15 +94,13 @@
         <hr>
         <ul id="recordDefaultTasks" class="defaults-list p-0">
             <li class="col-12 d-flex recTask">
-                <button class="btn btn-success defaultButton tasksButton col-6"
-                    id="recLunch">Lunch</button>
+                <button class="btn btn-success defaultButton tasksButton col-6" id="recLunch">Lunch</button>
                 <p class="startTaskTime taskTime col-3" id="startLunch"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedLunch"></p>
             </li>
-    
+
             <li class="col-12 d-flex recTask">
-                <button class="btn btn-success defaultButton tasksButton col-6"
-                    id="recBreak">Break</button>
+                <button class="btn btn-success defaultButton tasksButton col-6" id="recBreak">Break</button>
                 <p class="startTaskTime taskTime col-3" id="startBreak"></p>
                 <p class="elapsedTaskTime taskTime col-3" id="elapsedBreak"></p>
             </li>
@@ -133,11 +129,10 @@
                 </div>
 
                 <!-- Action buttons-->
-                <button class="btn btn-default pause col-3" id="recPause" data-toggle="tooltip"
-                title="Pause"><i class="fa fa-pause-circle"
-                        aria-hidden="true"></i></button>
-                <button class="btn btn-default stop col-3" id="recStop" data-toggle="tooltip"
-                title="Stop"><i class="fa fa-stop-circle" aria-hidden="true"></i></button>
+                <button class="btn btn-default pause col-3" id="recPause" data-toggle="tooltip" title="Pause"><i
+                        class="fa fa-pause-circle" aria-hidden="true"></i></button>
+                <button class="btn btn-default stop col-3" id="recStop" data-toggle="tooltip" title="Stop"><i
+                        class="fa fa-stop-circle" aria-hidden="true"></i></button>
             </div>
 
             <!-- Navigation -->
@@ -151,6 +146,14 @@
             </div>
         </nav>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/record.js"></script>
+
 </body>
 
 </html>

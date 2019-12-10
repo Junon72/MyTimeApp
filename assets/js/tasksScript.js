@@ -102,8 +102,8 @@ $(document).ready(function setProject() {
     2. when no entries found when page refreshed 
     3. when a new task item was added */
 
-    (function () {
-        time = Date();
+   (function () {
+        //time = Date();
         var initTasks = time.toLocaleString();
         if (!taskLIST || taskLIST === null) {
             console.log('At ' + initTasks + ' locale time, no entries have been submitted to the ' + project + ' tasks list yet.');

@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Share timesheet</title>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="assets/js/record.js"></script>
-
     <!-- Links -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
+    <link rel="shortcut icon" type="image/png" href="assets/img/hourGlass.png">
 </head>
 
 <body>
@@ -65,14 +64,17 @@
             </div>
             <div class="form-group">
                 <label for="subject">Subject:</label>
-                <input type="text" class="form-control mailFrom" id="subject" placeholder="project timesheet notification">
+                <input type="text" class="form-control mailFrom" id="subject"
+                    placeholder="project timesheet notification">
             </div>
             <div class="form-group">
                 <label for="message">Message:</label>
                 <textarea name="message" id="message" class="form-control" placeholder="message"></textarea>
             </div>
         </form>
-        <div class="attached d-flex float-right mr-2"><p class="attachedText mr-2">Timesheet attached</p><i class="fa fa-paperclip"></i></div>
+        <div class="attached d-flex float-right mr-2">
+            <p class="attachedText mr-2">Timesheet attached</p><i class="fa fa-paperclip"></i>
+        </div>
     </div>
 
     <!-- Fixed footer / Actions / Navigation -->
@@ -81,9 +83,11 @@
         <nav class="navbar navbar-default fixed-bottom p-0">
             <!-- Action buttons-->
             <div class="d-flex col justify-content-center actions-container">
-                    <a role="button" href="exit.html" class="btn btn-success start-button w-100 m-0" id="toRecord"><p>Share</p></a>
-                </div>
-           
+                <a role="button" href="exit.html" class="btn btn-success start-button w-100 m-0" id="toRecord">
+                    <p>Share</p>
+                </a>
+            </div>
+
             <!-- Navigation -->
             <div class="container-fluid nav-container-bottom w-100">
                 <div class="nav navbar-nav navbar-left col-2 back-container">
@@ -95,6 +99,13 @@
             </div>
         </nav>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/stop.js"></script>
 
 </body>
 

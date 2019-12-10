@@ -7,15 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create a project</title>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-    <script src="assets/js/script.js"></script>
-
     <!-- Links -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
+    <link rel="shortcut icon" type="image/png" href="assets/img/hourGlass.png">
 </head>
 
 <body>
@@ -52,7 +51,7 @@
         <div class="row no-gutters col-12" id="accept-project">
             <div id="project-name-display" class="new-projectName align-items-center col-9 mb-3"></div>
             <button type="button" id="projectReset" class="btn btn-secondary col-3 mb-3" data-toggle="tooltip"
-            title="Reset name">Cancel</button>
+                title="Reset name">Cancel</button>
         </div>
         <form class="form-group projectForm row no-gutters mr-2 ml-2" id="create-project-form">
             <input id="projectName" type="text" class="d-flex col-9" placeholder="New project name" required>
@@ -67,7 +66,9 @@
 
             <!-- Action buttons-->
             <div class="d-flex col justify-content-center actions-container">
-                <a role="button" href="" class="btn btn-success start-button w-100 m-0" id="save-project"><p>Create</p></a>
+                <a role="button" href="" class="btn btn-success start-button w-100 m-0" id="save-project">
+                    <p>Create</p>
+                </a>
             </div>
 
             <!-- Navigation-->
@@ -81,6 +82,13 @@
             </div>
         </nav>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>
