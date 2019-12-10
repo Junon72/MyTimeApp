@@ -102,7 +102,7 @@ $(document).ready(function () {
         };
 
         saveProjectButton.removeEventListener('submit', saveProjectToLocal);
-        $("#toTasks").removeAttr("href");
+        saveProjectButton.removeAttribute("href");
         $("#save-project").css({
             "cursor": "default",
             "background-color": "rgb(5, 199, 5, .5",
@@ -115,7 +115,7 @@ $(document).ready(function () {
     function addProjectButtonListener() {
 
         saveProjectButton.addEventListener('submit', saveProjectToLocal());
-        $("#toTasks").attr("href", "tasks.html");
+        saveProjectButton.setAttribute("href", "tasks.html");
         $('#save-project').css({
             "cursor": "pointer",
             "background-color": "var(--clr-green)",

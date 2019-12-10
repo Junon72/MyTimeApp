@@ -226,6 +226,11 @@ Planned:
 
 ## Testing
 
+### Testing html
+
+For html testing, [W3C Markup Validation Service](#https://validator.w3.org/) was used.
+
+
 ## Technologies  and libraries
 
 ### Technologies
@@ -257,4 +262,10 @@ Deployment:
 - scroll down the settings page to _"GitHub Pages"_ sections.
 - in the list of drop menu, which can be accessed by clicking the button, under the title _"Source"_, select _"Master Branch"_ .
 - the page will refresh automatically, and a message should appear  at the top of the GitHub Pages section, announcing the site is ready to be published, with a link to the website.
-- the application can be also run via Gitpod
+- the application can be also viewed and run via Gitpod, by clicking the green Gitpod button at the right hand side end of the row above the application directory commit list.  
+
+Cloning:
+
+- the project is available for cloning and downloading, which both can be done by clicking the Clone or download button. The button can be found as well at right hand side, above the application directory commit list.  
+- clicking the button opens a dialogue, where the URL to the project can be copied. It is also possible to open the project in desktop or download the file in ZIP form.  
+- the URL address can be accessed, for example, from your IDE bash terminal and cloned to your workspace.  

@@ -240,12 +240,17 @@ nav {
 /*-----------Buttons----------*/
 
 
-.start-button {
+.start-button >p {
     /* Green buttons */
     font-size: 1.2rem;
     font-weight: 200 important !;
     margin-left: 1em;
     margin-right: 1em;
+    color: white;
+}
+
+.start-button:hover {
+    
 }
 
 .pause,
