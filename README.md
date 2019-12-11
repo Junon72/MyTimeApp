@@ -24,6 +24,8 @@
 6. [Technologies and libraries](#technologies-and-libraries)  
 [Technologies](#technologies)  
 [Libraries](#libraries)  
+7. [Deployment](#deployment)
+
 
 ## What is MyTime
 
@@ -236,14 +238,6 @@ Planned:
 Planned:  
     - prompt with an option to reset all data.  
 
-## Testing
-
-For html testing, [W3C Markup Validation Service](#https://validator.w3.org/) was used.
-For 
-
-
-
-
 ## Technologies  and libraries
 
 ### Technologies
@@ -282,6 +276,16 @@ Cloning:
 - the project is available for cloning and downloading, which both can be done by clicking the Clone or download button. The button can be found as well at right hand side, above the application directory commit list.  
 - clicking the button opens a dialogue, where the URL to the project can be copied. It is also possible to open the project in desktop or download the file in ZIP form.  
 - the URL address can be accessed, for example, from your IDE bash terminal and cloned to your workspace.  
+
+## Testing
+
+Testing services:  
+HTML testing - [W3C Markup Validation Service](#https://validator.w3.org/).  
+CSS testing - [W3C Validation Service](#https://jigsaw.w3.org/css-validator/).  
+JavaScript - [JSHint](#https://jshint.com/).  
+
+The app was also tested for responsiveness and compatibility.  
+The full testing document is available [here](#assets/documents/MyTime testing.pdf).  
 
 ## References
 
