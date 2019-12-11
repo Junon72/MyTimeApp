@@ -321,6 +321,8 @@ Deployment:
 - in the list of drop menu, which can be accessed by clicking the button, under the title _"Source"_, select _"Master Branch"_ .
 - the page will refresh automatically, and a message should appear  at the top of the GitHub Pages section, announcing the site is ready to be published, with a link to the website.
 
+The deployed version is identical to the development version.
+
 Currently the application is hosted by GitHub and runs at [MyTime App](https://junon72.github.io/MyTimeApp/)
 
 Cloning:
