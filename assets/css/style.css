@@ -72,26 +72,6 @@ body {
     height: 100vh;
 }
 
-@media screen and (min-width: 430px) {
-    .wrap {
-        border-right: solid 1px var(--clr-light);
-        width: 430px;
-    }
-
-    .tasksForm,
-    .defaults-container-top,
-    .defaults-container-bottom,
-    .projectTimeDisplay {
-        border-right: solid 1px var(--clr-light);
-    }
-
-}
- @media screen and (max-width: 429px) {
-     .wrap {
-         border: none;
-         width: 100vw;
-     }
- }
 
 /* ---------------------------- General text styling */
 p,
@@ -601,6 +581,7 @@ li.taskItem {
     /* Container for the project time elements at the top */
     background-color: white;
     padding: 0 1em .4em;
+    height: 65px;
 }
 
 
@@ -630,7 +611,7 @@ li.taskItem {
     font-weight: 700;
     color: var(--clr-time);
     opacity: .4;
-    letter-spacing: 1px;
+    letter-spacing: -.1px;
 }
 
 .dateHeader {
@@ -638,8 +619,7 @@ li.taskItem {
     display: flex;
     float: left;
     color: var(--clr-time);
-    font-size: 1.6rem;
-    letter-spacing: -1.5px;
+    font-size: 1.5rem;
     font-weight: 700;
     opacity: .3;
 }
@@ -658,7 +638,7 @@ li.taskItem {
 }
 
 .tasksHeaderTasks {
-    margin: 1.6rem 0 1rem;
+    margin: 1.2em 0 1em;
     color: var(--clr--mainLight);
     font-size: 1.1em;
     font-style: italic;
@@ -1014,4 +994,36 @@ thead {
     width: 90%;
     border-radius: 2%;
     z-index: 1050;
+}
+
+/* ------------------ Media queries ----------------- */
+
+@media screen and (min-width: 430px) {
+    .wrap {
+        border-right: solid 1px var(--clr-light);
+        width: 430px;
+    }
+
+    .tasksForm,
+    .defaults-container-top,
+    .defaults-container-bottom,
+    .projectTimeDisplay {
+        border-right: solid 1px var(--clr-light);
+    }
+
+}
+ @media screen and (max-width: 429px) {
+     .wrap {
+         border: none;
+         width: 100vw;
+     }
+ }
+
+ @media screen and (min-width: 365px) {
+    .dateHeader {
+       font-size: 1.8rem;
+    }
+    .projectClockDisplay {
+        letter-spacing: 1px;
+    }
 }
