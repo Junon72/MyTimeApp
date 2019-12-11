@@ -8,6 +8,8 @@
 [Users](#users)  
 2. [Planning](#planning)  
 3. [UX / UI](#ux-/-ui)  
+[Wireframes and mockups](#wireframing-and-mockups)  
+[Developer tools](#developer-tools)  
 [User Stories](#user-stories)  
 4. [Functions and features](#functions-and-features)  
 [Core functions](#core-functions)  
@@ -25,6 +27,8 @@
 [Technologies](#technologies)  
 [Libraries](#libraries)  
 7. [Deployment](#deployment)
+[Using console](#using-console)
+[Caution for security](#caution-for-security)
 8. [Testing](#testing)  
 9. [References](#references)  
 
@@ -50,7 +54,11 @@ The user interface should be intuitive and simple to use. The application is mea
 
 The overall color schema I thought to be quite neutral to focus on to function of the application. The colors should emphasize the utility and the purpose of the features, such as record, pause and stop.  
 
-Wireframes can be found from [here](https://github.com/Junon72/MyTimeApp/blob/master/assets/documents/MyTime1.pdf).  
+### Wireframes and mockups
+
+[Balsamiq](https://balsamiq.com/?gclid=CjwKCAiAxMLvBRBNEiwAKhr-nIM261LiSSvKLP_VuIXqLTNH1Akjws8fgCSegVCICcpfVSsW78Rv_RoCod8QAvD_BwE) Mockup 3, was used to create the wireframing and mockups in the design phase of the application.
+
+Mockups can be found from [here](https://github.com/Junon72/MyTimeApp/blob/master/assets/documents/MyTime1.pdf).  
 
 ### User Stories
 
@@ -246,16 +254,15 @@ Planned:
 
 ### Technologies
 
-- HTML ~ markup language used for construction and content structuring of the applications pages.
+- [HTML](https://html.spec.whatwg.org/multipage/) ~ markup language used for construction and content structuring of the applications pages.
 - CSS ~ styling language was used for applications style, visual outlook and aesthetics.
 - JavaScript ~ programming language was used to built interactive user interface UI.
 - [Visual Studio Code](https://code.visualstudio.com/) ~ I used for my IDE in this project.
 - Visual Studio Code integrated terminal and local git repository were used for the version control and then pushed to GitHub.
 - [GitHub](https://github.com/) ~ is used for hosting the application and the repositories of previous versions.
 - Google Chrome and Firefox developer tools ~ were used through out the development process, to test applications browser behavior, code involving local storage and for css visuals.
-- [Digital Color Meter]
-(#https://support.apple.com/guide/digital-color-meter/welcome/mac) ~ was used for color values, to get colors and convert between rgb and hexadecimals.
-- [Balsamiq Mockups](https://balsamiq.com/) ~ was used to create Wireframing.  
+- [Digital Color Meter](#https://support.apple.com/guide/digital-color-meter/welcome/mac) ~ was used for color values, to get colors and convert between rgb and hexadecimals.
+- [Balsamiq Mockups](https://balsamiq.com/) ~ was used to create wireframing and mockups.  
 
 ### Libraries
 
@@ -273,13 +280,41 @@ Deployment:
 - scroll down the settings page to _"GitHub Pages"_ sections.
 - in the list of drop menu, which can be accessed by clicking the button, under the title _"Source"_, select _"Master Branch"_ .
 - the page will refresh automatically, and a message should appear  at the top of the GitHub Pages section, announcing the site is ready to be published, with a link to the website.
-- the application can be also viewed and run via Gitpod, by clicking the green Gitpod button at the right hand side end of the row above the application directory commit list.  
 
 Cloning:
 
-- the project is available for cloning and downloading, which both can be done by clicking the Clone or download button. The button can be found as well at right hand side, above the application directory commit list.  
+- the project is available for cloning and downloading at the GitHub repository [MyTimeApp](https://github.com/Junon72/MyTimeApp)
+- both can be done by clicking the Clone or download button found at the upper right side corner of the Repository menu.
 - clicking the button opens a dialogue, where the URL to the project can be copied. It is also possible to open the project in desktop or download the file in ZIP form.  
-- the URL address can be accessed, for example, from your IDE bash terminal and cloned to your workspace.  
+- the URL address can be accessed, for example, from your preferred IDE bash terminal to clone the Repository to your IDE workspace.  
+
+### Using console
+
+The application can be consumed as such, but for my own learning purposes I built in explanatory logs that are accessible via the developer tools console. The logs are designed to explain the intended workings of the application for learning and for entertainment.  
+
+To access the console in Chrome you can use (alt + cmd + i) for Mac or (ctrl + shift + i) for Windows to open the development tools. Then select Console from the Dev Tools menu.  
+
+To access the console in Firefox you can use (alt + cmd + k) for Mac or (Ctrl + Shift + k) for Windows to directly open the development tools console.  
+
+To clear the local storage from the stored data you can use `localStorage.clear();` command. This will reset the saved project data and results different log information.  
+
+## Caution for security
+
+- the application uses local storage.  Currently the application does not provide unique session identifier key to prevent possible storage event conflicts.  
+
+As quoted from [HTML Living Standard page](https://html.spec.whatwg.org/multipage/webstorage.html):
+
+>_"The localStorage attribute provides access to shared state. This specification does not define the interaction with other browsing contexts in a multiprocess user agent, and authors are encouraged to assume that there is no locking mechanism. A site could, for instance, try to read the value of a key, increment its value, then write it back out, using the new value as a unique identifier for the session; if the site does this twice in two different browser windows at the same time, it might end up using the same "unique" identifier for both sessions, with potentially disastrous effects."_
+
+More information about the subject can be found [here](https://html.spec.whatwg.org/multipage/webstorage.html#the-localstorage-attribute).
+
+- not using unique session identifier can pose a risk by exposing the session and local storage content for third party threats.  
+
+- although the stored information consist only of string data and time objects, it is not recommended to enter any sensitive private information to the application interface.  
+
+More about the security risks associated with the use of local storage, risk mitigation and what are the alternatives can be found for example [here](https://dev.to/rdegges/please-stop-using-local-storage-1i04).
+
+p.s. the following discussion after the above article is worth of skimming through as well... just saying...
 
 ## Testing
 
@@ -305,8 +340,7 @@ Similarly [Momentsjs](https://momentjs.com/) provides good [documentation](https
 
 ### Reference disclaimer
 
-Many different web sources were used to research techniques and methods to accomplish the following code.  
+Many different web sources were used to research techniques and methods to accomplish the application code.  
 Main sources for particular code blocks are mentioned in comments with the code.  
-The actual code is mostly put together using several sources, offering solution to a specific context,
-which I have deconstructed and reconstructed to suit the needs of this application.
-There might be overlapping with existing code out there in the vastness of the web and identical code snippets floating around, despite my efforts to reference, at least the main sources justly.
+The actual code is mostly put together using several sources offering solution in specific context,
+which I have deconstructed and reconstructed to suit the needs of this application. As the coding is reiterative process, the code is the outcome of origins, variations, mutations and permutations. Despite my efforts to reference, at least the main sources justly, there might be overlapping and identical code snippets floating around in the vastness of the web. In case you suspect the code or the content violates copyrights or has any other issues, please contact me at juno.athome@gmail.com.
