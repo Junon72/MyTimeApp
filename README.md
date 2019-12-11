@@ -30,6 +30,7 @@
 [Caution for security](#caution-for-security)
 8. [Testing](#testing)  
 9. [References](#references)  
+[Disclaimer](#disclaimer)  
 
 ## What is MyTime
 
@@ -365,7 +366,7 @@ Other helpful resources tackling HTML, CSS and JavaScript have been [W3School](s
 Specifically [jQuery](https://jquery.com/) related questions were often answered by carefully studying [jQuery Documentation](https://api.jquery.com/).
 Similarly [Momentsjs](https://momentjs.com/) provides good [documentation](https://momentjs.com/docs/).  
 
-### Reference disclaimer
+### Disclaimer
 
 Many different web sources were used to research techniques and methods to accomplish the application code.  
 Main sources for particular code blocks are mentioned in comments with the code.  
