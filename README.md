@@ -25,6 +25,8 @@
 [Technologies](#technologies)  
 [Libraries](#libraries)  
 7. [Deployment](#deployment)
+8. [Testing](#testing)  
+9. [References](#references)  
 
 ## What is MyTime
 
@@ -48,7 +50,7 @@ The user interface should be intuitive and simple to use. The application is mea
 
 The overall color schema I thought to be quite neutral to focus on to function of the application. The colors should emphasize the utility and the purpose of the features, such as record, pause and stop.  
 
-Wireframes can be found from [here]
+Wireframes can be found from [here](https://github.com/Junon72/MyTimeApp/blob/master/assets/documents/MyTime1.pdf).  
 
 ### User Stories
 
@@ -307,4 +309,4 @@ Many different web sources were used to research techniques and methods to accom
 Main sources for particular code blocks are mentioned in comments with the code.  
 The actual code is mostly put together using several sources, offering solution to a specific context,
 which I have deconstructed and reconstructed to suit the needs of this application.
-There might be overlapping with existing code out there in the vastness of the web and identical code snippets floating around, despite my efforts to reference, at least the main sources justly.  
+There might be overlapping with existing code out there in the vastness of the web and identical code snippets floating around, despite my efforts to reference, at least the main sources justly.
