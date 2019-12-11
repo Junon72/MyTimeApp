@@ -26,7 +26,6 @@
 [Libraries](#libraries)  
 7. [Deployment](#deployment)
 
-
 ## What is MyTime
 
 MyTime is a time and project task management application.
@@ -45,18 +44,21 @@ MyTime application at this phase should focus on the core functions - namely the
 
 ## UX / UI
 
-The user interface should be intuitive and simple to use. The application is meant for mobile devices. On desktops the window size should limited, so the application can be used together with other applications, for example with text programs or internet, without the MyTime application taking too much of space on viewport.  
+The user interface should be intuitive and simple to use. The application is meant for mobile devices. On desktops the window size should be limited, so the application can be used together with other applications, for example with text programs or internet, without the MyTime application taking too much of browser windows space.  
+
+The overall color schema I thought to be quite neutral to focus on to function of the application. The colors should emphasize the utility and the purpose of the features, such as record, pause and stop.  
+
+Wireframes can be found from [here]
 
 ### User Stories
 
 1. Students
-    - MyTime helps the students to track their time use when studying and plan better their time use.  
+    - MyTime helps students to track and plan their time use.  
 
 
-    _"As a 'Student', I want to keep track on time I use for studying separate subjects, and make sure I take enough breaks, so I can maintain concentration without loosing time."_    
-    
+    _"As a 'Student', I want to keep track on time I use for studying separate subjects, while making sure I take enough breaks so I can sustain concentration."_    
 
-    _"As a "Student", I want to learn to know better my own habits, so I can change the habits that are distracting or hindering my development."_  
+    _"As a "Student", I want to learn to know better my own habits, so I can change the habits that are distracting or hindering my progress."_  
 
 
 2. Self employed
@@ -285,7 +287,7 @@ CSS testing - [W3C Validation Service](https://jigsaw.w3.org/css-validator/).
 JavaScript - [JSHint](https://jshint.com/).  
 
 The app was also tested for responsiveness and compatibility.  
-The full testing document is available [here](/assets/documents/MyTime testing.pdf).  
+The full testing document can be found from [here](https://github.com/Junon72/MyTimeApp/blob/master/assets/documents/MyTime%20testing.pdf).  
 
 ## References
 
