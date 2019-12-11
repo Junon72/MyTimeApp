@@ -9,12 +9,12 @@
 2. [Planning](#planning)  
 3. [UX / UI](#ux-/-ui)  
 [Wireframes and mockups](#wireframing-and-mockups)  
-[Developer tools](#developer-tools)  
 [User Stories](#user-stories)  
 4. [Functions and features](#functions-and-features)  
 [Core functions](#core-functions)  
 [Realized functions](#realized-functions)  
 [Planned functions](#planned-functions)  
+[Using console with the app](#using-console-with-the-app)  
 5. [MyTime core features and requirements](#MyTime-core-features-and-requirements)  
 [Create a project interface](#create-a-project-interface)  
 [Create tasks interface](#create-tasks-interface)  
@@ -27,7 +27,6 @@
 [Technologies](#technologies)  
 [Libraries](#libraries)  
 7. [Deployment](#deployment)
-[Using console](#using-console)
 [Caution for security](#caution-for-security)
 8. [Testing](#testing)  
 9. [References](#references)  
@@ -250,6 +249,16 @@ Planned:
 Planned:  
     - prompt with an option to reset all data.  
 
+### Using console with the app
+
+The application can be consumed as such, but for my own learning purposes I built in explanatory logs that are accessible via the developer tools console. The logs are designed to explain the intended workings of the application for learning and for entertainment.  
+
+To access the console in Chrome you can use (alt + cmd + i) for Mac or (ctrl + shift + i) for Windows to open the development tools. Then select Console from the Dev Tools menu.  
+
+To access the console in Firefox you can use (alt + cmd + k) for Mac or (Ctrl + Shift + k) for Windows to directly open the development tools console.  
+
+To clear the local storage from the stored data you can use `localStorage.clear();` command. This will reset the saved project data and results different log information.  
+
 ## Technologies  and libraries
 
 ### Technologies
@@ -287,16 +296,6 @@ Cloning:
 - both can be done by clicking the Clone or download button found at the upper right side corner of the Repository menu.
 - clicking the button opens a dialogue, where the URL to the project can be copied. It is also possible to open the project in desktop or download the file in ZIP form.  
 - the URL address can be accessed, for example, from your preferred IDE bash terminal to clone the Repository to your IDE workspace.  
-
-### Using console
-
-The application can be consumed as such, but for my own learning purposes I built in explanatory logs that are accessible via the developer tools console. The logs are designed to explain the intended workings of the application for learning and for entertainment.  
-
-To access the console in Chrome you can use (alt + cmd + i) for Mac or (ctrl + shift + i) for Windows to open the development tools. Then select Console from the Dev Tools menu.  
-
-To access the console in Firefox you can use (alt + cmd + k) for Mac or (Ctrl + Shift + k) for Windows to directly open the development tools console.  
-
-To clear the local storage from the stored data you can use `localStorage.clear();` command. This will reset the saved project data and results different log information.  
 
 ## Caution for security
 
