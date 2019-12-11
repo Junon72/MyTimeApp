@@ -89,7 +89,11 @@ Mockups can be found from [here](https://github.com/Junon72/MyTimeApp/blob/maste
     _"As a 'Small business", I want to have a focused channel for communicating the working hours with employees who are not working on premise on daily bases."_
 
 4. Anybody interested in where does the time actually go.
-    - anybody can track their time use in various different instances, be it keeping track on fitness goals or sharing the burden of household chores. 
+    - anybody can track their time use in various different instances, be it keeping track on fitness goals or sharing the burden of household chores.  
+
+[Back to UX / UI](#UX-/-UI)  
+
+[Back to menu](#table-of-contents)  
 
 ## Functions and features
 
@@ -146,6 +150,8 @@ Eventually it would be possible to create multiple projects, each with their own
     - stores name to local storage.  
     - navigate to tasks page.  
 
+[Back to functions and features](#functions-and-features)  
+
 #### Create tasks interface
 
 1. Display the project name.  
@@ -166,6 +172,8 @@ Eventually it would be possible to create multiple projects, each with their own
     - activate if user has created at least one task.
     - navigate to recording page.
 7. Display default tasks - Break and Lunch.  
+
+[Back to functions and features](#functions-and-features)  
 
 #### Recording interface to record time spend in tasks
 
@@ -198,6 +206,8 @@ Planned:
 Planned:  
     - stop all recordings and store the time data to the local storage.  
 
+[Back to functions and features](#functions-and-features)  
+
 #### Stopped recording view
 
 1. Display project name.  
@@ -210,6 +220,8 @@ Planned:
     - returns to recording.  
 5. Accept button.  
     - navigates to view tasks page.  
+
+[Back to functions and features](#functions-and-features)  
 
 #### Timesheet viewer
 
@@ -230,6 +242,8 @@ Planned:
     - translate the data to a suitable format to be send with an email.  
     - attach the file to the email to be send.  
 
+[Back to functions and features](#functions-and-features)  
+
 #### Share timesheet document  
 
 1. Display form for email, subject and message fields:  
@@ -242,12 +256,16 @@ Planned:
     - prompt that sending mail succeeded.  
     - prompt that sending mail did not succeed and what to do next.  
 
+[Back to functions and features](#functions-and-features)  
+
 #### Exit the project page
 
 1. Start a new project button.  
     - navigates back to the start page.  
 Planned:  
     - prompt with an option to reset all data.  
+
+[Back to functions and features](#functions-and-features)  
 
 ### Using console with the app
 
@@ -258,6 +276,10 @@ To access the console in Chrome you can use (alt + cmd + i) for Mac or (ctrl + s
 To access the console in Firefox you can use (alt + cmd + k) for Mac or (Ctrl + Shift + k) for Windows to directly open the development tools console.  
 
 To clear the local storage from the stored data you can use `localStorage.clear();` command. This will reset the saved project data and results different log information.  
+
+[Back to functions and features](#functions-and-features)  
+
+[Back to menu](#table-of-contents)  
 
 ## Technologies  and libraries
 
@@ -279,6 +301,8 @@ To clear the local storage from the stored data you can use `localStorage.clear(
 - [jQuery](https://jquery.com) ~ library was used to simplify DOM manipulation.
 - [Momentsjs](https://momentjs.com/) ~ library was used to display local time.
 
+[Back to menu](#table-of-contents)  
+
 ## Deployment
 
 The application was created using VSCode (Visual Studio Code) IDE. Local Git Repository was initialized through VSCode to hold version control repository, and used in parallel with GitHub. GitHub was used also for deployment of the application. Gitpod helped to communicate code related questions towards the tutors.  
@@ -297,6 +321,8 @@ Cloning:
 - clicking the button opens a dialogue, where the URL to the project can be copied. It is also possible to open the project in desktop or download the file in ZIP form.  
 - the URL address can be accessed, for example, from your preferred IDE bash terminal to clone the Repository to your IDE workspace.  
 
+[Back to menu](#table-of-contents)  
+
 ## Caution for security
 
 - the application uses local storage.  Currently the application does not provide unique session identifier key to prevent possible storage event conflicts.  
@@ -314,6 +340,8 @@ More information about the subject can be found [here](https://html.spec.whatwg.
 More about the security risks associated with the use of local storage, risk mitigation and what are the alternatives can be found for example [here](https://dev.to/rdegges/please-stop-using-local-storage-1i04).
 
 p.s. the following discussion after the above article is worth of skimming through as well... just saying...
+
+[Back to menu](#table-of-contents)  
 
 ## Testing
 
@@ -343,3 +371,5 @@ Many different web sources were used to research techniques and methods to accom
 Main sources for particular code blocks are mentioned in comments with the code.  
 The actual code is mostly put together using several sources offering solution in specific context,
 which I have deconstructed and reconstructed to suit the needs of this application. As the coding is reiterative process, the code is the outcome of origins, variations, mutations and permutations. Despite my efforts to reference, at least the main sources justly, there might be overlapping and identical code snippets floating around in the vastness of the web. In case you suspect the code or the content violates copyrights or has any other issues, please contact me at juno.athome@gmail.com.
+
+[Back to menu](#table-of-contents)  
