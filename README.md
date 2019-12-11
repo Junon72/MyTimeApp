@@ -368,9 +368,9 @@ Similarly [Momentsjs](https://momentjs.com/) provides good [documentation](https
 
 ### Disclaimer
 
-Many different web sources were used to research techniques and methods to accomplish the application code.  
+Many different web sources were used to research techniques and methods to accomplish the application.  
 Main sources for particular code blocks are mentioned in comments with the code.  
-The actual code is mostly put together using several sources offering solution in specific context,
-which I have deconstructed and reconstructed to suit the needs of this application. As the coding is reiterative process, the code is the outcome of origins, variations, mutations and permutations. Despite my efforts to reference, at least the main sources justly, there might be overlapping and identical code snippets floating around in the vastness of the web. In case you suspect the code or the content violates copyrights or has any other issues, please contact me at juno.athome@gmail.com.
+The application is put together using several sources of code offering solution in specific context,
+which I have deconstructed and reconstructed to suit the needs of this application. As the coding is reiterative process, the code is the outcome of origins, variations, mutations and permutations. Despite my efforts to reference, at least the main sources justly, there might be overlapping and identical code snippets floating around in the vastness of the web. In case you suspect the code or the content violates copyrights, I have forgot to reference a clear origin or the code has any other  copyright issues, please contact me at juno.athome@gmail.com.
 
 [Back to menu](#table-of-contents)  
