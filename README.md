@@ -280,12 +280,12 @@ Cloning:
 ## Testing
 
 Testing services:  
-HTML testing - [W3C Markup Validation Service](#https://validator.w3.org/).  
-CSS testing - [W3C Validation Service](#https://jigsaw.w3.org/css-validator/).  
-JavaScript - [JSHint](#https://jshint.com/).  
+HTML testing - [W3C Markup Validation Service](https://validator.w3.org/).  
+CSS testing - [W3C Validation Service](https://jigsaw.w3.org/css-validator/).  
+JavaScript - [JSHint](https://jshint.com/).  
 
 The app was also tested for responsiveness and compatibility.  
-The full testing document is available [here](#assets/documents/MyTime testing.pdf).  
+The full testing document is available [here](/assets/documents/MyTime testing.pdf).  
 
 ## References
 
