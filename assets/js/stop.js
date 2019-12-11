@@ -118,4 +118,16 @@ $(document).ready(function () {
         e.preventDefault();
         $('.defaults-container-bottom').toggleClass('showDefaults');
     });
+
+    $('#backToRec').on('click', () => {
+        let url = "record.html";
+        $(location).attr("href", url);
+    });
+
+    $('#toShare').on('click', (e) => {
+        e.preventDefault();
+        let url = "view.html";
+        $(location).attr("href", url);
+        console.log('Tasks were accepted. At this point the data is processed and presented in table format to be viewed and send forward');
+    });
 });
