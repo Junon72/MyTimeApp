@@ -5,32 +5,33 @@
 ## Table of Contents
 
 1. [What is MyTime](#what-is-mytime)  
-* [Users](#users)  
+*   [Users](#users)  
 2. [Planning](#planning)  
 3. [UX / UI](#ux-/-ui)  
-* [Wireframes and mockups](#wireframing-and-mockups)  
-* [User Stories](#user-stories)  
+*   [Resourses](#resources)
+*   [Wireframes and mockups](#wireframing-and-mockups)  
+*   [User Stories](#user-stories)  
 4. [Functions and features](#functions-and-features)  
-* [Core functions](#core-functions)  
-* [Realized functions](#realized-functions)  
-* [Planned functions](#planned-functions)  
-* [Using console with the app](#using-console-with-the-app)  
+*   [Core functions](#core-functions)  
+*   [Realized functions](#realized-functions)  
+*   [Planned functions](#planned-functions)  
+*   [Using console with the app](#using-console-with-the-app)  
 5. [MyTime core features and requirements](#MyTime-core-features-and-requirements)  
-* [Create a project interface](#create-a-project-interface)  
-* [Create tasks interface](#create-tasks-interface)  
-* [Recording interface to record time spend in tasks](#recording-interface-to-record-time-spend-in-tasks)  
-* [Stopped recording view](#stopped-recording-view)  
-* [Timesheet viewer](#timesheet-viewer)  
-* [Share timesheet document](#share-timesheet-document)  
-* [Exit the project page](#exit-the-project-page)  
+*   [Create a project interface](#create-a-project-interface)  
+*   [Create tasks interface](#create-tasks-interface)  
+*   [Recording interface to record time spend in tasks](#recording-interface-to-record-time-spend-in-tasks)  
+*   [Stopped recording view](#stopped-recording-view)  
+*   [Timesheet viewer](#timesheet-viewer)  
+*   [Share timesheet document](#share-timesheet-document)  
+*   [Exit the project page](#exit-the-project-page)  
 6. [Technologies and libraries](#technologies-and-libraries)  
-* [Technologies](#technologies)  
-* [Libraries](#libraries)  
+*   [Technologies](#technologies)  
+*   [Libraries](#libraries)  
 7. [Deployment](#deployment)  
-* [Caution for security](#caution-for-security)
+*   [Caution for security](#caution-for-security)
 8. [Testing](#testing)  
 9. [References](#references)  
-* [Disclaimer](#disclaimer)  
+*   [Disclaimer](#disclaimer)  
 
 ## What is MyTime
 
@@ -38,21 +39,25 @@ MyTime is a time and project task management application.
 
 MyTime allows the user to manage and record the time they spend in project related tasks and activities and create sharable timesheet.
 
-## Planning
+## Milestone project goals
 
-For the Interactive Frontend Development Milestone Project only a part of the MyTime application would be developed.
+I am developing only a part of the visioned MyTime application for the Interactive Frontend Development Milestone Project.
 
-The application should focus on the technologies and tools discussed in the course material.
-
-The emphasis should be on the simple interactive functions and features.
-
-MyTime application at this phase should focus on the core functions - namely the time recorder for task management.
+At this phase my focus is on the creating the project and tasks feature of the application. The rest of the application is not interactive, but will demonstrate the planned functions and the interaction flow. Ultimately, the application would relay more on the back end features, which I hope to develop in the later milestones.  
 
 ## UX / UI
 
-The user interface should be intuitive and simple to use. The application is meant for mobile devices. On desktops the window size should be limited, so the application can be used together with other applications, for example with text programs or internet, without the MyTime application taking too much of browser windows space.  
+The user interface should be intuitive and simple to use. The application is meant primarily to be used with mobile devices. On desktops the application width is limited, which I assume to encourages the user to fit the browser window to the application width on bigger screens of table tops. The application is designed to be used also together with other applications, for example with text programs or internet, without the MyTime application taking too much of browser windows space.  
 
-The overall color schema I thought to be quite neutral to focus on to function of the application. The colors should emphasize the utility and the purpose of the features, such as record, pause and stop.  
+The overall color schema I thought to be quite neutral to focus on to the functions of the application for now. Together with the colors, icons are intended to emphasize the utility and the purpose of the visual and functional features, such as record, pause and stop buttons or icons that strengthens the message conveyed via the page titles they are attached to.  
+
+### Resources
+
+[HTML CSS Color Picker](https://www.htmlcsscolor.com/) provides an online color tool, which I used for the color scheming.  
+
+The buttons, icons and other visual cues are from [Font Awesome](https://fontawesome.com/).
+
+The favicon icon is a free download from [Iconfinder](https://www.iconfinder.com/) to be found with a keyword 'hourglass'.
 
 ### Wireframes and mockups
 
@@ -108,7 +113,7 @@ The application explores MVP requirements for eventually more complete time mana
 
 The application consists of seven pages - from creating a project to sharing and exiting the project.  
 For this Milestone project I have focused on the first part of the applications features, namely creating the project and tasks. The data is also saved to the local storage for later use, for example to create dynamic elements on following pages.  
-Unlike the starting pages, the rest of the interfaces are not interactive. However, they give an impression of the planned user experience and flow.  
+Unlike the starting pages, the rest of the interfaces are not interactive.
 
 ### Realized functions
 
@@ -301,6 +306,7 @@ To clear the local storage from the stored data you can use `localStorage.clear(
 - [Bootstrap 4 Framework](https://getbootstrap.com/) ~ library was used for structuring the core layout.  
 - [jQuery](https://jquery.com) ~ library was used to simplify DOM manipulation.
 - [Momentsjs](https://momentjs.com/) ~ library was used to display local time.
+
 
 [Back to menu](#table-of-contents)  
 
